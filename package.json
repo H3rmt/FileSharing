@@ -4,12 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs"
   },
   "dependencies": {
-    "astro": "^2.9.1"
+    "@astrojs/deno": "^4.3.0",
+    "@astrojs/solid-js": "^2.2.0",
+    "astro": "^2.9.1",
+    "pocketbase": "^0.15.3",
+    "solid-js": "^1.7.8"
   }
 }
