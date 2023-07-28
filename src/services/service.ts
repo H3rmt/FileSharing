@@ -1,4 +1,4 @@
-import Pocketbase from 'pocketbase';
+import Pocketbase, {RecordSubscription} from 'pocketbase';
 import type {File as F} from "../types/file";
 
 
@@ -30,4 +30,13 @@ export async function unmarkFile(file: F): Promise<void> {
   await pb
       .collection('files')
       .update(file.id, {new: false});
+}
+
+export async function subscribe(callback: (file: RecordSubscription<F>) => void): Promise<() => Promise<void>> {
+  return await pb
+      .collection('files')
+      .subscribe<F>('*', (ev) => {
+        console.log('Files updated');
+        callback(ev);
+      });
 }

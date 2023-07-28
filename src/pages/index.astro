@@ -1,28 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {NewFile} from '../components/NewFile';
 import {getFiles} from "../services/service";
-import {List} from "../components/List";
-import {File} from "../components/File";
-
-const files = await getFiles()
+import {Overview} from "../components/Overview";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <h1 class="title">Welcome to <span class="text-gradient">Local File Share</span></h1>
-    <p class="instructions">
-      This is a local file sharing service. You can upload files and share them with others.
-      Currently <span class="text-color">{files.filter(f => f.new).length}</span> new files and <span
-        class="text-color">{files.length}</span> files are
-      stored on the server using <span class="text-color">{9405834967}</span> MB.
-    </p>
-    <ul role="list" class="files">
-      {files.filter(f => f.new).map((file) => (
-          <File client:load file={file}/>))}
-    </ul>
-    <List client:load files={files}/>
-    <NewFile client:load/>
+    <Overview client:load/>
   </main>
 </Layout>
 

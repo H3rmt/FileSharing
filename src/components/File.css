@@ -102,6 +102,11 @@ main {
 	gap: 2rem;
 }
 
+.dragover {
+	background-color: rgba(var(--accent), 30%);
+	border: 2px dashed rgba(var(--accent), 55%);
+}
+
 .file:is(:hover, :focus-within) {
 	color: rgb(var(--accent));
 }

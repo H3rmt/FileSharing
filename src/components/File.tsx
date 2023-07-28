@@ -25,23 +25,12 @@ export function File(props: { file: File }) {
       e.stopPropagation()
       console.log('Multiple files')
 
-      const tmpLink = document.createElement("a");
-      tmpLink.style.display = 'none';
-
-      document.body.appendChild(tmpLink);
-
       for (const url of urls() ?? []) {
-        tmpLink.setAttribute('href', url);
-        tmpLink.setAttribute('target', '_blank');
-        tmpLink.setAttribute('download', url.split('/').pop() ?? '');
-        tmpLink.click();
+        window.open(url, '_blank')
       }
-
-      document.body.removeChild(tmpLink);
     }
 
     await unmarkFile(props.file)
-    setTimeout(() => window.location.reload(), 100)
   }
 
   return <a target="_blank" download={props.file.name} href={urls()?.[0] ?? ''} onclick={open} class="file existingFile"
