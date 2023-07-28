@@ -3,4 +3,3 @@ dist/
 .idea/
 
 pocketbase/pb_data/
-pocketbase/pb_migrations/
