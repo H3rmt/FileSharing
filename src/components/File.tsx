@@ -1,7 +1,7 @@
 import './File.css'
-import {getFileUrl, getFileUrls, unmarkFile} from "../services/service";
-import {createResource} from "solid-js";
-import type {File} from "../types/file";
+import { getFileUrl, getFileUrls, unmarkFile } from "../services/service";
+import { createResource } from "solid-js";
+import type { File } from "../types/file";
 
 export function File(props: { file: File }) {
   const loadURL = async () => await getFileUrls(props.file)
@@ -15,8 +15,11 @@ export function File(props: { file: File }) {
     displayURL = ''
   }
 
-  const close = () => {
+  const close = async (e: Event) => {
+    e.preventDefault()
+    e.stopPropagation()
     console.log("Close file", props.file)
+    await unmarkFile(props.file)
   }
 
   const open = async (e: Event) => {
@@ -26,15 +29,15 @@ export function File(props: { file: File }) {
       console.log('Multiple files')
 
       for (const url of urls() ?? []) {
-        window.open(url, '_blank')
+        window.open(url + '?download=1', "_blank")
       }
     }
 
-    await unmarkFile(props.file)
+    await unmarkFile(props.file)// "?download=1" 
   }
 
-  return <a target="_blank" download={props.file.name} href={urls()?.[0] ?? ''} onclick={open} class="file existingFile"
-            style={`background-image: url(${displayURL})`}>
+  return <a target="_blank" download={props.file.name} href={urls()?.length === 1 ? (urls()?.[0] + "?download=1" ?? '') : ''} onclick={open} class="file existingFile"
+    style={`background-image: url(${displayURL})`}>
     <div class="close" onclick={close}>X</div>
     <h2>{props.file.name}</h2>
     <p>{new Date(props.file.created).toLocaleString()}</p>

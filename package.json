@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "pocketbase": "cd pocketbase && go run main.go serve",
+    "pocketbase": "cd pocketbase && go run main.go serve --http=192.168.187.13:8090 --https=192.168.187.13:8091",
     "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "@astrojs/solid-js": "^2.2.0",
     "astro": "^2.9.1",
     "pocketbase": "^0.15.3",
-    "solid-js": "^1.7.8"
+    "solid-js": "^1.7.8",
+    "vite-plugin-pwa": "^0.16.4"
   }
 }

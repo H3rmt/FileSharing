@@ -15,7 +15,7 @@ export function NewFile() {
       return
     }
     if (name() === "" || name().length < 3) {
-      console.log("No name")
+      console.log("No name / to short")
       return
     }
 
@@ -29,6 +29,7 @@ export function NewFile() {
 
     setName("")
     setFiles([])
+    setFileCount(0)
 
     await uploadFile(formData)
   }
@@ -70,7 +71,7 @@ export function NewFile() {
 
   return <div class="file newFile" id="dropzone" ondragleave={dragoverleave} ondragover={dragover}
               ondrop={drop}>
-    <h2>&nbsp;+&nbsp; Add</h2>
+    <h2 class="Add">Add</h2>
     <input type="text" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)}/>
     <input type="file" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input}/>
     <input type="submit" value="Upload" onclick={submit}/>

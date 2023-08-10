@@ -1,13 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {getFiles} from "../services/service";
 import {Overview} from "../components/Overview";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Local File Share">
   <main>
     <h1 class="title">Welcome to <span class="text-gradient">Local File Share</span></h1>
-    <Overview client:load/>
+    <Overview client:only/>
   </main>
 </Layout>
 

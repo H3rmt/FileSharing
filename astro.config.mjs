@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import solidJs from "@astrojs/solid-js";
+import { VitePWA } from "vite-plugin-pwa"
 
 import deno from "@astrojs/deno";
 
@@ -9,6 +10,27 @@ export default defineConfig({
   output: "server",
   adapter: deno({
     port: 8081,
-    hostname: 'localhost',
-  })
+    hostname: '192.168.187.13',
+  }),
+  vite: {
+    plugins: [
+      VitePWA({
+        registerType: 'autoUpdate',
+        manifest: {
+          name: 'Local File Sharing',
+          short_name: 'LFS',
+          description: 'Local File Sharing Website',
+          background_color: '#222',
+          theme_color: '#fff',
+          icons: [
+            {
+              src: '/favicon.svg',
+              sizes: '150x150',
+              type: 'image/png'
+            }
+          ]
+        }
+      })
+    ]
+  }
 });
