@@ -21,7 +21,7 @@ func main() {
 		e.Router.GET("/size", func(c echo.Context) error {
 			var totalSize int64
 			filepath.WalkDir("pb_data/storage", func(path string, d fs.DirEntry, err error) error {
-				if !d.IsDir() {
+				if d != nil && !d.IsDir() {
 					info, err := d.Info()
 					if err != nil {
 						log.Print(err)

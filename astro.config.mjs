@@ -25,9 +25,13 @@ export default defineConfig({
           icons: [
             {
               src: '/favicon.svg',
-              sizes: '150x150',
               type: 'image/svg',
-              purpose: "any maskable"
+              sizes: '128x128',
+            },
+            {
+              src: '/astro.png',
+              type: 'image/png',
+              sizes: '512x512',
             }
           ]
         }
