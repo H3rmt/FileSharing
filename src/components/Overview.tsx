@@ -9,7 +9,6 @@ export function Overview() {
   const [files, { refetch }] = createResource(getFiles)
 
   onMount(async () => {
-    console.log("Mounted")
     await subscribe((ev) => {
       console.log("Event", ev)
       refetch()

@@ -1,7 +1,8 @@
 import Pocketbase, { RecordSubscription } from "pocketbase";
 import type { File as F } from "../types/file";
 
-const pb = new Pocketbase("http://192.168.187.13:8090");
+console.log(import.meta.env.PUBLIC_HOST)
+const pb = new Pocketbase();
 
 export async function getSize() {
   return await pb.send("/size", {});

@@ -5,15 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "pocketbase": "cd pocketbase && go run main.go serve --http=192.168.187.13:8090 --https=192.168.187.13:8091",
-    "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs"
+    "pocketbase": "cd pocketbase && go run main.go serve"
   },
   "dependencies": {
-    "@astrojs/deno": "^4.3.0",
-    "@astrojs/solid-js": "^2.2.0",
-    "astro": "^2.9.1",
-    "pocketbase": "^0.15.3",
-    "solid-js": "^1.7.8",
-    "vite-plugin-pwa": "^0.16.4"
+    "@astrojs/deno": "^5.0.1",
+    "@astrojs/solid-js": "^3.0.1",
+    "astro": "^3.2.0",
+    "pocketbase": "^0.18.0",
+    "solid-js": "^1.7.12",
+    "vite-plugin-pwa": "^0.16.5"
   }
 }
