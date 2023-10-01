@@ -1,12 +1,15 @@
 package main
 
 import (
+	"os"
 	"fmt"
 	"io/fs"
 	"log"
 	"net/http"
 	"path/filepath"
 	"strings"
+
+	"github.com/joho/godotenv"
 
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
@@ -15,7 +18,16 @@ import (
 )
 
 func main() {
+	godotenv.Load("../.env")
+	os.Args = append(os.Args, fmt.Sprintf("--http=%s", os.Getenv("PUBLIC_HOST")))
+
 	app := pocketbase.New()
+
+	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
+		e.Router.GET("/*", apis.StaticDirectoryHandler(os.DirFS("../dist"), false))
+	
+		return nil
+	})
 
 	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
 		e.Router.GET("/size", func(c echo.Context) error {

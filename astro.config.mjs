@@ -7,11 +7,7 @@ import deno from "@astrojs/deno";
 // https://astro.build/config
 export default defineConfig({
   integrations: [solidJs()],
-  output: "server",
-  adapter: deno({
-    port: 8081,
-    hostname: '192.168.187.13',
-  }),
+  output: "static",
   vite: {
     plugins: [
       VitePWA({
