@@ -10,11 +10,22 @@ main {
 }
 
 .instructions {
-	line-height: 1.6;
+	display: flex;
+    justify-content: space-between;
+
 	margin: 1rem 0;
 	border: 2px outset rgba(var(--accent), 55%);
 	padding: 1rem;
 	border-radius: 0.4rem;
+}
+
+.instructions p {
+	margin: 0rem;
+	line-height: 1.6;
+}
+
+.instructions button {
+	padding: 0.3rem
 }
 
 .text-gradient {
