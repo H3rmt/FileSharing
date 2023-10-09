@@ -1,7 +1,6 @@
-import Pocketbase, { RecordSubscription } from "pocketbase";
+import type { RecordSubscription } from "pocketbase";
 import type { File as F } from "../types/file";
-
-const pb = new Pocketbase();
+import { pb } from "./pocketpase";
 
 export async function getSize() {
   return await pb.send("/size", {});
@@ -39,7 +38,7 @@ export async function unmarkFile(file: F): Promise<void> {
     .update(file.id, { new: false });
 }
 
-export async function subscribe(
+export async function subscribeFiles(
   callback: (file: RecordSubscription<F>) => void,
 ): Promise<() => Promise<void>> {
   return await pb

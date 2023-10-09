@@ -1,5 +1,4 @@
-import './File.css'
-import { getFileUrl, getFileUrls, unmarkFile } from "../services/service";
+import { getFileUrl, getFileUrls, unmarkFile } from "../services/files";
 import { createResource } from "solid-js";
 import type { File } from "../types/file";
 
@@ -8,7 +7,7 @@ export function File(props: { file: File }) {
   const [urls] = createResource(loadURL)
 
   let displayURL: string
-  const firstFile = props.file.file[0]
+  const firstFile = props.file.file[0]?.toLocaleLowerCase()
   if (firstFile?.endsWith(".jpg") || firstFile?.endsWith(".png") || firstFile?.endsWith(".gif") || firstFile?.endsWith(".jpeg") || firstFile?.endsWith(".webp")) {
     displayURL = getFileUrl(props.file, firstFile, true)
   } else {
@@ -33,12 +32,14 @@ export function File(props: { file: File }) {
       }
     }
 
-    await unmarkFile(props.file)// "?download=1" 
+    await unmarkFile(props.file)
   }
 
-  return <a target="_blank" download={props.file.name} href={urls()?.length === 1 ? (urls()?.[0] + "?download=1" ?? '') : ''} onclick={open} class="file existingFile"
-    style={`background-image: url(${displayURL})`}>
-    <div class="close" onclick={close}>X</div>
+  return <a target="_blank" download={props.file.name} href={urls()?.length === 1 ? (urls()?.[0] + "?download=1" ?? '') : ''} onclick={open} class="file existingFile" style={"--background-img: url(" + displayURL + ")"}>
+    <div class="close">
+      {new Date(props.file.created).toLocaleString()}
+      <div class='close-btn' onclick={close}>X</div>
+    </div>
     <h2>{props.file.name}</h2>
     <p>{new Date(props.file.created).toLocaleString()}</p>
     {props.file.file.length > 1 ? <p class="count">{props.file.file.length}</p> : ''}

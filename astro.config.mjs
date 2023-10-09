@@ -14,10 +14,10 @@ export default defineConfig({
         registerType: 'autoUpdate',
         manifest: {
           name: 'Local File Sharing',
-          short_name: 'LFS',
+          short_name: 'Local File Sharing',
           description: 'Local File Sharing Website',
           background_color: '#222',
-          theme_color: '#fff',
+          theme_color: '#ACACAC',
           icons: [
             {
               src: '/favicon.svg',

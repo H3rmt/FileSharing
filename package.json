@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "pocketbase": "cd pocketbase && go run main.go serve"
+    "build": "astro build"
   },
   "dependencies": {
     "@astrojs/deno": "^5.0.1",

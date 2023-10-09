@@ -1,6 +1,5 @@
-import './File.css'
-import {createSignal} from "solid-js";
-import {uploadFile} from "../services/service";
+import { createSignal } from "solid-js";
+import { uploadFile } from "../services/files";
 
 export function NewFile() {
   const [name, setName] = createSignal("")
@@ -11,11 +10,11 @@ export function NewFile() {
     console.log("Submit new file")
 
     if ((files() ?? []).length === 0) {
-      console.log("No files")
+      alert("No files")
       return
     }
     if (name() === "" || name().length < 3) {
-      console.log("No name / to short")
+      alert("No name / to short")
       return
     }
 
@@ -32,6 +31,7 @@ export function NewFile() {
     setFileCount(0)
 
     await uploadFile(formData)
+    setTimeout(() => alert("Hochgeladen"), 100);
   }
 
   const drop = (e: DragEvent) => {
@@ -58,7 +58,6 @@ export function NewFile() {
   }
 
   const input = (e: Event) => {
-    console.log("Input", e)
     const f = files()
     for (let file of (e.target as HTMLInputElement).files ?? []) {
       f.push(file)
@@ -70,11 +69,11 @@ export function NewFile() {
   }
 
   return <div class="file newFile" id="dropzone" ondragleave={dragoverleave} ondragover={dragover}
-              ondrop={drop}>
-    <h2 class="Add">Add</h2>
-    <input type="text" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)}/>
-    <input type="file" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input}/>
-    <input type="submit" value="Upload" onclick={submit}/>
+    ondrop={drop}>
+    <h2 class="add">Add <span class="text-color">File</span></h2>
+    <input type="text" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
+    <input type="file" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input} />
+    <input type="submit" value="Upload" onclick={submit} />
     <div class='count'>{fileCount()}</div>
   </div>
 }

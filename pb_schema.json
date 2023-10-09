@@ -107,5 +107,50 @@
     "updateRule": "",
     "deleteRule": null,
     "options": {}
+  },
+  {
+    "id": "tdjssjf3fnz504k",
+    "name": "snippets",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "6he0n4ry",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xh1ybntx",
+        "name": "text",
+        "type": "editor",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "nh6eigqi",
+        "name": "new",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX `idx_a2NfZR6` ON `snippets` (`name`)"
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null,
+    "options": {}
   }
 ]
