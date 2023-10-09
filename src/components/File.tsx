@@ -7,8 +7,8 @@ export function File(props: { file: File }) {
   const [urls] = createResource(loadURL)
 
   let displayURL: string
-  const firstFile = props.file.file[0]?.toLocaleLowerCase()
-  if (firstFile?.endsWith(".jpg") || firstFile?.endsWith(".png") || firstFile?.endsWith(".gif") || firstFile?.endsWith(".jpeg") || firstFile?.endsWith(".webp")) {
+  const firstFile = props.file.file[0]
+  if (firstFile?.endsWith(".jpg") || firstFile?.endsWith(".JPG") ||firstFile?.endsWith(".png") || firstFile?.endsWith(".gif") || firstFile?.endsWith(".jpeg") || firstFile?.endsWith(".webp")) {
     displayURL = getFileUrl(props.file, firstFile, true)
   } else {
     displayURL = ''
