@@ -12,7 +12,7 @@ export function Info(props: { files: F[], snippets: S[], old: Accessor<boolean>,
         class="text-color">{props.files.length}</span> files are
       stored on the server using <span class="text-color">{Math.round(size() / 1000000)}</span> MB. <br />
       <span class="text-color">{props.snippets.filter(f => f.new).length}</span> new snippets and <span
-        class="text-color">{props.files.length}</span> snippets are stored in total.
+        class="text-color">{props.snippets.length}</span> snippets are stored in total.
     </p>
     <button onClick={() => props.setOld(!props.old())}>{props.old() ? "Hide Old" : "Show Old"}</button>
   </div>
