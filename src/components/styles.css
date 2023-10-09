@@ -19,6 +19,7 @@ main {
 	font-size: 3rem;
 	font-weight: 800;
 	margin: 0;
+	margin-bottom: 1rem;
 }
 
 .instructions {
@@ -122,6 +123,7 @@ main {
 .existingFile>.close>.close-btn {
 	padding: 0.3rem;
 	cursor: pointer;
+
 	border-radius: 0.6rem;
 	background-color: rgba(var(--background), 70%);
 	border: 2px solid rgba(var(--accent), 70%);
@@ -129,13 +131,14 @@ main {
 
 .existingFile>.count {
 	position: absolute;
-	right: 1.1rem;
-	bottom: 0;
+	right: 0.4rem;
+	bottom: 0.4rem;
 
 	padding: 0.3rem;
 
 	border-radius: 0.6rem;
-	border: 2px solid rgba(var(--accent), 30%);
+	background-color: rgba(var(--background), 70%);
+	border: 2px solid rgba(var(--accent), 70%);
 }
 
 .existingFile::before {
@@ -153,8 +156,8 @@ main {
 	width: 100%;
 	height: 100%;
 
-	-webkit-filter: blur(5px);
-	filter: blur(5px);
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
 }
 
 .existingFile>.data {

@@ -42,6 +42,6 @@ export function File(props: { file: File }) {
     </div>
     <h2>{props.file.name}</h2>
     <p>{new Date(props.file.created).toLocaleString()}</p>
-    {props.file.file.length > 1 ? <p class="count">{props.file.file.length}</p> : ''}
+    {props.file.file.length > 1 ? <div class="count">{props.file.file.length}</div> : ''}
   </a>
 }
