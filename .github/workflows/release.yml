@@ -31,8 +31,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            user/app:latest
-            user/app:${{ env.RELEASE_VERSION }}
-            ghcr.io/user/app:latest
-            ghcr.io/user/app:${{ env.RELEASE_VERSION }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/localfilesharing:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/localfilesharing:${{ env.RELEASE_VERSION }}
+            ghcr.io/${{ secrets.DOCKERHUB_USERNAME }}/localfilesharing:latest
+            ghcr.io/${{ secrets.DOCKERHUB_USERNAME }}/localfilesharing:${{ env.RELEASE_VERSION }}
       
