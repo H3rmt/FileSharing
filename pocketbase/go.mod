@@ -1,6 +1,6 @@
 module github.com/H3rmt/LocalFileSharing
 
-go 1.18
+go 1.19
 
 require (
 	github.com/labstack/echo/v5 v5.0.0-20230722203903-ec5b858dab61
