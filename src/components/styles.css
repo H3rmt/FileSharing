@@ -162,11 +162,11 @@
 	filter: blur(3px);
 } */
 
-.existingFile>.data {
+/* .existingFile>.data {
 	white-space: initial;
 	max-height: 30dvh;
 	overflow: auto;
-}
+} */
 
 .newFile {
 	display: flex;

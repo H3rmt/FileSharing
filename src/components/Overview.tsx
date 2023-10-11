@@ -1,4 +1,3 @@
-import './styles.css'
 import { getFiles, subscribeFiles } from "../services/files";
 import { getSnippets, subscribeSnippets } from 'src/services/snippets';
 import { Info } from "./Info";
@@ -28,11 +27,11 @@ export function Overview() {
     {(files.error || snippets.error) && <div>Error: {files.error} | {snippets.error}</div>}
     {(files.loading || snippets.error) && <div>Loading...</div>}
     {files() && snippets() && <Info snippets={snippets() ?? []} files={files() ?? []} old={old} setOld={setOld} />}
-    {files() && <div class='flex flex-col gap-2'>
+    {files() && <div class='flex flex-col gap-3'>
       <FileList files={files() ?? []} old={old} />
       <NewFile />
     </div>}
-    {snippets() && <div class='flex flex-col gap-2'>
+    {snippets() && <div class='flex flex-col gap-3'>
       <SnippetList snippets={snippets() ?? []} old={old} />
       <NewSnippet />
     </div>}

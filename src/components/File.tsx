@@ -38,7 +38,7 @@ export function File(props: { file: File }) {
 
   return <a target="_blank" download={props.file.name} href={urls()?.length === 1 ? (urls()?.[0] + "?download=1" ?? '') : ''} onclick={open}
     class="flex flex-col relative p-3 bg-cover rounded-md mix-blend-difference min-h-[100px] text-ellipsis
-      whitespace-nowrap overflow-hidden hover:text-accent 
+      whitespace-nowrap overflow-hidden cursor-pointer hover:text-accent 
       before:content-[''] before:absolute before:left-0 before:top-0 before:-z-10 before:w-full before:h-full before:blur-[2px]
       before:bg-img-background before:bg-cover before:bg-center"
     style={`--img-background: ${displayURL}`}>

@@ -1,5 +1,6 @@
 import { createSignal } from "solid-js";
 import { uploadSnippet } from "../services/snippets";
+import ImportantText from "./importantText";
 
 export function NewSnippet() {
   const [name, setName] = createSignal("")
@@ -29,14 +30,20 @@ export function NewSnippet() {
     setTimeout(() => alert("Hochgeladen"), 100);
   }
 
-  return <div class="file newSnippet">
-    <h2 class="add">Add <span class="text-color">Snippet</span></h2>
-    <input type="text" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
-    <div class="grow-wrap" data-replicated-value={snippet()}>
-      <textarea value={snippet()} placeholder="Snippet" oninput={(e) => {
-        setSnippet(e.target.value)
-      }} />
+  return <div class='rounded-md bg-textbg p-0.5'>
+    <div class="flex flex-col items-center gap-4 p-2 rounded-lg bg-background">
+      <div class="flex flex-row gap-4 ">
+        <span class="text-3xl font-bold hidden sm:block">Add <ImportantText>Snippet</ImportantText></span>
+        <input type="text" class="bg-transparent border-2 rounded-lg border-accent p-2" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
+        <input type="submit" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value="Upload" onclick={submit} />
+      </div>
+      <div data-replicated-value={snippet()} class="max-h-[40dvh] overflow-auto grid w-full
+      after:content-[attr(data-replicated-value)] after:whitespace-pre-wrap after:invisible after:[grid-area:1/1/2/2] after:p-1"
+      >
+        <textarea value={snippet()} placeholder="Snippet" class="outline-none bg-transparent border-2 rounded-lg border-accent p-2 resize-none overflow-hidden [grid-area:1/1/2/2]" onInput={(e) => {
+          setSnippet(e.target.value)
+        }} />
+      </div>
     </div>
-    <input type="submit" value="Upload" onclick={submit} />
   </div>
 }

@@ -2,47 +2,40 @@
 > hilarious-heliosphere@0.0.1 build /workspaces/LocalFileSharing
 > astro build
 
-04:27:06 PM [content] No content directory found. Skipping type generation.
-04:27:06 PM [build] output target: static
-04:27:06 PM [build] Collecting build info...
-04:27:06 PM [build] Completed in 159ms.
-04:27:06 PM [build] Building static entrypoints...
-04:27:09 PM [build] Completed in 2.15s.
+07:37:08 PM [content] No content directory found. Skipping type generation.
+07:37:08 PM [build] output target: static
+07:37:08 PM [build] Collecting build info...
+07:37:08 PM [build] Completed in 175ms.
+07:37:08 PM [build] Building static entrypoints...
+07:37:10 PM [build] Completed in 2.36s.
 
  building client 
 vite v4.4.9 building for production...
 transforming...
-[vite:css] start value has mixed support, consider using flex-start instead
-119|  
-120|  	display: flex;
-121|  	align-items: start;
-   |    ^
-122|  	gap: 0.7rem;
-123|  }
-✓ 17 modules transformed.
+✓ 18 modules transformed.
 rendering chunks...
 computing gzip size...
 dist/registerSW.js                  0.13 kB
 dist/manifest.webmanifest           0.35 kB
-dist/_astro/Overview.ec772625.css   2.18 kB │ gzip:  0.81 kB
-dist/_astro/client.1cdeaae2.js      0.86 kB │ gzip:  0.55 kB
-dist/_astro/web.7fd98bd7.js        12.91 kB │ gzip:  5.35 kB
-dist/_astro/Overview.1296ec08.js   42.48 kB │ gzip: 11.95 kB
+dist/_astro/Overview.9414a0f7.css   1.03 kB │ gzip:  0.48 kB
+dist/_astro/client.08299f6d.js      0.86 kB │ gzip:  0.55 kB
+dist/_astro/web.d015309f.js        12.91 kB │ gzip:  5.35 kB
+dist/_astro/Overview.75a4a1d3.js   43.48 kB │ gzip: 12.33 kB
 
 PWA v0.16.5
 mode      generateSW
-precache  9 entries (63.12 KiB)
+precache  9 entries (64.71 KiB)
 files generated
   dist/sw.js
   dist/workbox-56a10583.js
-✓ built in 4.50s
-Completed in 4.52s.
+✓ built in 5.84s
+Completed in 5.85s.
 
 
  generating static routes 
 ▶ src/pages/index.astro
-  └─ /index.html (+27ms)
-Completed in 57ms.
+  └─ /index.html (+45ms)
+Completed in 102ms.
 
-04:27:13 PM [build] 1 page(s) built in 6.93s
-04:27:13 PM [build] Complete!
+07:37:16 PM [build] 1 page(s) built in 8.53s
+07:37:16 PM [build] Complete!
