@@ -1,7 +1,8 @@
 version: '3.8'
 services:
-  db:
-    image: .
+  lfs:
+    image: localfilesharing
+    build: ./
     restart: always
     environment:
       - PUBLIC_HOST=localhost:8080
@@ -9,6 +10,3 @@ services:
       - '8080:8080'
     volumes: 
       - ./pb_data:/pb_data
-
-volumes:
-  pb_data:
