@@ -9,7 +9,7 @@ export function File(props: { file: File }) {
   let displayURL: string
   const firstFile = props.file.file[0]
   const type = firstFile?.split('.').pop()?.toLowerCase()
-  if (firstFile && (type === ".jpg" || type === ".png" || type === ".gif" || type === ".jpeg" || type === ".webp")) {
+  if (firstFile && (type === "jpg" || type === "png" || type === "gif" || type === "jpeg" || type === "webp")) {
     displayURL = "url(" + getFileUrl(props.file, firstFile, true) + ")"
   } else {
     displayURL = 'var(--important)'
