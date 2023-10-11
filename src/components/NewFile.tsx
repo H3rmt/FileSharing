@@ -1,5 +1,6 @@
 import { createSignal } from "solid-js";
 import { uploadFile } from "../services/files";
+import ImportantText from "./importantText";
 
 export function NewFile() {
   const [name, setName] = createSignal("")
@@ -37,29 +38,30 @@ export function NewFile() {
   const drop = (e: DragEvent) => {
     e.preventDefault()
     e.stopPropagation()
+    document.getElementById("dropzone")?.classList.remove("bg-transparent")
+
     console.log("Drop", e.dataTransfer?.files)
-    const f = files()
-    for (let file of e.dataTransfer?.files ?? []) {
-      f.push(file)
-    }
-    setFiles(f)
-    setFileCount(f.length)
+    addFiles(e.dataTransfer?.files ?? null)
   }
 
   const dragover = (e: DragEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    document.getElementById("dropzone")?.classList.add("dragover")
+    document.getElementById("dropzone")?.classList.add("bg-transparent")
   }
   const dragoverleave = (e: DragEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    document.getElementById("dropzone")?.classList.remove("dragover")
+    document.getElementById("dropzone")?.classList.remove("bg-transparent")
   }
 
   const input = (e: Event) => {
+    addFiles((e.target as HTMLInputElement).files)
+  }
+
+  const addFiles = (newFiles: FileList | null) => {
     const f = files()
-    for (let file of (e.target as HTMLInputElement).files ?? []) {
+    for (let file of newFiles ?? []) {
       f.push(file)
     }
     if (name() === "")
@@ -68,12 +70,15 @@ export function NewFile() {
     setFileCount(f.length)
   }
 
-  return <div class="file newFile" id="dropzone" ondragleave={dragoverleave} ondragover={dragover}
-    ondrop={drop}>
-    <h2 class="add">Add <span class="text-color">File</span></h2>
-    <input type="text" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
-    <input type="file" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input} />
-    <input type="submit" value="Upload" onclick={submit} />
-    <div class='count'>{fileCount()}</div>
+  return <div class='rounded-md bg-textbg p-0.5'>
+    <div class="flex gap-4 p-2 justify-center items-center rounded-lg bg-background"
+      id="dropzone" ondragleave={dragoverleave} ondragover={dragover}
+      ondrop={drop}>
+      <span class="text-3xl font-bold">Add <ImportantText>File</ImportantText></span>
+      <input type="text" class="bg-transparent border-2 rounded-lg border-accent p-2" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
+      <input type="file" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input} />
+      <input type="submit" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value="Upload" onclick={submit} />
+      <div class='count'>{fileCount()}</div>
+    </div>
   </div>
 }
