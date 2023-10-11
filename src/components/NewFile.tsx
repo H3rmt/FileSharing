@@ -76,7 +76,7 @@ export function NewFile() {
       ondrop={drop}>
       <div class="flex flex-row gap-4 overflow-auto">
         <span class="text-3xl font-bold hidden sm:block">Add <ImportantText>File</ImportantText></span>
-        <input type="text" class="bg-transparent border-2 rounded-lg border-accent p-2" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
+        <input type="text" class="bg-transparent border-2 rounded-lg border-accent p-2 outline-none" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
         <input type="submit" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value="Upload" onclick={submit} />
       </div>
       <div class="flex flex-row gap-4 overflow-auto items-center">
