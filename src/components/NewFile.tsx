@@ -79,7 +79,7 @@ export function NewFile() {
         <input type="text" class="bg-transparent border-2 rounded-lg border-accent p-2" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
         <input type="submit" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value="Upload" onclick={submit} />
       </div>
-      <div class="flex flex-row gap-4 overflow-auto">
+      <div class="flex flex-row gap-4 overflow-auto items-center">
         <input type="file" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input} />
         <div class='count'>{fileCount()}</div>
       </div>
