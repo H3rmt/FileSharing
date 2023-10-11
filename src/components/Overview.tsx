@@ -15,24 +15,24 @@ export function Overview() {
 
   onMount(async () => {
     await subscribeFiles((ev) => {
-      console.log("Event", ev)
+      console.log("Event Files", ev)
       refetchFiles()
     })
     await subscribeSnippets((ev) => {
-      console.log("Event", ev)
+      console.log("Event Snippets", ev)
       refetchSnippets()
     })
   })
 
-  return <div class='content'>
+  return <div class='flex flex-col gap-8'>
     {(files.error || snippets.error) && <div>Error: {files.error} | {snippets.error}</div>}
     {(files.loading || snippets.error) && <div>Loading...</div>}
     {files() && snippets() && <Info snippets={snippets() ?? []} files={files() ?? []} old={old} setOld={setOld} />}
-    {files() && <div class='sub-content'>
+    {files() && <div class='flex flex-col gap-2'>
       <FileList files={files() ?? []} old={old} />
       <NewFile />
     </div>}
-    {snippets() && <div class='sub-content'>
+    {snippets() && <div class='flex flex-col gap-2'>
       <SnippetList snippets={snippets() ?? []} old={old} />
       <NewSnippet />
     </div>}

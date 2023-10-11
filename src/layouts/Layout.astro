@@ -6,7 +6,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,12 +19,12 @@ const { title } = Astro.props;
     <link rel="manifest" href="/manifest.webmanifest" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-background">
     <slot />
   </body>
 </html>
 <style is:global>
-  :root {
+  /* :root {
     --accent: 124, 58, 237;
     --accent-light: 169, 86, 225;
     --background: 34, 34, 34;
@@ -34,11 +34,37 @@ const { title } = Astro.props;
       #da62c4 30%,
       #8d0074 60%
     );
+  } */
+
+  :root {
+    --background: 0 0% 100%;
+    --text: 0 0% 0%;
+    --accent: 262 83% 57%;
+    --background-accent: 262 83% 57% / 0.2;
+    --important: linear-gradient(
+      45deg,
+      hsl(var(--accent)),
+      #da62c4 30%,
+      #8d0074 60%
+    );
   }
 
-  html {
-    font-family: system-ui, sans-serif;
-    color-scheme: dark;
-    background-color: rgb(var(--background));
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 0 0% 13%;
+      --text: 0 0% 100%;
+      --accent: 262 83% 57%;
+      --background-accent: 262 83% 57% / 0.2;
+      --important: linear-gradient(
+        45deg,
+        hsl(var(--accent)),
+        #da62c4 30%,
+        #8d0074 60%
+      );
+    }
   }
+
+  /* html {
+    font-family: system-ui, sans-serif;
+  } */
 </style>

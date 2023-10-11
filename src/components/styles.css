@@ -1,9 +1,9 @@
-main {
+/* main {
 	margin: auto;
 	padding: 1rem;
-}
+} */
 
-.content {
+/* .content {
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
@@ -13,16 +13,16 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-}
-
+} */
+/* 
 .title {
 	font-size: 3rem;
 	font-weight: 800;
 	margin: 0;
 	margin-bottom: 1rem;
-}
+} */
 
-.instructions {
+/* .instructions {
 	display: flex;
 	gap: 1rem;
 	justify-content: space-between;
@@ -30,54 +30,56 @@ main {
 	border: 2px solid rgba(var(--accent), 55%);
 	padding: 1rem;
 	border-radius: 0.4rem;
-}
+} */
 
-.instructions p {
+/* .instructions p {
 	margin: 0rem;
 	line-height: 1.6;
-}
+} */
 
-.instructions button {
+/* .instructions button {
 	padding: 0.3rem;
 	border: 2px solid rgba(var(--accent), 55%);
 	border-radius: 0.4rem;
 	background: transparent;
-}
+} */
 
-.text-gradient {
+/* .text-gradient {
 	background-image: var(--accent-gradient);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-}
+} */
 
-.text-color {
+/* .text-color {
 	color: rgb(var(--accent-light));
 	font-weight: bolder;
-}
 
-.files {
+	text-red-700 font-bold
+} */
+
+/* .files {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
 	gap: 1rem;
 	overflow: auto;
 	padding: 0;
 	margin: 0;
-}
+} */
 
-.file {
+/* .file {
 	background-size: 200%;
 	border-radius: 0.6rem;
 
 	border: 2px dashed rgba(var(--accent), 55%);
 	background-image: none;
 	background-color: transparent;
-}
+} */
 
-.file>h2 {
+/* .file>h2 {
 	filter: drop-shadow(.05em .05em black);
 	margin-block: 0.2rem;
 	font-size: 1.8rem;
-}
+} */
 
 .existingFile {
 	display: flex;
@@ -97,13 +99,13 @@ main {
 	background-repeat: no-repeat;
 }
 
-.existingFile>p {
+/* .existingFile>p {
 	filter: drop-shadow(.05em .05em black);
-}
+} */
 
-.existingFile:is(:hover, :focus-within) {
+/* .existingFile:is(:hover, :focus-within) {
 	color: rgb(var(--accent));
-}
+} */
 
 .existingFile>.close {
 	position: absolute;

@@ -1,12 +1,11 @@
 import { defineConfig } from 'astro/config';
 import solidJs from "@astrojs/solid-js";
-import { VitePWA } from "vite-plugin-pwa"
-
-import deno from "@astrojs/deno";
+import tailwind from '@astrojs/tailwind';
+import { VitePWA } from "vite-plugin-pwa";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs()],
+  integrations: [solidJs(), tailwind()],
   output: "static",
   vite: {
     plugins: [

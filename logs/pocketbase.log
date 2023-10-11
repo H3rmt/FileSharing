@@ -1,0 +1,723 @@
+[13.00ms] SELECT {{_params}}.* FROM `_params` WHERE `key`='settings' LIMIT 1
+[0.00ms] CREATE TABLE IF NOT EXISTS `_migrations` (file VARCHAR(255) PRIMARY KEY NOT NULL, applied INTEGER NOT NULL)
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1640988000_init.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1673167670_multi_match_migrate.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1677152688_rename_authentik_to_oidc.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1679943780_normalize_single_multiple_values.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1679943781_add_indexes_column.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1685164450_check_fk.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1689579878_renormalize_single_multiple_values.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1690319366_reset_null_values.go' LIMIT 1
+[0.00ms] SELECT count(*) FROM `_migrations` WHERE `file`='1690454337_transform_relations_to_views.go' LIMIT 1
+[0.00ms] SELECT {{_params}}.* FROM `_params` WHERE `key`='settings' LIMIT 1
+2023/10/11 16:27:37 Server started at http://localhost:8080
+├─ REST API: http://localhost:8080/api/
+└─ Admin UI: http://localhost:8080/_/
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:27:42 Realtime connection established: v4IWvwoHKecPXpJjxK1BDbdLL2k8vNHzggjc1zrg
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:29:22 Realtime connection closed (cancelled request): v4IWvwoHKecPXpJjxK1BDbdLL2k8vNHzggjc1zrg
+2023/10/11 16:29:23 Realtime connection established: pFfGn6GOaJZ5jQl0PlBJ8KDPWafEaFssSpAqjFtw
+2023/10/11 16:31:03 Realtime connection closed (cancelled request): pFfGn6GOaJZ5jQl0PlBJ8KDPWafEaFssSpAqjFtw
+2023/10/11 16:31:04 Realtime connection established: Mdh7btfMkqPHRyOzh8qP6WN1jVkarB1Ln9MzMFuJ
+2023/10/11 16:32:44 Realtime connection closed (cancelled request): Mdh7btfMkqPHRyOzh8qP6WN1jVkarB1Ln9MzMFuJ
+2023/10/11 16:32:45 Realtime connection established: jlZxtOw0O3eTbGh1BIY5ikPa31NuEclvuvf0ScUw
+2023/10/11 16:34:25 Realtime connection closed (cancelled request): jlZxtOw0O3eTbGh1BIY5ikPa31NuEclvuvf0ScUw
+2023/10/11 16:34:26 Realtime connection established: HJtDh90Xh22DjJMfkrhUiiqc9uIR0BWJbzFRYtR1
+2023/10/11 16:36:06 Realtime connection closed (cancelled request): HJtDh90Xh22DjJMfkrhUiiqc9uIR0BWJbzFRYtR1
+2023/10/11 16:36:07 Realtime connection established: 32j8EeAVTbr6peyMkxeut9DQqsvIP0M6rf9IcWtj
+2023/10/11 16:37:47 Realtime connection closed (cancelled request): 32j8EeAVTbr6peyMkxeut9DQqsvIP0M6rf9IcWtj
+2023/10/11 16:37:48 Realtime connection established: pO3eG12UUflX37L4TH8TKIvrKiA1K7NAHdbrqlbR
+2023/10/11 16:39:28 Realtime connection closed (cancelled request): pO3eG12UUflX37L4TH8TKIvrKiA1K7NAHdbrqlbR
+2023/10/11 16:39:29 Realtime connection established: oq0u8IOfXDkk5yf9b7XTvrwLi7B9QkItmHSsXK5T
+2023/10/11 16:41:09 Realtime connection closed (cancelled request): oq0u8IOfXDkk5yf9b7XTvrwLi7B9QkItmHSsXK5T
+2023/10/11 16:41:10 Realtime connection established: 5IlH3Kdy2cwHOU2RMiUf7Jf27olTovQCxDjkak8C
+2023/10/11 16:41:11 Realtime connection closed (cancelled request): 5IlH3Kdy2cwHOU2RMiUf7Jf27olTovQCxDjkak8C
+2023/10/11 16:41:11 Realtime connection established: q5UvEshg91pA2KPeTGvnpwRM70J2jRIRms67Cg6R
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:42:20 Realtime connection closed (cancelled request): q5UvEshg91pA2KPeTGvnpwRM70J2jRIRms67Cg6R
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:42:20 Realtime connection established: lf2q0Pg3ULGFppOxHf4XLI10N24PBGcN3twpsT3W
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:43:05 Realtime connection closed (cancelled request): lf2q0Pg3ULGFppOxHf4XLI10N24PBGcN3twpsT3W
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:43:05 Realtime connection established: etDUBhgvnLb46gu27bQX2ccwkNQZeJIZk9pbsGJi
+2023/10/11 16:44:30 Realtime connection closed (cancelled request): etDUBhgvnLb46gu27bQX2ccwkNQZeJIZk9pbsGJi
+2023/10/11 16:44:30 Realtime connection established: zZrL1PSJsiIeFJdMofL55KlNrfYenn0gXlRvLU7p
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:45:42 Realtime connection closed (cancelled request): zZrL1PSJsiIeFJdMofL55KlNrfYenn0gXlRvLU7p
+2023/10/11 16:45:42 Realtime connection established: c8Q0vQnGbE8qrmiRcagWZYtuXxomnDFOR8ENcR82
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:45:43 Realtime connection closed (cancelled request): c8Q0vQnGbE8qrmiRcagWZYtuXxomnDFOR8ENcR82
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:45:43 Realtime connection established: 0sFNl4FBqWPcT9Yjmtf81y2ei4hHSjnF6e5XWpoK
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:47:23 Realtime connection closed (cancelled request): 0sFNl4FBqWPcT9Yjmtf81y2ei4hHSjnF6e5XWpoK
+2023/10/11 16:47:25 Realtime connection established: xjLJ4zjxWhRinIpeIooZefNyHOeM9jqBjeUjTjtc
+2023/10/11 16:47:30 Realtime connection closed (cancelled request): xjLJ4zjxWhRinIpeIooZefNyHOeM9jqBjeUjTjtc
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:47:30 Realtime connection established: LhOuaDuELgklAe3mHyoyRNOmy79sSN4TYAJheRza
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:47:31 Realtime connection closed (cancelled request): LhOuaDuELgklAe3mHyoyRNOmy79sSN4TYAJheRza
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:47:31 Realtime connection established: U0nh5D2zzlpNqTLx7mIs9hTIdTUqp1CM3jULwpz0
+2023/10/11 16:49:05 Realtime connection closed (cancelled request): U0nh5D2zzlpNqTLx7mIs9hTIdTUqp1CM3jULwpz0
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:49:05 Realtime connection established: 2zfgJEJ4CMm1jau02Khs0XhUvg4IYV4hBU0I9aYQ
+2023/10/11 16:50:45 Realtime connection closed (cancelled request): 2zfgJEJ4CMm1jau02Khs0XhUvg4IYV4hBU0I9aYQ
+2023/10/11 16:50:46 Realtime connection established: xF3XCJ8hEP0uiZ7uRd97TolFZgs3XszWEnAjjfsV
+2023/10/11 16:52:26 Realtime connection closed (cancelled request): xF3XCJ8hEP0uiZ7uRd97TolFZgs3XszWEnAjjfsV
+2023/10/11 16:52:27 Realtime connection established: gGf4CeniVX7oYj9yv6kvVRA4pRjjlkBCsKBn0qwI
+2023/10/11 16:53:47 Realtime connection closed (cancelled request): gGf4CeniVX7oYj9yv6kvVRA4pRjjlkBCsKBn0qwI
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:53:48 Realtime connection established: OueeHjy949qL2NNFZkEhyGX1tPP6pvOQoFOmXZQX
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:55:25 Realtime connection closed (cancelled request): OueeHjy949qL2NNFZkEhyGX1tPP6pvOQoFOmXZQX
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:55:26 Realtime connection established: Vj7jLAzIlQwin0L8gmNFgHwGWTOr8bncGOirDb9H
+2023/10/11 16:57:06 Realtime connection closed (cancelled request): Vj7jLAzIlQwin0L8gmNFgHwGWTOr8bncGOirDb9H
+2023/10/11 16:57:06 Realtime connection established: mmWkj1fSg9pQLX9aYzCPhWsxjIorADX9AoTE782v
+2023/10/11 16:57:32 Realtime connection closed (cancelled request): mmWkj1fSg9pQLX9aYzCPhWsxjIorADX9AoTE782v
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:57:33 Realtime connection established: eEx4dWWmw4Bsu6OEzqM8rVS3UhwkCkccCO2IZa57
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 16:58:19 Realtime connection closed (cancelled request): eEx4dWWmw4Bsu6OEzqM8rVS3UhwkCkccCO2IZa57
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 16:58:20 Realtime connection established: H3Guu0lQuuHjYSOxgtWmkOEwHA2SOimtOoM57Zn0
+2023/10/11 17:00:00 Realtime connection closed (cancelled request): H3Guu0lQuuHjYSOxgtWmkOEwHA2SOimtOoM57Zn0
+2023/10/11 17:00:00 Realtime connection established: wfaY3GUMqNKZuq2BVKTeLJEFpijyr2pz9tmMjcgQ
+2023/10/11 17:00:44 Realtime connection closed (cancelled request): wfaY3GUMqNKZuq2BVKTeLJEFpijyr2pz9tmMjcgQ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:00:44 Realtime connection established: XSmwoclUtOBqkEmFtFcZUdXfp9wduFb3DZjIkuLf
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:01:11 Realtime connection closed (cancelled request): XSmwoclUtOBqkEmFtFcZUdXfp9wduFb3DZjIkuLf
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:01:12 Realtime connection established: 1R7nUXUKbxLFUCwo4xhltylMaXd2yLDVKhDLXC6g
+2023/10/11 17:01:12 Realtime connection closed (cancelled request): 1R7nUXUKbxLFUCwo4xhltylMaXd2yLDVKhDLXC6g
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:01:12 Realtime connection established: kUKdFC2mXi2zUqkWII4yu1UgZu2EKofyngN0AI1e
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:02:52 Realtime connection closed (cancelled request): kUKdFC2mXi2zUqkWII4yu1UgZu2EKofyngN0AI1e
+2023/10/11 17:02:53 Realtime connection established: 2NG9tRKZNS1aX5Z2Ejjz1PzRSNnk3vyMF1cRHuon
+2023/10/11 17:02:57 Realtime connection closed (cancelled request): 2NG9tRKZNS1aX5Z2Ejjz1PzRSNnk3vyMF1cRHuon
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:02:57 Realtime connection established: rI2eD7R7YZJbQ88dBRVDdgHsQrS2JFiJ0l3hKWMI
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:04:37 Realtime connection closed (cancelled request): rI2eD7R7YZJbQ88dBRVDdgHsQrS2JFiJ0l3hKWMI
+2023/10/11 17:04:38 Realtime connection established: MuVloGvsVLh6NQ7tdgeLPdps3Q8ThtfqF8p06e5D
+2023/10/11 17:06:18 Realtime connection closed (cancelled request): MuVloGvsVLh6NQ7tdgeLPdps3Q8ThtfqF8p06e5D
+2023/10/11 17:06:19 Realtime connection established: 4k85cJ1BnduGMQ6TgU2Vroj3RS5s65xbC5faQLs0
+2023/10/11 17:07:59 Realtime connection closed (cancelled request): 4k85cJ1BnduGMQ6TgU2Vroj3RS5s65xbC5faQLs0
+2023/10/11 17:08:00 Realtime connection established: ACrIvrzMq4yDCz1TGynxyZ7sF2RhjsA5XXUYpa53
+2023/10/11 17:08:05 Realtime connection closed (cancelled request): ACrIvrzMq4yDCz1TGynxyZ7sF2RhjsA5XXUYpa53
+2023/10/11 17:08:06 Realtime connection established: UxKqEW8qo9DhQSghSIRkfVTIIS2TRZWhrn6xrc90
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:08:07 Realtime connection closed (cancelled request): UxKqEW8qo9DhQSghSIRkfVTIIS2TRZWhrn6xrc90
+2023/10/11 17:08:07 Realtime connection established: tRu1kSV5sx9ZCbc73MZx8fnYUjqcezivuFPhQOSr
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:09:19 Realtime connection closed (cancelled request): tRu1kSV5sx9ZCbc73MZx8fnYUjqcezivuFPhQOSr
+2023/10/11 17:09:19 Realtime connection established: ZjIiXMuyI32GUK5rM72uydmXCtnrMx5QYWuelF4H
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:10:39 Realtime connection closed (cancelled request): ZjIiXMuyI32GUK5rM72uydmXCtnrMx5QYWuelF4H
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:10:40 Realtime connection established: 9I8iFqI0m6MPw4X6qepYSw8oQGXfqBkmIGRsBJv9
+2023/10/11 17:10:41 Realtime connection closed (cancelled request): 9I8iFqI0m6MPw4X6qepYSw8oQGXfqBkmIGRsBJv9
+2023/10/11 17:10:41 Realtime connection established: 3Jt4wgcCMWlxUOzUAL6WASvTVdV3hEDaoaUgxRJe
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:11:27 Realtime connection closed (cancelled request): 3Jt4wgcCMWlxUOzUAL6WASvTVdV3hEDaoaUgxRJe
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+2023/10/11 17:11:28 Realtime connection established: 4abAMyDdcdHdZNbsyZvbtDcrxeVswUM4RjVU7nXY
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:12:01 Realtime connection closed (cancelled request): 4abAMyDdcdHdZNbsyZvbtDcrxeVswUM4RjVU7nXY
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[1.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:12:01 Realtime connection established: Wcgr9oEjG0Lys8bO2sT3eDXz7TU0dXDSe4na1gcU
+2023/10/11 17:13:28 Realtime connection closed (cancelled request): Wcgr9oEjG0Lys8bO2sT3eDXz7TU0dXDSe4na1gcU
+2023/10/11 17:13:28 Realtime connection established: MWeiizv2XHAVAotqFGqXIujPqHC4dV5eX9UcEnzn
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:14:13 Realtime connection closed (cancelled request): MWeiizv2XHAVAotqFGqXIujPqHC4dV5eX9UcEnzn
+2023/10/11 17:14:15 Realtime connection established: g4LUhnQouQmTTvaZ9ZWBXaHfjTTGMLotd84Eac7P
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:14:40 Realtime connection closed (cancelled request): g4LUhnQouQmTTvaZ9ZWBXaHfjTTGMLotd84Eac7P
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:14:40 Realtime connection established: s5eDZ1JbCgIBYI5aFVkSGrExByU5S8D495Ihvif5
+2023/10/11 17:16:07 Realtime connection closed (cancelled request): s5eDZ1JbCgIBYI5aFVkSGrExByU5S8D495Ihvif5
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:16:08 Realtime connection established: GXRi17NZBEh42Nco1mYCk4NR2Etx6FEj3UnQqrv4
+2023/10/11 17:16:09 Realtime connection closed (cancelled request): GXRi17NZBEh42Nco1mYCk4NR2Etx6FEj3UnQqrv4
+2023/10/11 17:16:09 Realtime connection established: Bv0FVjhVZ50wURxAyB7qjDO4C8vqh11Zb9Qkimzx
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:16:39 Realtime connection closed (cancelled request): Bv0FVjhVZ50wURxAyB7qjDO4C8vqh11Zb9Qkimzx
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:16:40 Realtime connection established: EUNlT4spjhciC2qcRGibQXUt55wiRzlFssERIpFL
+2023/10/11 17:17:52 Realtime connection closed (cancelled request): EUNlT4spjhciC2qcRGibQXUt55wiRzlFssERIpFL
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:17:52 Realtime connection established: vpzGEIxcluh4FmEU1WGtJsZnQE1fcQTH0j5JNn5L
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:17:53 Realtime connection closed (cancelled request): vpzGEIxcluh4FmEU1WGtJsZnQE1fcQTH0j5JNn5L
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:17:53 Realtime connection established: OpJ5tyKr2xaYYetYLCMuM2tIYu5cClXutrehBOLx
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:18:15 Realtime connection closed (cancelled request): OpJ5tyKr2xaYYetYLCMuM2tIYu5cClXutrehBOLx
+2023/10/11 17:18:16 Realtime connection established: 2eiJRrGJo7uJ2ZbSTx5vUPMPJNJIbsWM65Enf2D7
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:18:35 Realtime connection closed (cancelled request): 2eiJRrGJo7uJ2ZbSTx5vUPMPJNJIbsWM65Enf2D7
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:18:35 Realtime connection established: CAki9w7srsokgg4iumVP5WwcT7LdmxJHLxJoxpzA
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:20:15 Realtime connection closed (cancelled request): CAki9w7srsokgg4iumVP5WwcT7LdmxJHLxJoxpzA
+2023/10/11 17:20:15 Realtime connection established: joTHgOR7LjWT1jZydffP9Q9kh5yjBEfrIPcV5BnM
+2023/10/11 17:21:55 Realtime connection closed (cancelled request): joTHgOR7LjWT1jZydffP9Q9kh5yjBEfrIPcV5BnM
+2023/10/11 17:21:56 Realtime connection established: nIUs4yHpzMIG0YlBBABzpwbU5L4rUN26CbbTsVTK
+2023/10/11 17:22:22 Realtime connection closed (cancelled request): nIUs4yHpzMIG0YlBBABzpwbU5L4rUN26CbbTsVTK
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:22:22 Realtime connection established: G1imORq1OSRGurmO0gpYmzI7z39oeYPXOjLm4BMJ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:22:22 Realtime connection closed (cancelled request): G1imORq1OSRGurmO0gpYmzI7z39oeYPXOjLm4BMJ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+2023/10/11 17:22:23 Realtime connection established: U49ryYQz7PZrlBDPTXKxUEZzacscOVJ41tkmbE3z
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:24:03 Realtime connection closed (cancelled request): U49ryYQz7PZrlBDPTXKxUEZzacscOVJ41tkmbE3z
+2023/10/11 17:24:03 Realtime connection established: 0fhMcLJecC0yVHuBlMBJiZ0W9BEw4ZXMZcgj4L3G
+2023/10/11 17:24:14 Realtime connection closed (cancelled request): 0fhMcLJecC0yVHuBlMBJiZ0W9BEw4ZXMZcgj4L3G
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:24:15 Realtime connection established: NFUHLer6vzpGF2QJVKBRWDMeOHLrKY3Vc3cvPeiD
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:25:38 Realtime connection closed (cancelled request): NFUHLer6vzpGF2QJVKBRWDMeOHLrKY3Vc3cvPeiD
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:25:38 Realtime connection established: NJxy171WusBKl5JGZLmwfPhnPz4WGGHGPkd2Oeez
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:27:18 Realtime connection closed (cancelled request): NJxy171WusBKl5JGZLmwfPhnPz4WGGHGPkd2Oeez
+2023/10/11 17:27:19 Realtime connection established: VLqotHisS3trldjwY4WSC3z1oAnTJYQbfwCKY4B2
+2023/10/11 17:28:34 Realtime connection closed (cancelled request): VLqotHisS3trldjwY4WSC3z1oAnTJYQbfwCKY4B2
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:28:34 Realtime connection established: wdnD0DEQG0hpSVrlTwkE2FgNnLemHEmOjO0k4dPq
+2023/10/11 17:30:14 Realtime connection closed (cancelled request): wdnD0DEQG0hpSVrlTwkE2FgNnLemHEmOjO0k4dPq
+2023/10/11 17:30:14 Realtime connection established: gpyTbVx5VBMZPQt8gZyjTDmTCcCqnIXmP3N6wmcv
+2023/10/11 17:31:18 Realtime connection closed (cancelled request): gpyTbVx5VBMZPQt8gZyjTDmTCcCqnIXmP3N6wmcv
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:31:18 Realtime connection established: fTXqTNTRSPNb04tMFcXvC1rdgw7miU7JadWVc8Je
+2023/10/11 17:32:58 Realtime connection closed (cancelled request): fTXqTNTRSPNb04tMFcXvC1rdgw7miU7JadWVc8Je
+2023/10/11 17:32:59 Realtime connection established: Cc3SfpOuU0gEYf7M8plYEFYZbjlmeJKUuMbu7xOq
+2023/10/11 17:33:56 Realtime connection closed (cancelled request): Cc3SfpOuU0gEYf7M8plYEFYZbjlmeJKUuMbu7xOq
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:33:57 Realtime connection established: q4RFZCUamlFLwYia6QukRz3QkfDPiKoLrsAAHSAp
+2023/10/11 17:35:37 Realtime connection closed (cancelled request): q4RFZCUamlFLwYia6QukRz3QkfDPiKoLrsAAHSAp
+2023/10/11 17:35:37 Realtime connection established: UMLUVpYPGIMjpG7xKKyOq0kmYdcQVDpseLJFzfCw
+2023/10/11 17:37:17 Realtime connection closed (cancelled request): UMLUVpYPGIMjpG7xKKyOq0kmYdcQVDpseLJFzfCw
+2023/10/11 17:37:17 Realtime connection established: ed3VyXzSmcvZeBit75fXlaQcQIbLZcbnQy9ZVqwM
+2023/10/11 17:38:57 Realtime connection closed (cancelled request): ed3VyXzSmcvZeBit75fXlaQcQIbLZcbnQy9ZVqwM
+2023/10/11 17:38:58 Realtime connection established: wewAMTNa9kmJwnRZFQpcwWZHDdKD80v3gjzjOgjJ
+2023/10/11 17:40:38 Realtime connection closed (cancelled request): wewAMTNa9kmJwnRZFQpcwWZHDdKD80v3gjzjOgjJ
+2023/10/11 17:40:39 Realtime connection established: nehbA5OZ9FaQlHL7lZIJrsDKZHZSbpQNokWLhSS4
+2023/10/11 17:42:19 Realtime connection closed (cancelled request): nehbA5OZ9FaQlHL7lZIJrsDKZHZSbpQNokWLhSS4
+2023/10/11 17:42:20 Realtime connection established: 9aMYkp0IVLMdrcRYM8SFd3eweFgC36N64EibsTuP
+2023/10/11 17:44:00 Realtime connection closed (cancelled request): 9aMYkp0IVLMdrcRYM8SFd3eweFgC36N64EibsTuP
+2023/10/11 17:44:01 Realtime connection established: 7GFyEbQ3PWfaw2zNHtpR9DfL2xZD2btyxgYEGWdp
+2023/10/11 17:45:41 Realtime connection closed (cancelled request): 7GFyEbQ3PWfaw2zNHtpR9DfL2xZD2btyxgYEGWdp
+2023/10/11 17:45:42 Realtime connection established: hhPZFyEG72NC2pRJZQmsIw6CnQmkgQc4fSHHsCDP
+2023/10/11 17:46:51 Realtime connection closed (cancelled request): hhPZFyEG72NC2pRJZQmsIw6CnQmkgQc4fSHHsCDP
+2023/10/11 17:46:51 Realtime connection established: 96mA8KxgiVUn7yD22jen1em2AxPrN7fqvGT2V9Cw
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:48:31 Realtime connection closed (cancelled request): 96mA8KxgiVUn7yD22jen1em2AxPrN7fqvGT2V9Cw
+2023/10/11 17:48:32 Realtime connection established: VYdLdbvkMXh2wM8sMaPq3uj2bUY4Met4ZOxmoOVS
+2023/10/11 17:50:12 Realtime connection closed (cancelled request): VYdLdbvkMXh2wM8sMaPq3uj2bUY4Met4ZOxmoOVS
+2023/10/11 17:50:13 Realtime connection established: bsNVvrvU3HLRr7evGJDAT3grlRxy9KyNmSJhQCyg
+2023/10/11 17:50:32 Realtime connection closed (cancelled request): bsNVvrvU3HLRr7evGJDAT3grlRxy9KyNmSJhQCyg
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:50:33 Realtime connection established: MJCrJ3s0Zz3Nusa1MUnIwKE6JqB2DeUfhTrrh8mQ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:52:09 Realtime connection closed (cancelled request): MJCrJ3s0Zz3Nusa1MUnIwKE6JqB2DeUfhTrrh8mQ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:52:09 Realtime connection established: Z6z4TcIpMzJyA2Z3Bm9dHEgqEsnwJd9HR3vuVWgU
+2023/10/11 17:52:59 Realtime connection closed (cancelled request): Z6z4TcIpMzJyA2Z3Bm9dHEgqEsnwJd9HR3vuVWgU
+2023/10/11 17:52:59 Realtime connection established: VRPywDxYDd2WAHRRVl2n7ws1qOKgIXKUUTxuqHiJ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:54:39 Realtime connection closed (cancelled request): VRPywDxYDd2WAHRRVl2n7ws1qOKgIXKUUTxuqHiJ
+2023/10/11 17:54:40 Realtime connection established: ec9XOhjJw4fFqVpq7pm5bUGFoOB3CytoF3NKhSwT
+2023/10/11 17:55:34 Realtime connection closed (cancelled request): ec9XOhjJw4fFqVpq7pm5bUGFoOB3CytoF3NKhSwT
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:55:34 Realtime connection established: OpZkue7ZzEYLWrMwiU8Ff6yE7cjh1DKBnbuq5Sd7
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:56:09 Realtime connection closed (cancelled request): OpZkue7ZzEYLWrMwiU8Ff6yE7cjh1DKBnbuq5Sd7
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:56:10 Realtime connection established: qD592zy0sSAUaTxmeVtGdCSB11MYb1WRJ7lwDyuP
+2023/10/11 17:56:31 Realtime connection closed (cancelled request): qD592zy0sSAUaTxmeVtGdCSB11MYb1WRJ7lwDyuP
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:56:31 Realtime connection established: TjSPkTIFo14gXy2gW2fPkc7pmoed3zJTQgVRHRQn
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'tdjssjf3fnz504k' OR LOWER([[name]])='tdjssjf3fnz504k' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` WHERE `snippets`.`id`='qtn52wziozt4fa6' LIMIT 1
+[28.00ms] UPDATE `snippets` SET `created`='2023-10-09 20:56:41.715Z', `id`='qtn52wziozt4fa6', `name`='fgweg', `new`=false, `text`='affa', `updated`='2023-10-11 17:58:03.976Z' WHERE `id`='qtn52wziozt4fa6'
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'tdjssjf3fnz504k' OR LOWER([[name]])='tdjssjf3fnz504k' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` WHERE `snippets`.`id`='qtn52wziozt4fa6' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:59:18 Realtime connection closed (cancelled request): TjSPkTIFo14gXy2gW2fPkc7pmoed3zJTQgVRHRQn
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 17:59:18 Realtime connection established: 9OApXw4tvNOo9qzYWbi9fbpbcTs25NP9AtKRstu7
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 17:59:48 Realtime connection closed (cancelled request): 9OApXw4tvNOo9qzYWbi9fbpbcTs25NP9AtKRstu7
+2023/10/11 17:59:49 Realtime connection established: vUCJv4jE0htanBw3kLoCBUvze4zuSwUqHrHb78a2
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:00:26 Realtime connection closed (cancelled request): vUCJv4jE0htanBw3kLoCBUvze4zuSwUqHrHb78a2
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:00:27 Realtime connection established: maK6JVJ10iHJ5GXDuQ8qaQpBVPIllz2nr0fWsRh0
+2023/10/11 18:02:07 Realtime connection closed (cancelled request): maK6JVJ10iHJ5GXDuQ8qaQpBVPIllz2nr0fWsRh0
+2023/10/11 18:02:08 Realtime connection established: oIfMPxdh1mONhlQeHABkrZyYrcNqK8ZgzoCYMyAP
+2023/10/11 18:03:48 Realtime connection closed (cancelled request): oIfMPxdh1mONhlQeHABkrZyYrcNqK8ZgzoCYMyAP
+2023/10/11 18:03:49 Realtime connection established: NhNl6rNbOc6pdaISUBR8NdFyhji7GkbuE1DavzyH
+2023/10/11 18:05:29 Realtime connection closed (cancelled request): NhNl6rNbOc6pdaISUBR8NdFyhji7GkbuE1DavzyH
+2023/10/11 18:05:29 Realtime connection established: TxWmCebad8myNYFY1muI1g2w6ppJKUIrNN96lUsB
+2023/10/11 18:06:05 Realtime connection closed (cancelled request): TxWmCebad8myNYFY1muI1g2w6ppJKUIrNN96lUsB
+2023/10/11 18:06:05 Realtime connection established: cCHX2NpWKuHR0zrKOAosZLSMn0VcZa1XxVJZLNtx
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:07:45 Realtime connection closed (cancelled request): cCHX2NpWKuHR0zrKOAosZLSMn0VcZa1XxVJZLNtx
+2023/10/11 18:07:45 Realtime connection established: 6zw12M9EmXoQNxNCTFdv6izHKGZTug4wVMtSj78o
+2023/10/11 18:09:25 Realtime connection closed (cancelled request): 6zw12M9EmXoQNxNCTFdv6izHKGZTug4wVMtSj78o
+2023/10/11 18:09:26 Realtime connection established: dOCSHIbEA8gRmaZ48VJpwr0WVzK5AqmQA6PhQI9r
+2023/10/11 18:10:15 Realtime connection closed (cancelled request): dOCSHIbEA8gRmaZ48VJpwr0WVzK5AqmQA6PhQI9r
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:10:16 Realtime connection established: 5KZICmJc8Q8ogqHTkfr5JAxCoAW3T9LQ3eCFQpX5
+2023/10/11 18:10:45 Realtime connection closed (cancelled request): 5KZICmJc8Q8ogqHTkfr5JAxCoAW3T9LQ3eCFQpX5
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+2023/10/11 18:10:47 Realtime connection established: Knh9d0dkO9Nrwptq9qVj950cAV0gFvNzfmmc7qFU
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:11:18 Realtime connection closed (cancelled request): Knh9d0dkO9Nrwptq9qVj950cAV0gFvNzfmmc7qFU
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:11:18 Realtime connection established: FJBol4J1FfMiLeKpGhgOy1xNUWalbSWeYpskJKU2
+2023/10/11 18:11:28 Realtime connection closed (cancelled request): FJBol4J1FfMiLeKpGhgOy1xNUWalbSWeYpskJKU2
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:11:29 Realtime connection established: aOklA9xvcjBP0AkbFc1rLPZwKc3NEU8wsh7mXrDH
+2023/10/11 18:11:54 Realtime connection closed (cancelled request): aOklA9xvcjBP0AkbFc1rLPZwKc3NEU8wsh7mXrDH
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:11:56 Realtime connection established: B4ZM5Ms4EGsPxFvz3kVXQwxgisdMb5kzobiQ3Sln
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:12:13 Realtime connection closed (cancelled request): B4ZM5Ms4EGsPxFvz3kVXQwxgisdMb5kzobiQ3Sln
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:12:18 Realtime connection established: xZrBPM8RdYmhs8qeZeYnkONYXdDG0m6nZLPReQvN
+2023/10/11 18:13:50 Realtime connection closed (cancelled request): xZrBPM8RdYmhs8qeZeYnkONYXdDG0m6nZLPReQvN
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:13:50 Realtime connection established: WiK5d41ThNZvl8IMEpS9JOFLXuOclNv3tjQVVKhc
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:14:48 Realtime connection closed (cancelled request): WiK5d41ThNZvl8IMEpS9JOFLXuOclNv3tjQVVKhc
+2023/10/11 18:14:48 Realtime connection established: saN1zFjYVu4p3EcFPMx6u4dnSo97StZAHUgPNg4F
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:16:01 Realtime connection closed (cancelled request): saN1zFjYVu4p3EcFPMx6u4dnSo97StZAHUgPNg4F
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:16:05 Realtime connection established: Omp8UDGVTnAdUw3I4gEPYbAY8t77kzo29PpEQOUU
+2023/10/11 18:16:48 Realtime connection closed (cancelled request): Omp8UDGVTnAdUw3I4gEPYbAY8t77kzo29PpEQOUU
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:16:48 Realtime connection established: 9GfChSd56wBm70EL3qj7ci5eXgfAyPgEjHhq7szj
+2023/10/11 18:18:28 Realtime connection closed (cancelled request): 9GfChSd56wBm70EL3qj7ci5eXgfAyPgEjHhq7szj
+2023/10/11 18:18:29 Realtime connection established: CBHG0wx8fvGWJjk9LRd37xPtlplkmhJ0H6NGVMVm
+2023/10/11 18:19:09 Realtime connection closed (cancelled request): CBHG0wx8fvGWJjk9LRd37xPtlplkmhJ0H6NGVMVm
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:19:09 Realtime connection established: 7XXPImXZFtLHuB25wBKMV2Wjz9xJ8YpHP7RGh0UU
+2023/10/11 18:20:08 Realtime connection closed (cancelled request): 7XXPImXZFtLHuB25wBKMV2Wjz9xJ8YpHP7RGh0UU
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:20:09 Realtime connection established: 7VyPPdpc7FQNOIlZtCO5D86m6jJE5K2abZRshMdi
+2023/10/11 18:20:46 Realtime connection closed (cancelled request): 7VyPPdpc7FQNOIlZtCO5D86m6jJE5K2abZRshMdi
+2023/10/11 18:20:46 Realtime connection established: d3ykRatbo1cK3opRvJDTo46ixnu0JXDqQVruFMCb
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:22:26 Realtime connection closed (cancelled request): d3ykRatbo1cK3opRvJDTo46ixnu0JXDqQVruFMCb
+2023/10/11 18:22:26 Realtime connection established: Zl3ubVJB0z2aDrLueZx3YLfKKZgi0IvkPd219D0w
+2023/10/11 18:22:43 Realtime connection closed (cancelled request): Zl3ubVJB0z2aDrLueZx3YLfKKZgi0IvkPd219D0w
+2023/10/11 18:22:43 Realtime connection established: QnSBnoKkwPOy9fPIRwSEtLsVdc9aMUPaZEgkRKv3
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:23:16 Realtime connection closed (cancelled request): QnSBnoKkwPOy9fPIRwSEtLsVdc9aMUPaZEgkRKv3
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:23:16 Realtime connection established: 2IYj7KcG0UCkHs76pSoUhHmB4XoEeycZuPk6Eugq
+2023/10/11 18:23:37 Realtime connection closed (cancelled request): 2IYj7KcG0UCkHs76pSoUhHmB4XoEeycZuPk6Eugq
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:23:38 Realtime connection established: RGLj1urX9NpwX5mWuetSCvijPUQQXjY8BqfQG2kv
+2023/10/11 18:24:39 Realtime connection closed (cancelled request): RGLj1urX9NpwX5mWuetSCvijPUQQXjY8BqfQG2kv
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:24:39 Realtime connection established: a3jzAr7hhmh531CIoh00VLPiIAOResxO7WqALyLC
+2023/10/11 18:25:57 Realtime connection closed (cancelled request): a3jzAr7hhmh531CIoh00VLPiIAOResxO7WqALyLC
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:25:57 Realtime connection established: L9a9mLreHiIeemMA6ZzcqWie5FW5HGW9mtIkQuz0
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:26:22 Realtime connection closed (cancelled request): L9a9mLreHiIeemMA6ZzcqWie5FW5HGW9mtIkQuz0
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:26:24 Realtime connection established: MssCs57rE6KATNUHRT6luGxdxOl3Nk6nuK3i7VCT
+2023/10/11 18:27:12 Realtime connection closed (cancelled request): MssCs57rE6KATNUHRT6luGxdxOl3Nk6nuK3i7VCT
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:27:14 Realtime connection established: ACvsDHrNtAUzIIPD3Rsnm8pR9gFykb4P7wbctfvY
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:28:06 Realtime connection closed (cancelled request): ACvsDHrNtAUzIIPD3Rsnm8pR9gFykb4P7wbctfvY
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:28:06 Realtime connection established: zSHk1aWnr6tkR19NTJHHsWJ4xwzYg71guXe4KXLa
+2023/10/11 18:28:53 Realtime connection closed (cancelled request): zSHk1aWnr6tkR19NTJHHsWJ4xwzYg71guXe4KXLa
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:28:54 Realtime connection established: Xl4MxYqv0Gu1YH3guT2qqR7p5ErPS0fQe2K4iAM4
+2023/10/11 18:30:22 Realtime connection closed (cancelled request): Xl4MxYqv0Gu1YH3guT2qqR7p5ErPS0fQe2K4iAM4
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:30:25 Realtime connection established: K6zlcz4BEBbHfWKWZm2KybzAXwjrXQyj33Y1B02e
+2023/10/11 18:31:00 Realtime connection closed (cancelled request): K6zlcz4BEBbHfWKWZm2KybzAXwjrXQyj33Y1B02e
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:32:25 Realtime connection established: I6TMBVCQfdcoN1vtdkb9dRNhtl7XtDCc4Sgywvuw
+2023/10/11 18:34:05 Realtime connection closed (cancelled request): I6TMBVCQfdcoN1vtdkb9dRNhtl7XtDCc4Sgywvuw
+2023/10/11 18:34:07 Realtime connection established: BdFz85FcHXsYwCjVzC4W8PrMhBv959Nq0TCTPP1j
+2023/10/11 18:34:51 Realtime connection closed (cancelled request): BdFz85FcHXsYwCjVzC4W8PrMhBv959Nq0TCTPP1j
+2023/10/11 18:34:52 Realtime connection established: de1CC2xu8xDIVzoyIiFtfKGUhPOeiBrX7DUtWF03
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:35:35 Realtime connection closed (cancelled request): de1CC2xu8xDIVzoyIiFtfKGUhPOeiBrX7DUtWF03
+2023/10/11 18:35:35 Realtime connection established: a5GkWcdiqaLzxTrAYKwGRT1uRuPcNZcJoqouTenj
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:36:32 Realtime connection closed (cancelled request): a5GkWcdiqaLzxTrAYKwGRT1uRuPcNZcJoqouTenj
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:36:32 Realtime connection established: LXU2mmFZ00pMdOgTQz3LRfb5V90HulbSKav9g9uo
+2023/10/11 18:36:33 Realtime connection closed (cancelled request): LXU2mmFZ00pMdOgTQz3LRfb5V90HulbSKav9g9uo
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:36:33 Realtime connection established: wwLk9CH8IEAWtXYyhwSB7JN6mNXz5MPYBUgUz8Dy
+2023/10/11 18:38:13 Realtime connection closed (cancelled request): wwLk9CH8IEAWtXYyhwSB7JN6mNXz5MPYBUgUz8Dy
+2023/10/11 18:38:14 Realtime connection established: waeMQzIbsNfjGu1N66k7MpmPbMLcmzxAjc9aQ2Ww
+2023/10/11 18:38:16 Realtime connection closed (cancelled request): waeMQzIbsNfjGu1N66k7MpmPbMLcmzxAjc9aQ2Ww
+2023/10/11 18:38:16 Realtime connection established: NVPVEgq9xX56oTmAlw1wWj0f370K1AYKqKyBHPgG
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:38:31 Realtime connection closed (cancelled request): NVPVEgq9xX56oTmAlw1wWj0f370K1AYKqKyBHPgG
+2023/10/11 18:38:36 Realtime connection established: r1QTbfA27UuguJdJpIjV1JfzDAY0bagKdCXNWxBs
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[10.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:38:49.914Z', '["start_kurzstrecke_l_sdqxe_ru3_c_GBJespmk4D.JPG"]', 'es7obja8s5a9cwg', 'start_kurzstrecke_lSDqxeRu3C.JPG', true, '2023-10-11 18:38:49.914Z')
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='es7obja8s5a9cwg' LIMIT 1
+[17.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:38:49.926Z', '["start_kurzstrecke_l_sdqxe_ru3_c_1ZR2n96zRC.JPG"]', 'o9g2kp5mbgo8yov', 'start_kurzstrecke_lSDqxeRu3C.JPG', true, '2023-10-11 18:38:49.926Z')
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='o9g2kp5mbgo8yov' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='o9g2kp5mbgo8yov' LIMIT 1
+2023/10/11 18:38:54 Realtime connection closed (cancelled request): r1QTbfA27UuguJdJpIjV1JfzDAY0bagKdCXNWxBs
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:38:54 Realtime connection established: ZcCoGESwfnCfNxkfw8ImBMS95uae5OZJPyz7IJwk
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:39:06.544Z', '["walker_1f7TujharW.JPG"]', '7mqg0tj9swut5gm', 'Walker.JPG', true, '2023-10-11 18:39:06.544Z')
+2023/10/11 18:39:06 name: Value must be unique.
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:39:25.047Z', '["start_kurzstrecke_Dz7VJpcNyO.JPG"]', 'qrg0yz8re7blxq7', 'qfwqfqwgq', true, '2023-10-11 18:39:25.047Z')
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='qrg0yz8re7blxq7' LIMIT 1
+[0.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:39:25.048Z', '["start_kurzstrecke_O3Qr0PybRG.JPG"]', 'odswmtozkeiuwvl', 'qfwqfqwgq', true, '2023-10-11 18:39:25.048Z')
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='odswmtozkeiuwvl' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='odswmtozkeiuwvl' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='odswmtozkeiuwvl' LIMIT 1
+2023/10/11 18:41:05 Realtime connection closed (cancelled request): ZcCoGESwfnCfNxkfw8ImBMS95uae5OZJPyz7IJwk
+2023/10/11 18:41:06 Realtime connection established: iPIqvSJ1mHd7igBjDJMvPS60Yzv01NJzt1mV04NW
+2023/10/11 18:41:19 Realtime connection closed (cancelled request): iPIqvSJ1mHd7igBjDJMvPS60Yzv01NJzt1mV04NW
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:41:20 Realtime connection established: flF9bFr65BvbOuffCLwxjEgKGmhl6weFDqYLH6ns
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:41:30.402Z', '["walker_5dE6iFzoJl.JPG"]', 'ox716ik98bihty1', 'Walker.JPG', true, '2023-10-11 18:41:30.402Z')
+2023/10/11 18:41:30 name: Value must be unique.
+2023/10/11 18:41:33 Realtime connection closed (cancelled request): flF9bFr65BvbOuffCLwxjEgKGmhl6weFDqYLH6ns
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:41:34 Realtime connection established: Ik7wFi0yDRsl6DLr6T6VZYed0cQXPV9cxAHH3QoE
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:41:40.341Z', '["270px_fritz_logo_svg_WJHZFQ4gwM.png"]', 'dbe75y1oki7p2gl', '270px-Fritz!_Logo.svg.png', true, '2023-10-11 18:41:40.341Z')
+2023/10/11 18:41:40 name: Value must be unique.
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='0xibor8hexf2jbl' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='107gp2276lwuiue' LIMIT 1
+2023/10/11 18:42:15 Realtime connection closed (cancelled request): Ik7wFi0yDRsl6DLr6T6VZYed0cQXPV9cxAHH3QoE
+2023/10/11 18:42:18 Realtime connection established: gzDzqtXKVgMl5pDQo84t2pJ6TReNKz6qD9GK8dQW
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:42:18 Realtime connection closed (cancelled request): gzDzqtXKVgMl5pDQo84t2pJ6TReNKz6qD9GK8dQW
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:42:18 Realtime connection established: mr2GVeTHj5Lj6wM2JzCqnYAGOSTXGV8Ec7m0VQ4C
+2023/10/11 18:43:04 Realtime connection closed (cancelled request): mr2GVeTHj5Lj6wM2JzCqnYAGOSTXGV8Ec7m0VQ4C
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:43:04 Realtime connection established: wXqLGK7nWsCnhjVJkkG85FuX8mwF17oIOEpStXYc
+2023/10/11 18:44:34 Realtime connection closed (cancelled request): wXqLGK7nWsCnhjVJkkG85FuX8mwF17oIOEpStXYc
+2023/10/11 18:44:34 Realtime connection established: K8w1YFiUVnwYXvh3QcF3uoXN0yWJabZtq3x66764
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:45:04 Realtime connection closed (cancelled request): K8w1YFiUVnwYXvh3QcF3uoXN0yWJabZtq3x66764
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:45:04 Realtime connection established: xTks4OrzZFFuk3ZfQlRaRYDxpOM0IFrjJvXMiGuR
+2023/10/11 18:46:30 Realtime connection closed (cancelled request): xTks4OrzZFFuk3ZfQlRaRYDxpOM0IFrjJvXMiGuR
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:46:30 Realtime connection established: 94TqJRJ9Glo4uwQVAGBcYHbP1CgT463NyBWlROnA
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:46:32 Realtime connection closed (cancelled request): 94TqJRJ9Glo4uwQVAGBcYHbP1CgT463NyBWlROnA
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:46:32 Realtime connection established: meg7MLpy9huynV3YjpPt9tqnPnVBDuJMHqxkExOJ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+2023/10/11 18:47:13 Realtime connection closed (cancelled request): meg7MLpy9huynV3YjpPt9tqnPnVBDuJMHqxkExOJ
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'snippets' OR LOWER([[name]])='snippets' LIMIT 1
+[0.00ms] SELECT `snippets`.* FROM `snippets` LIMIT 500
+2023/10/11 18:47:14 Realtime connection established: RjeORuTzgh3sfQsF71c3dniEsRbruJSr25eRldkM
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:47:31.381Z', '["mp5_smg_gun_guru_703432894_o8wxRCtrGJ.mp3"]', 'dm2vgulb91m6pr9', 'MP5_SMG-GunGyrdsyuru-703432894.mp3', true, '2023-10-11 18:47:31.381Z')
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='dm2vgulb91m6pr9' LIMIT 1
+[0.00ms] INSERT INTO `files` (`created`, `file`, `id`, `name`, `new`, `updated`) VALUES ('2023-10-11 18:47:31.381Z', '["mp5_smg_gun_guru_703432894_fKzVrdlSq0.mp3"]', 'q15hkas33yftc0j', 'MP5_SMG-GunGyrdsyuru-703432894.mp3', true, '2023-10-11 18:47:31.381Z')
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'ihr5eiyab1g0f1w' OR LOWER([[name]])='ihr5eiyab1g0f1w' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` WHERE `files`.`id`='q15hkas33yftc0j' LIMIT 1
+[0.00ms] SELECT {{_collections}}.* FROM `_collections` WHERE [[id]] = 'files' OR LOWER([[name]])='files' LIMIT 1
+[0.00ms] SELECT `files`.* FROM `files` LIMIT 500
