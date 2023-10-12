@@ -11,17 +11,27 @@ import (
 
 	"github.com/joho/godotenv"
 
+	_ "github.com/H3rmt/LocalFileSharing/migrations"
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/apis"
 	"github.com/pocketbase/pocketbase/core"
+	"github.com/pocketbase/pocketbase/plugins/migratecmd"
 )
 
 func main() {
 	godotenv.Load("../.env")
-	os.Args = append(os.Args, fmt.Sprintf("--http=%s", os.Getenv("PUBLIC_HOST")))
+	// os.Args = append(os.Args, fmt.Sprintf("--http=%s", os.Getenv("PUBLIC_HOST")))
 
 	app := pocketbase.New()
+
+	isGoRun := strings.HasPrefix(os.Args[0], os.TempDir())
+
+	migratecmd.MustRegister(app, app.RootCmd, migratecmd.Config{
+		// enable auto creation of migration files when making collection changes in the Admin UI
+		// (the isGoRun check is to enable it only during development)
+		Automigrate: isGoRun,
+	})
 
 	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
 		e.Router.GET("/*", apis.StaticDirectoryHandler(os.DirFS("./dist"), false))
