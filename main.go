@@ -1,11 +1,11 @@
 package main
 
 import (
-	"os"
 	"fmt"
 	"io/fs"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"strings"
 
@@ -24,8 +24,8 @@ func main() {
 	app := pocketbase.New()
 
 	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
-		e.Router.GET("/*", apis.StaticDirectoryHandler(os.DirFS("../dist"), false))
-	
+		e.Router.GET("/*", apis.StaticDirectoryHandler(os.DirFS("./dist"), false))
+
 		return nil
 	})
 
