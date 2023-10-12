@@ -77,10 +77,10 @@ export function NewFile() {
       <div class="flex flex-row gap-4 overflow-auto">
         <span class="text-3xl font-bold hidden sm:block">Add <ImportantText>File</ImportantText></span>
         <input type="text" class="bg-transparent border-2 rounded-lg border-accent p-2 outline-none" value={name()} placeholder="Custom Name" oninput={(e) => setName(e.target.value)} />
-        <input type="submit" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value="Upload" onclick={submit} />
+        <input type="submit" class="bg-transparent border-2 rounded-lg border-accent p-2 outline-none hover:text-accent hover:bg-background-accent" value="Upload" onclick={submit} />
       </div>
       <div class="flex flex-row gap-4 overflow-auto items-center">
-        <input type="file" class="bg-transparent border-2 rounded-lg border-accent p-2 hover:text-accent hover:bg-background-accent" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input} />
+        <input type="file" class="bg-transparent border-2 rounded-lg border-accent p-2 outline-none hover:text-accent hover:bg-background-accent" value={files().map(f => f.name)} placeholder="File name" multiple onchange={input} />
         <div class='count'>{fileCount()}</div>
       </div>
     </div>
