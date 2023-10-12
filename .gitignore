@@ -5,4 +5,4 @@ dist/
 .env
 
 logs/
-pocketbase/pb_data/
+pb_data/
