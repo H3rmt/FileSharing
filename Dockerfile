@@ -5,7 +5,7 @@ RUN go mod download
 COPY pocketbase/*.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o ./LocalFileSharing
 
-FROM node:20-slim AS js-base
+FROM node:20 AS js-base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -19,9 +19,9 @@ COPY src/ ./src
 RUN pnpm build
 
 FROM alpine:latest AS release
-WORKDIR /
+WORKDIR /app
 COPY --from=build-stage /app/LocalFileSharing ./LocalFileSharing
 COPY --from=js-base /app/dist ./dist
-EXPOSE 8080
+EXPOSE 80
 
-ENTRYPOINT ["/LocalFileSharing", "serve"]
+ENTRYPOINT ["/app/LocalFileSharing", "serve"]
