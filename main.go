@@ -21,7 +21,7 @@ import (
 
 func main() {
 	godotenv.Load("../.env")
-	// os.Args = append(os.Args, fmt.Sprintf("--http=%s", os.Getenv("PUBLIC_HOST")))
+	os.Args = append(os.Args, fmt.Sprintf("--http=%s", os.Getenv("PUBLIC_HOST")))
 
 	app := pocketbase.New()
 
