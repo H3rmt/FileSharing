@@ -1,12 +1,9 @@
 version: '3.8'
 services:
   lfs:
-    image: localfilesharing
-    build: ./
+    image: h3rmt/localfilesharing
     restart: always
-    environment:
-      - PUBLIC_HOST=localhost:8080
     ports:
-      - '8080:8080'
+      - '8080:80'
     volumes: 
       - ./pb_data:/pb_data

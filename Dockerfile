@@ -24,4 +24,4 @@ COPY --from=build-stage /app/LocalFileSharing ./LocalFileSharing
 COPY --from=js-base /app/dist ./dist
 EXPOSE 80
 
-ENTRYPOINT ["/app/LocalFileSharing", "serve"]
+ENTRYPOINT ["/app/LocalFileSharing", "serve", "--http=0.0.0.0:80"]
