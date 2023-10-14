@@ -38,7 +38,7 @@ export function NewFile() {
   const drop = (e: DragEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    document.getElementById("dropzone")?.classList.remove("bg-transparent")
+    document.getElementById("f-dropzone")?.classList.remove("bg-transparent")
 
     console.log("Drop", e.dataTransfer?.files)
     addFiles(e.dataTransfer?.files ?? null)
@@ -47,12 +47,12 @@ export function NewFile() {
   const dragover = (e: DragEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    document.getElementById("dropzone")?.classList.add("bg-transparent")
+    document.getElementById("f-dropzone")?.classList.add("bg-transparent")
   }
   const dragoverleave = (e: DragEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    document.getElementById("dropzone")?.classList.remove("bg-transparent")
+    document.getElementById("f-dropzone")?.classList.remove("bg-transparent")
   }
 
   const input = (e: Event) => {
@@ -72,7 +72,7 @@ export function NewFile() {
 
   return <div class='rounded-md bg-textbg p-0.5'>
     <div class="flex flex-col items-center  gap-4 p-2 rounded-lg bg-background overflow-auto"
-      id="dropzone" ondragleave={dragoverleave} ondragover={dragover}
+      id="f-dropzone" ondragleave={dragoverleave} ondragover={dragover}
       ondrop={drop}>
       <div class="flex flex-row gap-4 overflow-auto">
         <span class="text-3xl font-bold hidden sm:block">Add <ImportantText>File</ImportantText></span>
