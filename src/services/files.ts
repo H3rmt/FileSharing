@@ -12,6 +12,14 @@ export async function getFiles(): Promise<F[]> {
     .getFullList<F>();
 }
 
+export async function isDuplicateFile(name: string): Promise<boolean> {
+  const files = await pb
+    .collection("files")
+    .getFullList<F>({ name });
+
+  return files.some((file) => file.name === name);
+}
+
 export async function getFileUrls(file: F): Promise<string[]> {
   return file.file.map((filename) => {
     return getFileUrl(file, filename, false);

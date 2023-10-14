@@ -1,6 +1,7 @@
 import {createSignal} from "solid-js";
 import {uploadSnippet} from "../services/snippets";
 import ImportantText from "./importantText";
+import {getDuplicateFiles, isDuplicateFile} from "../services/files";
 
 export function NewSnippet() {
   const [name, setName] = createSignal("")
@@ -16,6 +17,11 @@ export function NewSnippet() {
     if (name() === "" || name().length < 3) {
       alert("No name / to short")
       return
+    }
+
+    if (await isDuplicateFile(name())) {
+      if (!confirm("File already exists. Do you want to overwrite it?"))
+        return
     }
 
     const formData = new FormData();
