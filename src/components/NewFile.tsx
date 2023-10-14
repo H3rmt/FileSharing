@@ -1,6 +1,7 @@
 import { createSignal } from "solid-js";
 import {isDuplicateFile, uploadFile} from "../services/files";
 import ImportantText from "./importantText";
+import {toast} from "../services/toast";
 
 export function NewFile() {
   const [name, setName] = createSignal("")
@@ -11,11 +12,11 @@ export function NewFile() {
     console.log("Submit new file")
 
     if ((files() ?? []).length === 0) {
-      alert("No files")
+      toast("No files")
       return
     }
     if (name() === "" || name().length < 3) {
-      alert("No name / to short")
+      toast("No name / to short")
       return
     }
 
@@ -37,7 +38,7 @@ export function NewFile() {
     setFileCount(0)
 
     await uploadFile(formData)
-    setTimeout(() => alert("Hochgeladen"), 100);
+    toast("Hochgeladen")
   }
 
   const drop = (e: DragEvent) => {

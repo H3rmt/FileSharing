@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.2.4)(tailwindcss@3.3.3)
+  '@types/toastify-js':
+    specifier: ^1.12.1
+    version: 1.12.1
   astro:
     specifier: ^3.2.4
     version: 3.2.4
@@ -23,6 +26,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
+  toastify-js:
+    specifier: ^1.12.0
+    version: 1.12.0
   vite-plugin-pwa:
     specifier: ^0.16.5
     version: 0.16.5(vite@4.4.11)(workbox-build@7.0.0)(workbox-window@7.0.0)
@@ -1968,6 +1974,10 @@ packages:
 
   /@types/resolve@1.20.3:
     resolution: {integrity: sha512-NH5oErHOtHZYcjCtg69t26aXEk4BN2zLWqf7wnDZ+dpe0iR7Rds1SPGEItl3fca21oOe0n3OCnZ4W7jBxu7FOw==}
+    dev: false
+
+  /@types/toastify-js@1.12.1:
+    resolution: {integrity: sha512-9CTM+LKFmS0+Ii+RH55XPKcmNxCjLticj8kxeCxa7PnSVCZPQurb9XtKQtoMl/fv7WaqUpRezDcFuY8n92CtUg==}
     dev: false
 
   /@types/trusted-types@2.0.4:
@@ -5423,6 +5433,10 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+    dev: false
+
+  /toastify-js@1.12.0:
+    resolution: {integrity: sha512-HeMHCO9yLPvP9k0apGSdPUWrUbLnxUKNFzgUoZp1PHCLploIX/4DSQ7V8H25ef+h4iO9n0he7ImfcndnN6nDrQ==}
     dev: false
 
   /tr46@1.0.1:

@@ -1,6 +1,7 @@
 import {createSignal} from "solid-js";
 import {isDuplicateSnippet, uploadSnippet} from "../services/snippets";
 import ImportantText from "./importantText";
+import {toast} from "../services/toast";
 
 export function NewSnippet() {
   const [name, setName] = createSignal("")
@@ -10,11 +11,11 @@ export function NewSnippet() {
     console.log("Submit new snippet")
 
     if (snippet() === "") {
-      alert("No snippet")
+      toast("No snippet")
       return
     }
     if (name() === "" || name().length < 3) {
-      alert("No name / to short")
+      toast("No name / to short")
       return
     }
 
@@ -32,7 +33,7 @@ export function NewSnippet() {
     setSnippet("")
 
     await uploadSnippet(formData)
-    setTimeout(() => alert("Hochgeladen"), 100);
+    toast("Hochgeladen")
   }
 
   const drop = async (e: DragEvent) => {
@@ -44,16 +45,10 @@ export function NewSnippet() {
 
     if (e.dataTransfer?.files === null) return
     if (e.dataTransfer?.files.length !== 1) {
-      alert("Only one file allowed")
+      toast("Only one file allowed")
       return
     }
     const file = e.dataTransfer?.files[0] as File
-    try {
-      await file.text()
-    } catch (e) {
-      alert("Only text files allowed")
-      return
-    }
 
     setName(file.name)
     console.log("name", file.name)
