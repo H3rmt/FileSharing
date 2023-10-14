@@ -1,7 +1,6 @@
 import type { RecordSubscription } from "pocketbase";
 import type { Snippet as S } from "../types/file";
 import { pb } from "./pocketpase";
-import {File as F} from "../types/file";
 
 export async function getSnippets(): Promise<S[]> {
   return await pb
@@ -10,11 +9,11 @@ export async function getSnippets(): Promise<S[]> {
 }
 
 export async function isDuplicateSnippet(name: string): Promise<boolean> {
-  const files = await pb
+  const snippets = await pb
     .collection("snippets")
-    .getFullList<F>({ name });
-
-  return files.some((snippet) => snippet.name === name);
+    .getFullList<S>({ name });
+  console.log(snippets, "snippets")
+  return snippets.some((snippet) => snippet.name === name);
 }
 
 export async function uploadSnippet(data: FormData): Promise<void> {

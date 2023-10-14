@@ -1,7 +1,6 @@
 import { createSignal } from "solid-js";
 import {isDuplicateFile, uploadFile} from "../services/files";
 import ImportantText from "./importantText";
-import {isDuplicateSnippet} from "../services/snippets";
 
 export function NewFile() {
   const [name, setName] = createSignal("")
@@ -20,8 +19,8 @@ export function NewFile() {
       return
     }
 
-    if (await isDuplicateSnippet(name())) {
-      if (!confirm("Snippet already exists. Do you want to overwrite it?"))
+    if (await isDuplicateFile(name())) {
+      if (!confirm("File/Files with same name already exists. Do you want to upload it?"))
         return
     }
 
