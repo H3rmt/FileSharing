@@ -25,6 +25,8 @@ export function File(props: { file: File }) {
   const remove = async (e: Event) => {
     e.preventDefault()
     e.stopPropagation()
+    if (!confirm("Remove permanently?"))
+      return
     console.log("Remove file", props.file)
     await removeFile(props.file)
   }

@@ -12,6 +12,8 @@ export function Snippet(props: { snippet: Snippet }) {
   const remove = async (e: Event) => {
     e.preventDefault()
     e.stopPropagation()
+    if (!confirm("Remove permanently?"))
+      return
     console.log("Remove file", props.snippet)
     await removeSnippet(props.snippet)
   }
