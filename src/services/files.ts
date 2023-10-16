@@ -46,6 +46,12 @@ export async function unmarkFile(file: F): Promise<void> {
     .update(file.id, { new: false });
 }
 
+export async function removeFile(file: F): Promise<void> {
+  await pb
+    .collection("files")
+    .delete(file.id)
+}
+
 export async function subscribeFiles(
   callback: (file: RecordSubscription<F>) => void,
 ): Promise<() => Promise<void>> {

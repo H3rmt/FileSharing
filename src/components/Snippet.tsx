@@ -1,4 +1,4 @@
-import { unmarkSnippet } from "src/services/snippets";
+import { removeSnippet, unmarkSnippet } from "src/services/snippets";
 import type { Snippet } from "../types/file";
 
 export function Snippet(props: { snippet: Snippet }) {
@@ -7,6 +7,13 @@ export function Snippet(props: { snippet: Snippet }) {
     e.stopPropagation()
     console.log("Close snippet", props.snippet)
     await unmarkSnippet(props.snippet)
+  }
+
+  const remove = async (e: Event) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log("Remove file", props.snippet)
+    await removeSnippet(props.snippet)
   }
 
   const copy = async (e: Event) => {
@@ -23,7 +30,7 @@ export function Snippet(props: { snippet: Snippet }) {
     <h2 class="mb-1 text-3xl [text-shadow:_0_0_0.4em_black]">{props.snippet.name}</h2>
     <div class="absolute z-50 right-1 top-1 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.4em_black]">
       <div>{new Date(props.snippet.created).toLocaleString()}</div>
-      <div class='p-1 cursor-pointer rounded-lg border-dashed border-2 border-accent sm:hover:bg-background-accent' onclick={close}>X</div>
+      <div class='p-1 cursor-pointer rounded-lg border-dashed border-2 border-accent sm:hover:bg-background-accent' onclick={props.snippet.new ? close : remove}>X</div>
     </div>
     <p class="whitespace-normal max-h-[40dvh] overflow-auto text-text">{props.snippet.text}</p>
   </div>

@@ -1,4 +1,4 @@
-import { getFileUrl, getFileUrls, unmarkFile } from "../services/files";
+import { getFileUrl, getFileUrls, removeFile, unmarkFile } from "../services/files";
 import { createResource } from "solid-js";
 import type { File } from "../types/file";
 
@@ -20,6 +20,13 @@ export function File(props: { file: File }) {
     e.stopPropagation()
     console.log("Close file", props.file)
     await unmarkFile(props.file)
+  }
+
+  const remove = async (e: Event) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log("Remove file", props.file)
+    await removeFile(props.file)
   }
 
   const open = async (e: Event) => {
@@ -44,7 +51,7 @@ export function File(props: { file: File }) {
     style={`--img-background: ${displayURL}`}>
     <div class="absolute z-50 right-1 top-1 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.4em_black]">
       {new Date(props.file.created).toLocaleString()}
-      <div class='p-1 cursor-pointer rounded-lg border-dashed border-2 border-accent sm:hover:bg-background-accent' onclick={close}>X</div>
+      <div class='p-1 cursor-pointer rounded-lg border-dashed border-2 border-accent sm:hover:bg-background-accent' onclick={props.file.new ? close : remove}>X</div>
     </div>
     <h2 class="mb-1 text-3xl [text-shadow:_0_0_0.4em_black]">{props.file.name}</h2>
     {props.file.file.length > 1 ? <div class="absolute z-50 right-1 p-1 bottom-1 font-bold border-dashed rounded-lg border-2 border-accent">{props.file.file.length}</div> : ''}

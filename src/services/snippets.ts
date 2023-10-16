@@ -28,6 +28,12 @@ export async function unmarkSnippet(snippet: S): Promise<void> {
     .update(snippet.id, { new: false });
 }
 
+export async function removeSnippet(snippet: S): Promise<void> {
+  await pb
+    .collection("snippets")
+    .delete(snippet.id)
+}
+
 export async function subscribeSnippets(
   callback: (file: RecordSubscription<S>) => void,
 ): Promise<() => Promise<void>> {
