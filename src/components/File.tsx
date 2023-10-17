@@ -24,7 +24,7 @@ export function File(props: { file: File }) {
   ) {
     displayURL = "url(" + getFileUrl(props.file, firstFile, true) + ")";
   } else {
-    displayURL = "var(--important)";
+    displayURL = "var(--textbg)";
   }
 
   const close = async (e: Event) => {
@@ -64,16 +64,16 @@ export function File(props: { file: File }) {
       href={urls()?.length === 1 ? urls()?.[0] + "?download=1" ?? "" : ""}
       onclick={open}
       class="relative flex min-h-[100px] cursor-pointer flex-col overflow-hidden text-ellipsis whitespace-nowrap
-      rounded-lg border-2 border-accent bg-cover 
-      p-3 before:absolute 
-      before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center
-      before:blur-[2px] before:content-[''] sm:hover:text-accent"
+      rounded-lg border-2 border-border bg-cover 
+      p-3 
+      before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center before:blur-[2px] before:content-['']
+      sm:hover:bg-background-accent sm:hover:text-accent"
       style={`--img-background: ${displayURL}`}
     >
       <div class="absolute right-1 top-1 z-50 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
         {new Date(props.file.created).toLocaleString()}
         <div
-          class="cursor-pointer rounded-lg border-2 border-dashed border-accent p-1 sm:hover:bg-background-accent"
+          class="cursor-pointer rounded-lg border-2 border-dashed border-border p-1 sm:hover:bg-background-accent"
           onclick={props.file.new ? close : remove}
         >
           X
@@ -83,7 +83,7 @@ export function File(props: { file: File }) {
         {props.file.name}
       </h2>
       {props.file.file.length > 1 ? (
-        <div class="absolute bottom-1 right-1 z-50 rounded-lg border-2 border-dashed border-accent p-1 font-bold">
+        <div class="absolute bottom-1 right-1 z-50 rounded-lg border-2 border-dashed border-border p-1 font-bold">
           {props.file.file.length}
         </div>
       ) : (

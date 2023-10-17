@@ -8,9 +8,10 @@ module.exports = {
         "background-accent": "hsl(var(--background-accent))",
         text: "hsl(var(--text))",
         accent: "hsl(var(--accent))",
+        border: "hsl(var(--border))",
       },
       backgroundImage: {
-        textbg: "var(--important)",
+        textbg: "var(--textbg)",
         "img-background": "var(--img-background)",
       },
     },

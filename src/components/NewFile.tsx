@@ -94,14 +94,16 @@ export function NewFile() {
           </span>
           <input
             type="text"
-            class="rounded-lg border-2 border-accent bg-transparent p-2 outline-none"
+            class="rounded-lg border-2 border-border bg-transparent p-2
+            hover:bg-background-accent hover:text-accent focus:bg-background-accent focus:text-accent"
             value={name()}
             placeholder="Custom Name"
             oninput={(e) => setName(e.target.value)}
           />
           <input
             type="submit"
-            class="rounded-lg border-2 border-accent bg-transparent p-2 outline-none hover:bg-background-accent hover:text-accent"
+            class="rounded-lg border-2 border-border bg-transparent p-2
+            hover:bg-background-accent hover:text-accent focus:bg-background-accent focus:text-accent"
             value="Upload"
             onclick={submit}
           />
@@ -109,7 +111,8 @@ export function NewFile() {
         <div class="flex flex-row items-center gap-4 overflow-auto">
           <input
             type="file"
-            class="rounded-lg border-2 border-accent bg-transparent p-2 outline-none hover:bg-background-accent hover:text-accent"
+            class="rounded-lg border-2 border-border bg-transparent p-2
+            hover:bg-background-accent hover:text-accent focus:bg-background-accent focus:text-accent"
             value={files().map((f) => f.name)}
             placeholder="File name"
             multiple
