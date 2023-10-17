@@ -12,7 +12,10 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Local file Sharing" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#8d0074" />
     <script is:inline src="/registerSW.js"></script>

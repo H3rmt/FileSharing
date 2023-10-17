@@ -3,7 +3,7 @@ import { getSnippets, subscribeSnippets } from 'src/services/snippets';
 import { Info } from "./Info";
 import { FileList } from "./FileList";
 import { NewFile } from "./NewFile";
-import { createResource, onMount, createSignal } from "solid-js";
+import { createResource, onMount, createSignal, ErrorBoundary } from "solid-js";
 import { NewSnippet } from './NewSnippet';
 import { SnippetList } from './SnippetList';
 
@@ -24,16 +24,19 @@ export function Overview() {
   })
 
   return <div class='flex flex-col gap-8'>
-    {(files.error || snippets.error) && <div>Error: {files.error} | {snippets.error}</div>}
-    {(files.loading || snippets.error) && <div>Loading...</div>}
-    {files() && snippets() && <Info snippets={snippets() ?? []} files={files() ?? []} old={old} setOld={setOld} />}
-    {files() && <div class='flex flex-col gap-3'>
-      <FileList files={files() ?? []} old={old} />
-      <NewFile />
-    </div>}
-    {snippets() && <div class='flex flex-col gap-3'>
-      <SnippetList snippets={snippets() ?? []} old={old} />
-      <NewSnippet />
-    </div>}
+    <ErrorBoundary
+      fallback={(err, reset) => <div onClick={reset}>{err.toString()}</div>}
+    >
+      {(files.loading || snippets.error) && <div>Loading...</div>}
+      {files() && snippets() && <Info snippets={snippets() ?? []} files={files() ?? []} old={old} setOld={setOld} />}
+      {files() && <div class='flex flex-col gap-3'>
+        <FileList files={files() ?? []} old={old} />
+        <NewFile />
+      </div>}
+      {snippets() && <div class='flex flex-col gap-3'>
+        <SnippetList snippets={snippets() ?? []} old={old} />
+        <NewSnippet />
+      </div>}
+    </ErrorBoundary>
   </div>
 }
