@@ -6,4 +6,4 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./pb_data:/App/pb_data
+      - ./pb_data:/app/pb_data
