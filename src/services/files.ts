@@ -7,15 +7,11 @@ export async function getSize() {
 }
 
 export async function getFiles(): Promise<F[]> {
-  return await pb
-    .collection("files")
-    .getFullList<F>();
+  return await pb.collection("files").getFullList<F>();
 }
 
 export async function isDuplicateFile(name: string): Promise<boolean> {
-  const files = await pb
-    .collection("files")
-    .getFullList<F>({ name });
+  const files = await pb.collection("files").getFullList<F>({ name });
 
   return files.some((file) => file.name === name);
 }
@@ -35,30 +31,22 @@ export function getFileUrl(
 }
 
 export async function uploadFile(data: FormData): Promise<void> {
-  await pb
-    .collection("files")
-    .create(data);
+  await pb.collection("files").create(data);
 }
 
 export async function unmarkFile(file: F): Promise<void> {
-  await pb
-    .collection("files")
-    .update(file.id, { new: false });
+  await pb.collection("files").update(file.id, { new: false });
 }
 
 export async function removeFile(file: F): Promise<void> {
-  await pb
-    .collection("files")
-    .delete(file.id)
+  await pb.collection("files").delete(file.id);
 }
 
 export async function subscribeFiles(
   callback: (file: RecordSubscription<F>) => void,
 ): Promise<() => Promise<void>> {
-  return await pb
-    .collection("files")
-    .subscribe<F>("*", (ev) => {
-      console.log("Files updated");
-      callback(ev);
-    });
+  return await pb.collection("files").subscribe<F>("*", (ev) => {
+    console.log("Files updated");
+    callback(ev);
+  });
 }

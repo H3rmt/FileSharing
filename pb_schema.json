@@ -91,16 +91,12 @@
           "maxSelect": 99,
           "maxSize": 524288000,
           "mimeTypes": [],
-          "thumbs": [
-            "300x300"
-          ],
+          "thumbs": ["300x300"],
           "protected": false
         }
       }
     ],
-    "indexes": [
-      "CREATE UNIQUE INDEX `idx_rXiTYUH` ON `files` (`name`)"
-    ],
+    "indexes": ["CREATE UNIQUE INDEX `idx_rXiTYUH` ON `files` (`name`)"],
     "listRule": "",
     "viewRule": "",
     "createRule": "",
@@ -143,9 +139,7 @@
         "options": {}
       }
     ],
-    "indexes": [
-      "CREATE UNIQUE INDEX `idx_a2NfZR6` ON `snippets` (`name`)"
-    ],
+    "indexes": ["CREATE UNIQUE INDEX `idx_a2NfZR6` ON `snippets` (`name`)"],
     "listRule": "",
     "viewRule": "",
     "createRule": "",

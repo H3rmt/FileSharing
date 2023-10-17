@@ -1,6 +1,6 @@
-import "toastify-js/src/toastify.css"
+import "toastify-js/src/toastify.css";
 
-import Toastify from "toastify-js"
+import Toastify from "toastify-js";
 
 export const toast = (message: string) => {
   Toastify({
@@ -11,4 +11,4 @@ export const toast = (message: string) => {
     position: "right",
     stopOnFocus: true,
   }).showToast();
-}
+};

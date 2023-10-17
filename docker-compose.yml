@@ -1,9 +1,9 @@
-version: '3.8'
+version: "3.8"
 services:
   lfs:
     image: h3rmt/localfilesharing
     restart: always
     ports:
-      - '8080:80'
-    volumes: 
+      - "8080:80"
+    volumes:
       - ./pb_data:/pb_data

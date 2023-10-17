@@ -1,4 +1,4 @@
-import type {RecordModel as R} from "pocketbase";
+import type { RecordModel as R } from "pocketbase";
 
 export type File = {
   id: string;
@@ -6,7 +6,7 @@ export type File = {
   name: string;
   new: boolean;
   file: string[];
-} & R
+} & R;
 
 export type Snippet = {
   id: string;
@@ -14,4 +14,4 @@ export type Snippet = {
   name: string;
   new: boolean;
   text: string;
-} & R
+} & R;
