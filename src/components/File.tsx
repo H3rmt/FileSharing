@@ -63,17 +63,17 @@ export function File(props: { file: File }) {
       download={props.file.name}
       href={urls()?.length === 1 ? urls()?.[0] + "?download=1" ?? "" : ""}
       onclick={open}
-      class="flex flex-col relative p-3 bg-cover rounded-lg min-h-[100px] text-ellipsis
-      whitespace-nowrap overflow-hidden cursor-pointer sm:hover:text-accent 
-      border-accent border-2 
-      before:content-[''] before:absolute before:left-0 before:top-0 before:-z-10 before:w-full before:h-full before:blur-[2px]
-      before:bg-img-background before:bg-cover before:bg-center"
+      class="relative flex min-h-[100px] cursor-pointer flex-col overflow-hidden text-ellipsis whitespace-nowrap
+      rounded-lg border-2 border-accent bg-cover 
+      p-3 before:absolute 
+      before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center
+      before:blur-[2px] before:content-[''] sm:hover:text-accent"
       style={`--img-background: ${displayURL}`}
     >
-      <div class="absolute z-50 right-1 top-1 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
+      <div class="absolute right-1 top-1 z-50 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
         {new Date(props.file.created).toLocaleString()}
         <div
-          class="p-1 cursor-pointer rounded-lg border-dashed border-2 border-accent sm:hover:bg-background-accent"
+          class="cursor-pointer rounded-lg border-2 border-dashed border-accent p-1 sm:hover:bg-background-accent"
           onclick={props.file.new ? close : remove}
         >
           X
@@ -83,7 +83,7 @@ export function File(props: { file: File }) {
         {props.file.name}
       </h2>
       {props.file.file.length > 1 ? (
-        <div class="absolute z-50 right-1 p-1 bottom-1 font-bold border-dashed rounded-lg border-2 border-accent">
+        <div class="absolute bottom-1 right-1 z-50 rounded-lg border-2 border-dashed border-accent p-1 font-bold">
           {props.file.file.length}
         </div>
       ) : (

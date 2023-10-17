@@ -13,7 +13,7 @@ export function Info(props: {
 
   return (
     <div class="rounded-lg bg-textbg p-1">
-      <div class="flex gap-2 p-2 justify-between rounded-lg bg-background">
+      <div class="flex justify-between gap-2 rounded-lg bg-background p-2">
         <p class="m-0 leading-5">
           This is a file/snippet sharing service. You can upload files and
           snippets to share them with others. <br />
@@ -33,7 +33,7 @@ export function Info(props: {
           stored in total.
         </p>
         <button
-          class="p-2 border-2 border-accent rounded-lg bg-transparent hover:text-accent hover:bg-background-accent"
+          class="rounded-lg border-2 border-accent bg-transparent p-2 hover:bg-background-accent hover:text-accent"
           onClick={() => props.setOld(!props.old())}
         >
           {props.old() ? "Hide Old" : "Show Old"}

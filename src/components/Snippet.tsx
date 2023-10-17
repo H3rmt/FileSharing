@@ -29,22 +29,22 @@ export function Snippet(props: { snippet: Snippet }) {
   return (
     <div
       onclick={copy}
-      class="flex flex-col relative p-3 bg-cover rounded-lg min-h-[100px] text-ellipsis
-  whitespace-nowrap overflow-hidden sm:hover:text-accent border-2 border-accent cursor-pointer sm:hover:bg-textbg"
+      class="relative flex min-h-[100px] cursor-pointer flex-col overflow-hidden text-ellipsis whitespace-nowrap
+  rounded-lg border-2 border-accent bg-cover p-3 sm:hover:bg-textbg sm:hover:text-accent"
     >
       <h2 class="mb-1 text-3xl [text-shadow:_0_0_0.2em_#00000069]">
         {props.snippet.name}
       </h2>
-      <div class="absolute z-50 right-1 top-1 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
+      <div class="absolute right-1 top-1 z-50 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
         <div>{new Date(props.snippet.created).toLocaleString()}</div>
         <div
-          class="p-1 cursor-pointer rounded-lg border-dashed border-2 border-accent sm:hover:bg-background-accent"
+          class="cursor-pointer rounded-lg border-2 border-dashed border-accent p-1 sm:hover:bg-background-accent"
           onclick={props.snippet.new ? close : remove}
         >
           X
         </div>
       </div>
-      <pre class="whitespace-pre max-h-[40dvh] overflow-auto text-text">
+      <pre class="max-h-[40dvh] overflow-auto whitespace-pre text-text">
         {props.snippet.text}
       </pre>
     </div>

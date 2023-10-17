@@ -82,34 +82,34 @@ export function NewFile() {
   return (
     <div class="rounded-lg bg-textbg p-1">
       <div
-        class="flex flex-col items-center  gap-4 p-2 rounded-lg bg-background overflow-auto"
+        class="flex flex-col items-center  gap-4 overflow-auto rounded-lg bg-background p-2"
         id="f-dropzone"
         ondragleave={dragoverleave}
         ondragover={dragover}
         ondrop={drop}
       >
         <div class="flex flex-row gap-4 overflow-auto">
-          <span class="text-3xl font-bold hidden sm:block">
+          <span class="hidden text-3xl font-bold sm:block">
             Add <ImportantText>File</ImportantText>
           </span>
           <input
             type="text"
-            class="bg-transparent border-2 rounded-lg border-accent p-2 outline-none"
+            class="rounded-lg border-2 border-accent bg-transparent p-2 outline-none"
             value={name()}
             placeholder="Custom Name"
             oninput={(e) => setName(e.target.value)}
           />
           <input
             type="submit"
-            class="bg-transparent border-2 rounded-lg border-accent p-2 outline-none hover:text-accent hover:bg-background-accent"
+            class="rounded-lg border-2 border-accent bg-transparent p-2 outline-none hover:bg-background-accent hover:text-accent"
             value="Upload"
             onclick={submit}
           />
         </div>
-        <div class="flex flex-row gap-4 overflow-auto items-center">
+        <div class="flex flex-row items-center gap-4 overflow-auto">
           <input
             type="file"
-            class="bg-transparent border-2 rounded-lg border-accent p-2 outline-none hover:text-accent hover:bg-background-accent"
+            class="rounded-lg border-2 border-accent bg-transparent p-2 outline-none hover:bg-background-accent hover:text-accent"
             value={files().map((f) => f.name)}
             placeholder="File name"
             multiple

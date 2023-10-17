@@ -6,7 +6,7 @@ export function FileList(props: { files: F[]; old: Accessor<boolean> }) {
   return (
     <ul
       role="list"
-      class="grid grid-cols-[repeat(auto-fit,_minmax(35ch,_1fr))] gap-2 overflow-auto p-0 m-0"
+      class="m-0 grid grid-cols-[repeat(auto-fit,_minmax(35ch,_1fr))] gap-2 overflow-auto p-0"
     >
       <For each={props.files.filter((f) => props.old() || f.new)}>
         {(file) => <File file={file} />}
