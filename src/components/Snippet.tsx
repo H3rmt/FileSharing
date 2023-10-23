@@ -31,7 +31,7 @@ export function Snippet(props: { snippet: Snippet }) {
       tabindex="0"
       onclick={copy}
       class="relative flex min-h-[100px] cursor-pointer flex-col overflow-hidden text-ellipsis whitespace-nowrap rounded-lg border-2 border-border bg-cover p-3 
-      sm:hover:bg-background-accent sm:hover:text-accent focus:bg-background-accent focus:text-accent
+      focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent
       "
     >
       <h2 class="mb-1 text-3xl [text-shadow:_0_0_0.2em_#00000069]">

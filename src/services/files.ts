@@ -3,7 +3,7 @@ import type { File as F } from "../types/file";
 import { pb } from "./pocketpase";
 
 export async function getSize() {
-  return await pb.send("/size", {});
+  return await pb.send("/api/size", {});
 }
 
 export async function getFiles(): Promise<F[]> {

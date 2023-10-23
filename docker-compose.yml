@@ -5,5 +5,9 @@ services:
     restart: always
     ports:
       - "8080:80"
+    environment:
+      - ADMIN_PASSWORD=test
+      - ADMIN_EMAIL=admin@example.com
+      - USER_PASSWORD=test
     volumes:
       - ./pb_data:/pb_data

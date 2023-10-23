@@ -67,7 +67,7 @@ export function File(props: { file: File }) {
       rounded-lg border-2 border-border bg-cover 
       p-3 
       before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center before:blur-[2px] before:content-['']
-      sm:hover:bg-background-accent sm:hover:text-accent focus:bg-background-accent focus:text-accent"
+      focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
       style={`--img-background: ${displayURL}`}
     >
       <div class="absolute right-1 top-1 z-50 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">

@@ -6,11 +6,16 @@ import { NewFile } from "./NewFile";
 import { createResource, onMount, createSignal, ErrorBoundary } from "solid-js";
 import { NewSnippet } from "./NewSnippet";
 import { SnippetList } from "./SnippetList";
+import { loggedIn } from "src/services/pocketpase";
 
 export function Overview() {
   const [files, { refetch: refetchFiles }] = createResource(getFiles);
   const [snippets, { refetch: refetchSnippets }] = createResource(getSnippets);
   const [old, setOld] = createSignal(false);
+
+  if (!loggedIn()) {
+    window.location.href = "/login";
+  }
 
   onMount(async () => {
     await subscribeFiles((ev) => {
