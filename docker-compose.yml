@@ -10,4 +10,4 @@ services:
       - ADMIN_EMAIL=admin@example.com
       - USER_PASSWORD=test
     volumes:
-      - ./pb_data:/pb_data
+      - ./pb_data:/app/pb_data
