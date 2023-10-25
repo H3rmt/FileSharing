@@ -1,12 +1,13 @@
 version: "3.8"
 services:
   lfs:
-    image: h3rmt/localfilesharing
+    # image: h3rmt/localfilesharing
+    build: .
     restart: always
     ports:
       - "8080:80"
     environment:
-      - ADMIN_PASSWORD=test
+      - ADMIN_PASSWORD=testtest
       - ADMIN_EMAIL=admin@example.com
       - USER_PASSWORD=test
     volumes:

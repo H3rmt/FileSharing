@@ -1,14 +1,12 @@
 import { createSignal } from "solid-js";
 import { toast } from "../services/toast";
 import { login } from "src/services/login";
-import { loggedIn } from "src/services/pocketpase";
+import { checkLoginReverse } from "src/services/pocketpase";
 
 export function Login() {
   const [password, setPassword] = createSignal("");
 
-  if (loggedIn()) {
-    window.location.href = "/";
-  }
+  checkLoginReverse();
 
   const submit = async () => {
     console.log("new Login");

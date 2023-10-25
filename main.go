@@ -54,7 +54,7 @@ func main() {
 				return nil
 			})
 			return c.String(http.StatusOK, fmt.Sprint(totalSize))
-		}, apis.ActivityLogger(app), apis.RequireRecordAuth())
+		}, apis.ActivityLogger(app), apis.RequireAdminOrRecordAuth())
 
 		return nil
 	})
