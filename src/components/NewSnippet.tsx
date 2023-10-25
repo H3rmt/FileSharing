@@ -100,14 +100,14 @@ export function NewSnippet() {
           />
         </div>
         <div
-          data-replicated-value={snippet()}
-          class="grid max-h-[40dvh] w-full overflow-auto
-      after:invisible after:whitespace-pre-wrap after:p-1 after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2]"
+          data-replicated-value={snippet() + "\n"}
+          class="grid max-h-[40dvh] w-full overflow-auto after:p-2 after:text-lg
+      after:invisible after:whitespace-pre-wrap after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2]"
         >
           <textarea
             value={snippet()}
             placeholder="Snippet"
-            class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 [grid-area:1/1/2/2] 
+            class="resize-none text-lg overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 [grid-area:1/1/2/2] 
             focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
             onInput={(e) => {
               setSnippet(e.target.value);
