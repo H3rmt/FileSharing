@@ -37,7 +37,7 @@ export function Info(props: {
           focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
           onClick={() => props.setOld(!props.old())}
         >
-          {props.old() ? "Hide Old" : "Show Old"}
+          {props.old() ? "Show New" : "Show Old"}
         </button>
       </div>
     </div>

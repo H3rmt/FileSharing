@@ -7,7 +7,8 @@ export function NewSnippet() {
   const [name, setName] = createSignal("");
   const [snippet, setSnippet] = createSignal<string>("");
 
-  const submit = async () => {
+  const submit = async (e: SubmitEvent) => {
+    e.preventDefault()
     console.log("Submit new snippet");
 
     if (snippet() === "") {
@@ -71,12 +72,13 @@ export function NewSnippet() {
 
   return (
     <div class="rounded-lg bg-textbg p-1">
-      <div
+      <form
         class="flex flex-col items-center gap-4 overflow-auto rounded-lg bg-background p-2"
         id="s-dropzone"
         ondragleave={dragoverleave}
         ondragover={dragover}
         ondrop={drop}
+        onsubmit={submit}
       >
         <div class="flex flex-row gap-4 overflow-auto">
           <span class="hidden text-3xl font-bold sm:block">
@@ -95,7 +97,6 @@ export function NewSnippet() {
             class="rounded-lg border-2 border-border bg-transparent p-2
             focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
             value="Upload"
-            onclick={submit}
           />
         </div>
         <div
@@ -113,7 +114,7 @@ export function NewSnippet() {
             }}
           />
         </div>
-      </div>
+      </form>
     </div>
   );
 }

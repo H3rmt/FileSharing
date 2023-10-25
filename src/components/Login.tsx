@@ -8,7 +8,8 @@ export function Login() {
 
   checkLoginReverse();
 
-  const submit = async () => {
+  const submit = async (e: SubmitEvent) => {
+    e.preventDefault()
     console.log("new Login");
 
     if (password() === "") {
@@ -18,16 +19,18 @@ export function Login() {
 
     if (await login(password())) {
       toast("Login");
-      window.location.href = "/";
+      setTimeout(() => window.location.href = "/", 500)
     } else {
       toast("Login failed");
     }
   };
 
   return (
-    <div class="flex flex-row gap-4 overflow-auto">
+    <form class="flex flex-row gap-4 overflow-auto" onsubmit={submit}>
       <input
-        type="text"
+        autofocus
+        autocomplete="current-password"
+        type="password"
         class="rounded-lg border-2 border-border bg-transparent p-2
             focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
         value={password()}
@@ -38,9 +41,8 @@ export function Login() {
         type="submit"
         class="rounded-lg border-2 border-border bg-transparent p-2
             focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
-        value="Upload"
-        onclick={submit}
+        value="Login"
       />
-    </div>
+    </form>
   );
 }

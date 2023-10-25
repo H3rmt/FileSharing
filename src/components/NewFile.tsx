@@ -8,7 +8,8 @@ export function NewFile() {
   const [files, setFiles] = createSignal<File[]>([]);
   const [fileCount, setFileCount] = createSignal(0);
 
-  const submit = async () => {
+  const submit = async (e: SubmitEvent) => {
+    e.preventDefault()
     console.log("Submit new file");
 
     if ((files() ?? []).length === 0) {
@@ -81,12 +82,13 @@ export function NewFile() {
 
   return (
     <div class="rounded-lg bg-textbg p-1">
-      <div
+      <form
         class="flex flex-col items-center  gap-4 overflow-auto rounded-lg bg-background p-2"
         id="f-dropzone"
         ondragleave={dragoverleave}
         ondragover={dragover}
         ondrop={drop}
+        onsubmit={submit}
       >
         <div class="flex flex-row gap-4 overflow-auto">
           <span class="hidden text-3xl font-bold sm:block">
@@ -105,7 +107,6 @@ export function NewFile() {
             class="rounded-lg border-2 border-border bg-transparent p-2
             focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
             value="Upload"
-            onclick={submit}
           />
         </div>
         <div class="flex flex-row items-center gap-4 overflow-auto">
@@ -120,7 +121,7 @@ export function NewFile() {
           />
           <div class="count">{fileCount()}</div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

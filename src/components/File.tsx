@@ -64,8 +64,7 @@ export function File(props: { file: File }) {
       href={urls()?.length === 1 ? urls()?.[0] + "?download=1" ?? "" : ""}
       onclick={open}
       class="relative flex min-h-[100px] cursor-pointer flex-col overflow-hidden text-ellipsis whitespace-nowrap
-      rounded-lg border-2 border-border bg-cover 
-      p-3 
+      rounded-lg border-2 border-border bg-cover py-4 px-2
       before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center before:blur-[2px] before:content-['']
       focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
       style={`--img-background: ${displayURL}`}

@@ -22,8 +22,3 @@ export async function checkLoginReverse() {
     console.warn(e);
   }
 }
-
-// export function loggedIn() {
-//   console.log(pb.authStore.model);
-//   return pb.authStore.model ? true : false;
-// }
