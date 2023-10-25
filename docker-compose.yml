@@ -1,8 +1,7 @@
 version: "3.8"
 services:
   lfs:
-    # image: h3rmt/localfilesharing
-    build: .
+    image: h3rmt/localfilesharing
     restart: always
     ports:
       - "8080:80"
