@@ -59,7 +59,9 @@ func main() {
 		return nil
 	})
 
-	app.OnAfterBootstrap().Add(func(e *core.BootstrapEvent) error {
+	// app.OnAfterBootstrap().Add(func(e *core.BootstrapEvent) error {
+	// migrations were not applied yet
+	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
 		// create admin
 		admin_email, present := os.LookupEnv("ADMIN_EMAIL")
 		if !present {
