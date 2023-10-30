@@ -9,7 +9,7 @@ export function Login() {
   checkLoginReverse();
 
   const submit = async (e: SubmitEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log("new Login");
 
     if (password() === "") {
@@ -19,7 +19,7 @@ export function Login() {
 
     if (await login(password())) {
       toast("Login");
-      setTimeout(() => window.location.href = "/", 500)
+      setTimeout(() => (window.location.href = "/"), 500);
     } else {
       toast("Login failed");
     }

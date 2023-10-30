@@ -9,7 +9,7 @@ export function NewFile() {
   const [fileCount, setFileCount] = createSignal(0);
 
   const submit = async (e: SubmitEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log("Submit new file");
 
     if ((files() ?? []).length === 0) {
