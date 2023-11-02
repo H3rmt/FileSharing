@@ -9,8 +9,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/joho/godotenv"
-
 	_ "github.com/H3rmt/LocalFileSharing/migrations"
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
@@ -20,19 +18,40 @@ import (
 	"github.com/pocketbase/pocketbase/plugins/migratecmd"
 )
 
+const (
+	env_host = "HOST"
+	env_port = "PORT"
+
+	env_admin_email    = "ADMIN_EMAIL"
+	env_admin_password = "ADMIN_PASSWORD"
+	env_user_password  = "USER_PASSWORD"
+)
+
 const username = "generated-user"
 
 func main() {
-	godotenv.Load("../.env")
-
 	app := pocketbase.New()
 
-	isGoRun := strings.HasPrefix(os.Args[0], os.TempDir())
+	// run if serve command is executed
+	if len(os.Args) > 1 && os.Args[1] == "serve" {
+		host, present := os.LookupEnv(env_host)
+		if !present {
+			host = "0.0.0.0"
+			fmt.Printf("missing %s env, using '%s'\n", env_host, host)
+		}
+		port, present := os.LookupEnv(env_port)
+		if !present {
+			port = "80"
+			fmt.Printf("missing %s env, using '%s'\n", env_port, port)
+		}
+
+		os.Args = append(os.Args, fmt.Sprintf("--http=%s:%s", host, port))
+	}
 
 	migratecmd.MustRegister(app, app.RootCmd, migratecmd.Config{
 		// enable auto creation of migration files when making collection changes in the Admin UI
 		// (the isGoRun check is to enable it only during development)
-		Automigrate: isGoRun,
+		Automigrate: strings.HasPrefix(os.Args[0], os.TempDir()),
 	})
 
 	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
@@ -63,18 +82,18 @@ func main() {
 	// migrations were not applied yet
 	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
 		// create admin
-		admin_email, present := os.LookupEnv("ADMIN_EMAIL")
+		admin_email, present := os.LookupEnv(env_admin_email)
 		if !present {
 			admin_email = "admin@example.com"
-			fmt.Println("missing ADMIN_EMAIL env, using 'admin@example.com'")
+			fmt.Printf("missing %s env, using '%s'\n", env_admin_email, admin_email)
 		}
-		admin_passwd, present := os.LookupEnv("ADMIN_PASSWORD")
+		admin_passwd, present := os.LookupEnv(env_admin_password)
 		if !present {
-			return fmt.Errorf("ADMIN_PASSWORD env not set")
+			return fmt.Errorf("%s env not set", env_admin_password)
 		}
-		user_passwd, present := os.LookupEnv("USER_PASSWORD")
+		user_passwd, present := os.LookupEnv(env_user_password)
 		if !present {
-			return fmt.Errorf("USER_PASSWORD env not set")
+			return fmt.Errorf("%s env not set", env_user_password)
 		}
 
 		old_admin, _ := e.App.Dao().FindAdminByEmail(admin_email)

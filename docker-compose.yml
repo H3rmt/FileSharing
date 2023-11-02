@@ -7,6 +7,8 @@ services:
     ports:
       - "8080:80"
     environment:
+      - HOST:0.0.0.0
+      - PORT:80
       - ADMIN_PASSWORD=testtest
       - ADMIN_EMAIL=admin@example.com
       - USER_PASSWORD=test
