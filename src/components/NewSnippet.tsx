@@ -80,7 +80,7 @@ export function NewSnippet() {
         ondrop={drop}
         onsubmit={submit}
       >
-        <div class="flex flex-row gap-4">
+        <div class="flex flex-row items-center gap-4">
           <span class="hidden text-3xl font-bold sm:block">
             Add <ImportantText>Snippet</ImportantText>
           </span>

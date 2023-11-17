@@ -83,14 +83,14 @@ export function NewFile() {
   return (
     <div class="rounded-lg bg-textbg p-1">
       <form
-        class="flex flex-col items-center  gap-4 overflow-auto rounded-lg bg-background p-2"
+        class="flex flex-col items-center gap-4 overflow-auto rounded-lg bg-background p-2"
         id="f-dropzone"
         ondragleave={dragoverleave}
         ondragover={dragover}
         ondrop={drop}
         onsubmit={submit}
       >
-        <div class="flex flex-row gap-4">
+        <div class="flex flex-row items-center gap-4">
           <span class="hidden text-3xl font-bold sm:block">
             Add <ImportantText>File</ImportantText>
           </span>

@@ -71,7 +71,7 @@ export function File(props: { file: File }) {
       style={`--img-background: ${displayURL}`}
     >
       <div class="absolute right-1 top-1 z-50 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
-        {new Date(props.file.created).toLocaleString()}
+        {new Date(props.file.created).toLocaleString("de-DE")}
         <button
           class="cursor-pointer rounded-lg border-2 border-dashed border-border p-1 focus-visible:outline-dotted
           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent"
