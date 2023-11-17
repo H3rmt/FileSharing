@@ -6,9 +6,16 @@ export const toast = (message: string) => {
   Toastify({
     text: message,
     duration: 3000,
-    close: true,
+    close: false,
     gravity: "bottom",
-    position: "right",
+    position: "center",
     stopOnFocus: true,
+    style: {
+      background: "transparent",
+      "border-radius": "0.5rem",
+      border: "solid",
+      "border-width": "2px",
+      "border-color": "hsl(var(--border))",
+    },
   }).showToast();
 };

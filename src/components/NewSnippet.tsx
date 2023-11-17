@@ -73,21 +73,22 @@ export function NewSnippet() {
   return (
     <div class="rounded-lg bg-textbg p-1">
       <form
-        class="flex flex-col items-center gap-4 overflow-auto rounded-lg bg-background p-2"
+        class="flex flex-col items-center gap-4 rounded-lg bg-background p-2"
         id="s-dropzone"
         ondragleave={dragoverleave}
         ondragover={dragover}
         ondrop={drop}
         onsubmit={submit}
       >
-        <div class="flex flex-row gap-4 overflow-auto">
+        <div class="flex flex-row gap-4">
           <span class="hidden text-3xl font-bold sm:block">
             Add <ImportantText>Snippet</ImportantText>
           </span>
           <input
             type="text"
             class="rounded-lg border-2 border-border bg-transparent p-2
-            focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
+            focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+            focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             value={name()}
             placeholder="Custom Name"
             oninput={(e) => setName(e.target.value)}
@@ -95,20 +96,22 @@ export function NewSnippet() {
           <input
             type="submit"
             class="rounded-lg border-2 border-border bg-transparent p-2
-            focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
+            focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+            focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             value="Upload"
           />
         </div>
         <div
           data-replicated-value={snippet() + "\n"}
-          class="grid max-h-[40dvh] w-full overflow-auto after:invisible after:whitespace-pre-wrap
+          class="grid max-h-[40dvh] w-full after:invisible after:whitespace-pre-wrap
       after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2]"
         >
           <textarea
             value={snippet()}
             placeholder="Snippet"
             class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg [grid-area:1/1/2/2] 
-            focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
+            focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+            focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             onInput={(e) => {
               setSnippet(e.target.value);
             }}

@@ -34,7 +34,8 @@ export function Info(props: {
         </p>
         <button
           class="rounded-lg border-2 border-border bg-transparent p-2
-          focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
+          focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+          focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
           onClick={() => props.setOld(!props.old())}
         >
           {props.old() ? "Show New" : "Show Old"}

@@ -66,17 +66,19 @@ export function File(props: { file: File }) {
       class="relative flex min-h-[100px] cursor-pointer flex-col overflow-hidden text-ellipsis whitespace-nowrap
       rounded-lg border-2 border-border bg-cover px-2 py-4
       before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center before:blur-[2px] before:content-['']
-      focus:bg-background-accent focus:text-accent sm:hover:bg-background-accent sm:hover:text-accent"
+      focus-within:bg-background-accent focus-within:text-accent focus-visible:outline-dotted focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
       style={`--img-background: ${displayURL}`}
     >
       <div class="absolute right-1 top-1 z-50 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
         {new Date(props.file.created).toLocaleString()}
-        <div
-          class="cursor-pointer rounded-lg border-2 border-dashed border-border p-1 sm:hover:bg-background-accent"
+        <button
+          class="cursor-pointer rounded-lg border-2 border-dashed border-border p-1 focus-visible:outline-dotted
+          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent"
           onclick={props.file.new ? close : remove}
         >
           X
-        </div>
+        </button>
       </div>
       <h2 class="mb-1 text-3xl [text-shadow:_0_0_0.2em_#00000069]">
         {props.file.name}
