@@ -9,7 +9,7 @@ export function FileList(props: { files: F[]; old: Accessor<boolean> }) {
       class="m-0 grid grid-cols-[repeat(auto-fit,_minmax(35ch,_1fr))] gap-2 p-0"
     >
       <For each={props.files.filter((f) => props.old() || f.new)}>
-        {(file) => <File file={file} />}
+        {(file) => <File file={file} viewOld={props.old} />}
       </For>
     </ul>
   );

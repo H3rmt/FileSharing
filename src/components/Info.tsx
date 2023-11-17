@@ -32,13 +32,29 @@ export function Info(props: {
           <ImportantText>{props.snippets.length}</ImportantText> snippets are
           stored in total.
         </p>
+        <div class="hidden">
+          <a target="_blank" href="https://icons8.com/icon/99961/delete">
+            Delete
+          </a>{" "}
+          icon by{" "}
+          <a target="_blank" href="https://icons8.com">
+            Icons8
+          </a>
+          <a target="_blank" href="https://icons8.com/icon/CEuLWmn45H5H/share">
+            Share
+          </a>{" "}
+          icon by{" "}
+          <a target="_blank" href="https://icons8.com">
+            Icons8
+          </a>
+        </div>
         <button
           class="rounded-lg border-2 border-border bg-transparent p-2
-          focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+          focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
           focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
           onClick={() => props.setOld(!props.old())}
         >
-          {props.old() ? "Show New" : "Show Old"}
+          {props.old() ? "Hide Old" : "Show Old"}
         </button>
       </div>
     </div>

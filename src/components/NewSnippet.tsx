@@ -87,7 +87,7 @@ export function NewSnippet() {
           <input
             type="text"
             class="rounded-lg border-2 border-border bg-transparent p-2
-            focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
             focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             value={name()}
             placeholder="Custom Name"
@@ -96,7 +96,7 @@ export function NewSnippet() {
           <input
             type="submit"
             class="rounded-lg border-2 border-border bg-transparent p-2
-            focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
             focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             value="Upload"
           />
@@ -110,7 +110,7 @@ export function NewSnippet() {
             value={snippet()}
             placeholder="Snippet"
             class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg [grid-area:1/1/2/2] 
-            focus:bg-background-accent focus:text-accent focus-visible:outline-dotted focus-visible:outline-2
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
             focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             onInput={(e) => {
               setSnippet(e.target.value);
