@@ -8,7 +8,7 @@ import { NewSnippet } from "./NewSnippet";
 import { SnippetList } from "./SnippetList";
 import { checkLogin } from "src/services/pocketpase";
 
-export function Overview() {
+export default function Overview() {
   const [files, { refetch: refetchFiles }] = createResource(getFiles);
   const [snippets, { refetch: refetchSnippets }] = createResource(getSnippets);
   const [old, setOld] = createSignal(false);

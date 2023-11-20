@@ -3,7 +3,7 @@ import { toast } from "../services/toast";
 import { login } from "src/services/login";
 import { checkLoginReverse } from "src/services/pocketpase";
 
-export function Login() {
+export default function Login() {
   const [password, setPassword] = createSignal("");
 
   checkLoginReverse();

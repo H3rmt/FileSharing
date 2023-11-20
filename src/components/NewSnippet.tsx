@@ -72,52 +72,51 @@ export function NewSnippet() {
 
   return (
     <div class="rounded-lg bg-textbg p-1">
-      <form
-        class="flex flex-col items-center gap-4 rounded-lg bg-background p-2"
-        id="s-dropzone"
-        ondragleave={dragoverleave}
-        ondragover={dragover}
-        ondrop={drop}
-        onsubmit={submit}
-      >
-        <div class="flex flex-row items-center gap-4">
-          <span class="hidden text-3xl font-bold sm:block">
-            Add <ImportantText>Snippet</ImportantText>
+      <div class="flex justify-center overflow-auto rounded-lg bg-background">
+        <form
+          class="grid w-fit grid-cols-[1fr_auto] grid-rows-[1fr_1fr_auto] gap-4 p-2 sm:grid-cols-[auto_1fr_auto] sm:grid-rows-[1fr_auto]"
+          id="s-dropzone"
+          ondragleave={dragoverleave}
+          ondragover={dragover}
+          ondrop={drop}
+          onsubmit={submit}
+        >
+          <span class="col-span-2 flex w-full items-center justify-center text-3xl font-bold sm:col-span-1">
+            Add&nbsp;<ImportantText>Snippet</ImportantText>
           </span>
           <input
             type="text"
-            class="rounded-lg border-2 border-border bg-transparent p-2
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+            class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
+              focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
+              focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             value={name()}
             placeholder="Custom Name"
             oninput={(e) => setName(e.target.value)}
           />
           <input
             type="submit"
-            class="rounded-lg border-2 border-border bg-transparent p-2
+            class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
             focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
             focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
             value="Upload"
           />
-        </div>
-        <div
-          data-replicated-value={snippet() + "\n"}
-          class="grid max-h-[40dvh] w-full after:invisible after:whitespace-pre-wrap
-      after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2]"
-        >
-          <textarea
-            value={snippet()}
-            placeholder="Snippet"
-            class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg [grid-area:1/1/2/2] 
+          <div
+            data-replicated-value={snippet() + "\n"}
+            class="col-span-2 grid max-h-[40dvh] w-full after:invisible after:whitespace-pre-wrap after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2] sm:col-span-3"
+          >
+            <textarea
+              value={snippet()}
+              placeholder="Snippet"
+              class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg [grid-area:1/1/2/2] 
             focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
             focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
-            onInput={(e) => {
-              setSnippet(e.target.value);
-            }}
-          />
-        </div>
-      </form>
+              onInput={(e) => {
+                setSnippet(e.target.value);
+              }}
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

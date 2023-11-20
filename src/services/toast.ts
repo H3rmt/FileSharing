@@ -5,15 +5,16 @@ import Toastify from "toastify-js";
 export const toast = (message: string) => {
   Toastify({
     text: message,
-    duration: 3000,
+    duration: 3500,
     close: false,
     gravity: "bottom",
     position: "center",
     stopOnFocus: true,
     style: {
-      background: "hsl(var(--background))",
+      background: "hsl(var(--toast-background))",
       "border-radius": "0.5rem",
-      border: "solid",
+      border: "dotted",
+      color: "black",
       "border-width": "2px",
       "border-color": "hsl(var(--border))",
     },

@@ -1,12 +1,27 @@
 import { removeSnippet, unmarkSnippet } from "src/services/snippets";
 import type { Snippet } from "../types/file";
+import sha from "../../public/icons8-share.svg?raw";
+import hid from "../../public/hide-svgrepo-com.svg?raw";
+import del from "../../public/icons8-delete.svg?raw";
+import { toast } from "src/services/toast";
+import type { Accessor } from "solid-js";
 
-export function Snippet(props: { snippet: Snippet }) {
-  const close = async (e: Event) => {
+export default function Snippet(props: {
+  snippet: Snippet;
+  viewOld: Accessor<boolean>;
+}) {
+  const share = async (e: Event) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("Close snippet", props.snippet);
+    toast("Not implemented yet");
+  };
+
+  const hide = async (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("Hide snippet", props.snippet);
     await unmarkSnippet(props.snippet);
+    toast("Snippet hidden");
   };
 
   const remove = async (e: Event) => {
@@ -25,31 +40,67 @@ export function Snippet(props: { snippet: Snippet }) {
     await unmarkSnippet(props.snippet);
   };
 
-  // removed mix-blend-difference, caused weird coloring on white mode
   return (
     <div
       tabindex="0"
       onclick={copy}
-      class="relative flex min-h-[100px] cursor-pointer flex-col overflow-hidden text-ellipsis whitespace-nowrap rounded-lg border-2 border-border bg-cover p-3 
+      class="relative flex min-h-[180px] cursor-pointer flex-col justify-between text-ellipsis whitespace-nowrap rounded-lg border-2 border-border 
       focus-within:bg-background-accent focus-visible:outline-dotted focus-visible:outline-2 
       focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent"
     >
-      <h2 class="mb-1 text-3xl [text-shadow:_0_0_0.2em_#00000069]">
-        {props.snippet.name}
-      </h2>
-      <div class="absolute right-1 top-1 z-50 flex items-start gap-3 rounded-lg font-bold [text-shadow:_0_0_0.2em_#00000069]">
-        <div>{new Date(props.snippet.created).toLocaleString("de-DE")}</div>
-        <button
-          class="cursor-pointer rounded-lg border-2 border-dashed border-border p-1 focus-visible:outline-dotted
-          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent"
-          onclick={props.snippet.new ? close : remove}
-        >
-          X
-        </button>
+      <div class="mx-2 overflow-auto py-2 text-center">
+        <h2 class="text-3xl font-semibold [text-shadow:_0_0_0.2em_#00000069]">
+          {props.snippet.name}
+        </h2>
       </div>
-      <pre class="max-h-[40dvh] overflow-auto whitespace-pre text-text">
-        {props.snippet.text}
-      </pre>
+      <div class="mx-2 overflow-auto py-2 text-center">
+        <pre class="max-h-[40dvh] overflow-auto whitespace-pre text-text">
+          {props.snippet.text}
+        </pre>
+      </div>
+      <div class="flex flex-row justify-between">
+        <button
+          class="h-14 w-14 rounded-bl-lg rounded-tr-lg border-r-2 border-t-2 border-border bg-background bg-cover fill-text
+          focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
+          focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
+          onClick={share}
+        >
+          <div
+            class="m-auto grid h-10 w-10 place-items-center"
+            innerHTML={sha}
+          ></div>
+        </button>
+        <span class="flex flex-col items-center gap-0 self-center text-base sm:flex-row sm:gap-2">
+          <span class="[text-shadow:_0_0_0.2em_#00000069]">
+            {new Date(props.snippet.created).toLocaleString("de-DE")}
+          </span>
+        </span>
+        {props.viewOld() ? (
+          <button
+            class="h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
+          focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
+          focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
+            onClick={remove}
+          >
+            <div
+              class="m-auto grid h-10 w-10 place-items-center"
+              innerHTML={del}
+            ></div>
+          </button>
+        ) : (
+          <button
+            class="h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
+          focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
+          focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
+            onClick={hide}
+          >
+            <div
+              class="m-auto grid h-10 w-10 place-items-center"
+              innerHTML={hid}
+            ></div>
+          </button>
+        )}
+      </div>
     </div>
   );
 }
