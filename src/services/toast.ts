@@ -5,7 +5,7 @@ import Toastify from "toastify-js";
 export const toast = (message: string) => {
   Toastify({
     text: message,
-    duration: 3000,
+    duration: 3500,
     close: false,
     gravity: "bottom",
     position: "center",

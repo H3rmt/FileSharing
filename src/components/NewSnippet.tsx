@@ -73,7 +73,7 @@ export function NewSnippet() {
   return (
     <div class="rounded-lg bg-textbg p-1">
       <form
-        class="flex flex-col items-center gap-4 rounded-lg bg-background p-2"
+        class="flex flex-col items-center gap-4 overflow-auto rounded-lg bg-background p-2"
         id="s-dropzone"
         ondragleave={dragoverleave}
         ondragover={dragover}
