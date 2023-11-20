@@ -94,7 +94,7 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
       download={props.file.name}
       href=""
       onclick={download}
-      class="relative flex min-h-[180px] cursor-pointer flex-col justify-between overflow-hidden text-ellipsis
+      class="relative flex min-h-[180px] cursor-pointer flex-col justify-between text-ellipsis
       whitespace-nowrap rounded-lg border-2 border-border bg-cover
       before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center before:blur-[1px] before:content-['']
       focus-within:bg-background-accent focus-visible:outline-dotted focus-visible:outline-2
@@ -108,7 +108,7 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
       </div>
       <div class="flex flex-row justify-between">
         <button
-          class="h-14 w-14 rounded-tr-lg border-r-2 border-t-2 border-border bg-background bg-cover fill-text
+          class="h-14 w-14 rounded-bl-lg rounded-tr-lg border-r-2 border-t-2 border-border bg-background bg-cover fill-text
           focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
           focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
           onClick={share}
@@ -130,7 +130,7 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
         </span>
         {props.viewOld() ? (
           <button
-            class="h-14 w-14 rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
+            class="h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
           focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
           focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
             onClick={remove}
@@ -142,7 +142,7 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
           </button>
         ) : (
           <button
-            class="h-14 w-14 rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
+            class="h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
           focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
           focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
             onClick={hide}

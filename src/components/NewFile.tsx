@@ -84,7 +84,7 @@ export function NewFile() {
     <div class="rounded-lg bg-textbg p-1">
       <div class="flex justify-center overflow-auto rounded-lg bg-background">
         <form
-          class="grid w-fit grid-cols-[1fr_auto] grid-rows-3 p-2 gap-4 sm:grid-cols-[auto_1fr_auto] sm:grid-rows-2"
+          class="grid w-fit grid-cols-[1fr_auto] grid-rows-3 gap-4 p-2 sm:grid-cols-[auto_1fr_auto] sm:grid-rows-2"
           id="f-dropzone"
           ondragleave={dragoverleave}
           ondragover={dragover}
