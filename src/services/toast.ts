@@ -11,9 +11,10 @@ export const toast = (message: string) => {
     position: "center",
     stopOnFocus: true,
     style: {
-      background: "hsl(var(--background))",
+      background: "hsl(var(--toast-background))",
       "border-radius": "0.5rem",
-      border: "solid",
+      border: "dotted",
+      color: "black",
       "border-width": "2px",
       "border-color": "hsl(var(--border))",
     },
