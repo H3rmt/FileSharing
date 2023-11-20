@@ -101,7 +101,7 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
       focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent"
       style={`--img-background: ${displayURL}`}
     >
-      <div class="mx-2 overflow-auto py-1 text-center">
+      <div class="mx-2 overflow-auto py-2 text-center">
         <h2 class="text-3xl font-semibold [text-shadow:_0_0_0.2em_#00000069]">
           {props.file.name}
         </h2>
@@ -118,10 +118,15 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
             innerHTML={sha}
           ></div>
         </button>
-        <span class="self-center text-base [text-shadow:_0_0_0.2em_#00000069]">
-          {new Date(props.file.created).toLocaleString("de-DE")}
-          &nbsp;&nbsp;&nbsp;
-          {props.file.file.length > 1 ? props.file.file.length + " Files" : ""}
+        <span class="flex flex-col items-center gap-0 self-center text-base sm:flex-row sm:gap-2">
+          <span class="[text-shadow:_0_0_0.2em_#00000069]">
+            {new Date(props.file.created).toLocaleString("de-DE")}
+          </span>
+          <span class="[text-shadow:_0_0_0.2em_#00000069]">
+            {props.file.file.length > 1
+              ? props.file.file.length + " Files"
+              : ""}
+          </span>
         </span>
         {props.viewOld() ? (
           <button
