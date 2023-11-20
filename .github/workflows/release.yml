@@ -39,6 +39,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.TOKEN }}
+      - name: Populate info.json
+        run: |
+          jq -n --arg version "${{ github.ref }}" --arg commit "${{ github.sha }}" --arg date "$(date -u +%FT%TZ)" '{ version: $version, commit: $commit, date: $date }' > info.json
       - name: Build and push by digest
         id: build
         uses: docker/build-push-action@v5
