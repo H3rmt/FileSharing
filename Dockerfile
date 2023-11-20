@@ -16,6 +16,7 @@ RUN pnpm install
 COPY astro.config.mjs tailwind.config.cjs tsconfig.json ./
 COPY public/ ./public
 COPY src/ ./src
+COPY info.json ./info.json
 RUN pnpm build
 
 FROM alpine:latest AS release
