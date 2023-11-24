@@ -28,7 +28,7 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
   ) {
     displayURL = "url(" + getFileUrl(props.file, firstFile, true) + ")";
   } else {
-    displayURL = "var(--textbg)";
+    displayURL = "var(--file-empty-bg)";
   }
 
   const share = async (e: Event) => {
@@ -98,11 +98,11 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
       whitespace-nowrap rounded-lg border-2 border-border bg-cover
       before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-img-background before:bg-cover before:bg-center before:blur-[1px] before:content-['']
       focus-within:bg-background-accent focus-visible:outline-dotted focus-visible:outline-2
-      focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent"
+      focus-visible:outline-offset-2 focus-visible:outline-text sm:hover:bg-background-accent"
       style={`--img-background: ${displayURL}`}
     >
       <div class="mx-2 overflow-auto py-2 text-center">
-        <h2 class="text-3xl font-semibold [text-shadow:_0_0_0.2em_#00000069]">
+        <h2 class="text-3xl font-semibold text-white mix-blend-difference [text-shadow:_0_0_0.2em_#00000069]">
           {props.file.name}
         </h2>
       </div>
@@ -119,10 +119,10 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
           ></div>
         </button>
         <span class="flex flex-col items-center gap-0 self-center text-base sm:flex-row sm:gap-2">
-          <span class="[text-shadow:_0_0_0.2em_#00000069]">
+          <span class="text-white mix-blend-difference [text-shadow:_0_0_0.2em_#00000069]">
             {new Date(props.file.created).toLocaleString("de-DE")}
           </span>
-          <span class="[text-shadow:_0_0_0.2em_#00000069]">
+          <span class="text-white mix-blend-difference [text-shadow:_0_0_0.2em_#00000069]">
             {props.file.file.length > 1
               ? props.file.file.length + " Files"
               : ""}
