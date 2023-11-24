@@ -39,7 +39,8 @@ export function NewSnippet() {
   const drop = async (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("s-dropzone")?.classList.remove("bg-transparent");
+    document.getElementById("s-dropzone")?.classList.remove("bg-textbg");
+    hovering = 0
 
     console.log("Drop", e.dataTransfer?.files[0]);
 
@@ -59,15 +60,25 @@ export function NewSnippet() {
     reader.readAsText(file);
   };
 
+  let hovering = 0 // 0 = false, 1 = true, 2 = false but delayed
+
   const dragover = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("s-dropzone")?.classList.add("bg-transparent");
+    document.getElementById("s-dropzone")?.classList.add("bg-textbg");
+    hovering = 1
   };
   const dragoverleave = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("s-dropzone")?.classList.remove("bg-transparent");
+
+    hovering = 2
+    setTimeout(() => {
+      if (hovering === 2) {
+        document.getElementById("s-dropzone")?.classList.remove("bg-textbg");
+        hovering = 0
+      }
+    }, 200)
   };
 
   return (

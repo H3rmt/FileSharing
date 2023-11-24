@@ -49,21 +49,30 @@ export function NewFile() {
   const drop = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("f-dropzone")?.classList.remove("bg-transparent");
+    document.getElementById("f-dropzone")?.classList.remove("bg-textbg");
 
     console.log("Drop", e.dataTransfer?.files);
     addFiles(e.dataTransfer?.files ?? null);
   };
 
+  let hovering = 0 // 0 = false, 1 = true, 2 = false but delayed
+
   const dragover = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("f-dropzone")?.classList.add("bg-transparent");
+    document.getElementById("f-dropzone")?.classList.add("bg-textbg");
+    hovering = 1
   };
   const dragoverleave = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("f-dropzone")?.classList.remove("bg-transparent");
+    hovering = 2
+    setTimeout(() => {
+      if (hovering === 2) {
+        document.getElementById("f-dropzone")?.classList.remove("bg-textbg");
+        hovering = 0
+      }
+    }, 200)
   };
 
   const input = (e: Event) => {
