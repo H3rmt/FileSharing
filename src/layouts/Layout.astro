@@ -44,6 +44,7 @@ const { title } = Astro.props;
       rgba(205, 0, 142, 15) 40%,
       rgba(161, 12, 181, 1) 85%
     );
+    --file-empty-bg: var(--background);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -60,6 +61,7 @@ const { title } = Astro.props;
         rgba(205, 0, 142, 15) 40%,
         rgba(161, 12, 181, 1) 85%
       );
+      --file-empty-bg: var(--textbg);
     }
   }
 </style>

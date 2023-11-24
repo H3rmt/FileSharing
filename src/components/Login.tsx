@@ -2,6 +2,7 @@ import { createSignal } from "solid-js";
 import { toast } from "../services/toast";
 import { login } from "src/services/login";
 import { checkLoginReverse } from "src/services/pocketpase";
+import ImportantText from "./importantText";
 
 export default function Login() {
   const [password, setPassword] = createSignal("");
@@ -26,23 +27,29 @@ export default function Login() {
   };
 
   return (
-    <form class="flex flex-row gap-4" onsubmit={submit}>
+    <form
+      class="grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] gap-4 p-2"
+      onsubmit={submit}
+    >
+      <span class="col-span-2 flex w-full items-center justify-center text-3xl font-bold">
+        <ImportantText>Login</ImportantText>
+      </span>
       <input
         autofocus
         autocomplete="current-password"
         type="password"
-        class="rounded-lg border-2 border-border bg-transparent p-2
-        focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
-            focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+        class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
+              focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
+              focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
         value={password()}
         placeholder="Password"
         oninput={(e) => setPassword(e.target.value)}
       />
       <input
         type="submit"
-        class="rounded-lg border-2 border-border bg-transparent p-2
-        focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
-            focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+        class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent 
+            focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
+             focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
         value="Login"
       />
     </form>

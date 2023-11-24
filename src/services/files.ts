@@ -27,7 +27,7 @@ export function getFileUrl(
   name: string,
   crop: boolean = false,
 ): string {
-  return pb.files.getUrl(file, name, crop ? { thumb: "300x180" } : {});
+  return pb.files.getUrl(file, name, crop ? { thumb: "200x180" } : {});
 }
 
 export async function uploadFile(data: FormData): Promise<void> {
