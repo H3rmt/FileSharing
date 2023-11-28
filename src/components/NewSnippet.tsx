@@ -20,8 +20,15 @@ export function NewSnippet() {
       return;
     }
 
-    if (await isDuplicateSnippet(name())) {
-      if (!confirm("Snippet already exists. Do you want to upload it?")) return;
+    try {
+      if (await isDuplicateSnippet(name())) {
+        if (!confirm("Snippet with same name already exists. Upload anyway?"))
+          return;
+      }
+    } catch (e) {
+      console.error(e)
+      toast("Error checking for duplicate snippet")
+      return
     }
 
     const formData = new FormData();
@@ -32,8 +39,15 @@ export function NewSnippet() {
     setName("");
     setSnippet("");
 
-    await uploadSnippet(formData);
-    toast("Hochgeladen");
+    toast("Uploading");
+    try {
+      await uploadSnippet(formData);
+    } catch (e) {
+      console.error(e)
+      toast("Error uploading snippet")
+      return
+    }
+    toast("Upload finished");
   };
 
   const drop = async (e: DragEvent) => {

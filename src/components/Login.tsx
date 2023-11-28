@@ -19,7 +19,7 @@ export default function Login() {
     }
 
     if (await login(password())) {
-      toast("Login");
+      toast("Login successful");
       setTimeout(() => (window.location.href = "/"), 500);
     } else {
       toast("Login failed");

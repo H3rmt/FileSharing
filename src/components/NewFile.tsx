@@ -21,13 +21,19 @@ export function NewFile() {
       return;
     }
 
-    if (await isDuplicateFile(name())) {
-      if (
-        !confirm(
-          "File/Files with same name already exists. Do you want to upload it?",
+    try {
+      if (await isDuplicateFile(name())) {
+        if (
+          !confirm(
+            "File/Files with same name already exists. Upload anyway?",
+          )
         )
-      )
-        return;
+          return;
+      }
+    } catch (e) {
+      console.error(e)
+      toast("Error checking for duplicate file")
+      return
     }
 
     const formData = new FormData();
@@ -42,8 +48,15 @@ export function NewFile() {
     setFiles([]);
     setFileCount(0);
 
-    await uploadFile(formData);
-    toast("Hochgeladen");
+    toast("Uploading");
+    try {
+      await uploadFile(formData);
+    } catch (e) {
+      console.error(e)
+      toast("Error uploading file")
+      return
+    }
+    toast("Upload finished");
   };
 
   const drop = (e: DragEvent) => {
