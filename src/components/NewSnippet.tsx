@@ -126,20 +126,22 @@ export function NewSnippet() {
             focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value="Upload"
             />
-            <div
-              data-replicated-value={snippet() + "\n"}
-              class="overflow-auto whitespace-pre text-text col-span-2 grid max-h-[40dvh] w-full after:invisible after:whitespace-pre-wrap after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2] sm:col-span-3"
-            >
-              <textarea
-                value={snippet()}
-                placeholder="Snippet"
-                class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg [grid-area:1/1/2/2] 
+            <div class="col-span-2 max-h-[40dvh] w-full overflow-auto p-1 sm:col-span-3">
+              <div
+                data-replicated-value={snippet() + "\n"}
+                class="grid whitespace-pre after:invisible after:whitespace-pre-wrap after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2] "
+              >
+                <textarea
+                  value={snippet()}
+                  placeholder="Snippet"
+                  class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg text-text [grid-area:1/1/2/2] 
             focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
             focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
-                onInput={(e) => {
-                  setSnippet(e.target.value);
-                }}
-              />
+                  onInput={(e) => {
+                    setSnippet(e.target.value);
+                  }}
+                />
+              </div>
             </div>
           </form>
         </div>
