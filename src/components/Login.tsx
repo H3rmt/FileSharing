@@ -39,8 +39,8 @@ export default function Login() {
         autocomplete="current-password"
         type="password"
         class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-              focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
-              focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+              focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+              focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
         value={password()}
         placeholder="Password"
         oninput={(e) => setPassword(e.target.value)}
@@ -48,8 +48,8 @@ export default function Login() {
       <input
         type="submit"
         class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent 
-            focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
-             focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+            focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+            focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
         value="Login"
       />
     </form>

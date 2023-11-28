@@ -26,9 +26,9 @@ export function NewSnippet() {
           return;
       }
     } catch (e) {
-      console.error(e)
-      toast("Error checking for duplicate snippet")
-      return
+      console.error(e);
+      toast("Error checking for duplicate snippet");
+      return;
     }
 
     const formData = new FormData();
@@ -43,9 +43,9 @@ export function NewSnippet() {
     try {
       await uploadSnippet(formData);
     } catch (e) {
-      console.error(e)
-      toast("Error uploading snippet")
-      return
+      console.error(e);
+      toast("Error uploading snippet");
+      return;
     }
     toast("Upload finished");
   };
@@ -54,7 +54,7 @@ export function NewSnippet() {
     e.preventDefault();
     e.stopPropagation();
     document.getElementById("s-dropzone")?.classList.remove("bg-textbg");
-    hovering = 0
+    hovering = 0;
 
     console.log("Drop", e.dataTransfer?.files[0]);
 
@@ -74,31 +74,31 @@ export function NewSnippet() {
     reader.readAsText(file);
   };
 
-  let hovering = 0 // 0 = false, 1 = true, 2 = false but delayed
+  let hovering = 0; // 0 = false, 1 = true, 2 = false but delayed
 
   const dragover = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
     document.getElementById("s-dropzone")?.classList.add("bg-textbg");
-    hovering = 1
+    hovering = 1;
   };
   const dragoverleave = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
-    hovering = 2
+    hovering = 2;
     setTimeout(() => {
       if (hovering === 2) {
         document.getElementById("s-dropzone")?.classList.remove("bg-textbg");
-        hovering = 0
+        hovering = 0;
       }
-    }, 200)
+    }, 200);
   };
 
   return (
     <div class="flex justify-center">
       <div class="rounded-lg bg-textbg p-1">
-        <div class="flex justify-center overflow-auto rounded-lg bg-background">
+        <div class="flex justify-center overflow-auto rounded-lg bg-background p-1">
           <form
             class="grid w-fit grid-cols-[1fr_auto] grid-rows-[1fr_1fr_auto] gap-4 p-2 sm:grid-cols-[auto_1fr_auto] sm:grid-rows-[1fr_auto]"
             id="s-dropzone"
@@ -113,8 +113,8 @@ export function NewSnippet() {
             <input
               type="text"
               class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-              focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
-              focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+              focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+              focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value={name()}
               placeholder="Custom Name"
               oninput={(e) => setName(e.target.value)}
@@ -122,20 +122,20 @@ export function NewSnippet() {
             <input
               type="submit"
               class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
+            focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value="Upload"
             />
             <div
               data-replicated-value={snippet() + "\n"}
-              class="col-span-2 grid max-h-[40dvh] w-full after:invisible after:whitespace-pre-wrap after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2] sm:col-span-3"
+              class="overflow-auto whitespace-pre text-text col-span-2 grid max-h-[40dvh] w-full after:invisible after:whitespace-pre-wrap after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2] sm:col-span-3"
             >
               <textarea
                 value={snippet()}
                 placeholder="Snippet"
                 class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg [grid-area:1/1/2/2] 
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
+            focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
                 onInput={(e) => {
                   setSnippet(e.target.value);
                 }}

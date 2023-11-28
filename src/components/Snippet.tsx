@@ -45,8 +45,8 @@ export default function Snippet(props: {
       tabindex="0"
       onclick={copy}
       class="relative flex min-h-[180px] cursor-pointer flex-col justify-between text-ellipsis whitespace-nowrap rounded-lg border-2 border-border 
-      focus-within:bg-background-accent focus-visible:outline-dotted focus-visible:outline-2 
-      focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent"
+      focus-within:bg-background-accent focus-visible:outline-dashed focus-visible:outline-2 
+      focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent"
     >
       <div class="mx-2 overflow-auto py-2 text-center">
         <h2 class="text-3xl font-semibold [text-shadow:_0_0_0.2em_#00000069]">
@@ -61,8 +61,8 @@ export default function Snippet(props: {
       <div class="flex flex-row justify-between">
         <button
           class="h-14 w-14 rounded-bl-lg rounded-tr-lg border-r-2 border-t-2 border-border bg-background bg-cover fill-text
-          focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
-          focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
+          focus-visible:fill-accent focus-visible:outline-dashed focus-visible:outline-2
+          focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:fill-accent"
           onClick={share}
         >
           <div
@@ -78,8 +78,8 @@ export default function Snippet(props: {
         {props.viewOld() ? (
           <button
             class="h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
-          focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
-          focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
+          focus-visible:fill-accent focus-visible:outline-dashed focus-visible:outline-2
+          focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:fill-accent"
             onClick={remove}
           >
             <div
@@ -90,8 +90,8 @@ export default function Snippet(props: {
         ) : (
           <button
             class="h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover fill-text
-          focus-visible:fill-accent focus-visible:outline-dotted focus-visible:outline-2
-          focus-visible:outline-offset-1 focus-visible:outline-white sm:hover:fill-accent"
+          focus-visible:fill-accent focus-visible:outline-dashed focus-visible:outline-2
+          focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:fill-accent"
             onClick={hide}
           >
             <div

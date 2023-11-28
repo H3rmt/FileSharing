@@ -24,16 +24,14 @@ export function NewFile() {
     try {
       if (await isDuplicateFile(name())) {
         if (
-          !confirm(
-            "File/Files with same name already exists. Upload anyway?",
-          )
+          !confirm("File/Files with same name already exists. Upload anyway?")
         )
           return;
       }
     } catch (e) {
-      console.error(e)
-      toast("Error checking for duplicate file")
-      return
+      console.error(e);
+      toast("Error checking for duplicate file");
+      return;
     }
 
     const formData = new FormData();
@@ -52,9 +50,9 @@ export function NewFile() {
     try {
       await uploadFile(formData);
     } catch (e) {
-      console.error(e)
-      toast("Error uploading file")
-      return
+      console.error(e);
+      toast("Error uploading file");
+      return;
     }
     toast("Upload finished");
   };
@@ -68,24 +66,24 @@ export function NewFile() {
     addFiles(e.dataTransfer?.files ?? null);
   };
 
-  let hovering = 0 // 0 = false, 1 = true, 2 = false but delayed
+  let hovering = 0; // 0 = false, 1 = true, 2 = false but delayed
 
   const dragover = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
     document.getElementById("f-dropzone")?.classList.add("bg-textbg");
-    hovering = 1
+    hovering = 1;
   };
   const dragoverleave = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    hovering = 2
+    hovering = 2;
     setTimeout(() => {
       if (hovering === 2) {
         document.getElementById("f-dropzone")?.classList.remove("bg-textbg");
-        hovering = 0
+        hovering = 0;
       }
-    }, 200)
+    }, 200);
   };
 
   const input = (e: Event) => {
@@ -105,7 +103,7 @@ export function NewFile() {
   return (
     <div class="flex justify-center">
       <div class="rounded-lg bg-textbg p-1">
-        <div class="flex justify-center overflow-auto rounded-lg bg-background">
+        <div class="flex justify-center overflow-auto rounded-lg bg-background p-1">
           <form
             class="grid w-fit grid-cols-[1fr_auto] grid-rows-3 gap-4 p-2 sm:grid-cols-[auto_1fr_auto] sm:grid-rows-2"
             id="f-dropzone"
@@ -120,8 +118,8 @@ export function NewFile() {
             <input
               type="text"
               class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-            focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
-            focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+            focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+            focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value={name()}
               placeholder="Custom Name"
               oninput={(e) => setName(e.target.value)}
@@ -129,15 +127,15 @@ export function NewFile() {
             <input
               type="submit"
               class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-white sm:hover:bg-background-accent sm:hover:text-accent"
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
+            focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value="Upload"
             />
             <input
               type="file"
               class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-            focus-visible:text-accent focus-visible:outline-dotted focus-visible:outline-2 focus-visible:outline-offset-2
-            focus-visible:outline-white sm:col-span-2 sm:hover:bg-background-accent sm:hover:text-accent"
+            focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+            focus-visible:outline-text sm:col-span-2 sm:hover:bg-background-accent sm:hover:text-accent"
               value={files().map((f) => f.name)}
               placeholder="Files"
               multiple
