@@ -112,8 +112,8 @@ export function NewSnippet() {
             </span>
             <input
               type="text"
-              class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-              focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
+              focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
               focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value={name()}
               placeholder="Custom Name"
@@ -121,9 +121,9 @@ export function NewSnippet() {
             />
             <input
               type="submit"
-              class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
-            focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent
+            p-2 focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1
+            focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value="Upload"
             />
             <div class="col-span-2 max-h-[40dvh] w-full overflow-auto p-1 sm:col-span-3">
@@ -134,9 +134,9 @@ export function NewSnippet() {
                 <textarea
                   value={snippet()}
                   placeholder="Snippet"
-                  class="resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg text-text [grid-area:1/1/2/2] 
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
-            focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+                  class="focus-visible:outline-solid resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg text-text 
+            [grid-area:1/1/2/2] focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1
+            focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
                   onInput={(e) => {
                     setSnippet(e.target.value);
                   }}

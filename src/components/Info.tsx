@@ -49,9 +49,9 @@ export function Info(props: {
           </a>
         </div>
         <button
-          class="rounded-lg border-2 border-border bg-transparent p-2
-          focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
-          focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+          class="focus-visible:outline-solid rounded-lg border-2 border-border bg-transparent
+          p-2 focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1
+          focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
           onClick={() => props.setOld(!props.old())}
         >
           {props.old() ? "Hide Old" : "Show Old"}

@@ -117,8 +117,8 @@ export function NewFile() {
             </span>
             <input
               type="text"
-              class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-            focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
             focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value={name()}
               placeholder="Custom Name"
@@ -126,15 +126,15 @@ export function NewFile() {
             />
             <input
               type="submit"
-              class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2
-            focus-visible:outline-offset-1 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent
+            p-2 focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1
+            focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
               value="Upload"
             />
             <input
               type="file"
-              class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-            focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
             focus-visible:outline-text sm:col-span-2 sm:hover:bg-background-accent sm:hover:text-accent"
               value={files().map((f) => f.name)}
               placeholder="Files"

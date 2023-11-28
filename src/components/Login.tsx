@@ -38,8 +38,8 @@ export default function Login() {
         autofocus
         autocomplete="current-password"
         type="password"
-        class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent
-              focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+        class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
+              focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
               focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
         value={password()}
         placeholder="Password"
@@ -47,8 +47,8 @@ export default function Login() {
       />
       <input
         type="submit"
-        class="col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 focus-visible:bg-background-accent 
-            focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1
+        class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 
+            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
             focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
         value="Login"
       />
