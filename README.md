@@ -10,6 +10,7 @@ Astro + Solid using Pocketbase to share files and snippets
 - Simple download of multiple files with one click
 - Download/copy causes file to be marked as old and disappear from frontpage
 - Old Files can be displayed with one buttonpress
+- Generate Links to download files without login
 
 ## Example
 
