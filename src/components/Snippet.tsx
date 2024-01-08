@@ -38,6 +38,7 @@ export default function Snippet(props: {
     await navigator.clipboard.writeText(props.snippet.text);
     console.log("Copy snippet", props.snippet);
     await unmarkSnippet(props.snippet);
+    toast("Snippet copied");
   };
 
   return (
