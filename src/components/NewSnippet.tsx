@@ -53,7 +53,7 @@ export function NewSnippet() {
   const drop = async (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("s-dropzone")?.classList.remove("bg-textbg");
+    document.getElementById("s-dropzone")?.classList.remove("shadow-[inset_0_0_70px_30px_rgba(130,1,120,0.4)]");
     hovering = 0;
 
     console.log("Drop", e.dataTransfer?.files[0]);
