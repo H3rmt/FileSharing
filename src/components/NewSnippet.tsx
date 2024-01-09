@@ -79,7 +79,9 @@ export function NewSnippet() {
   const dragover = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("s-dropzone")?.classList.add("bg-textbg");
+    document
+      .getElementById("s-dropzone")
+      ?.classList.add("shadow-[inset_0_0_70px_30px_rgba(130,1,120,0.4)]");
     hovering = 1;
   };
   const dragoverleave = (e: DragEvent) => {
@@ -89,19 +91,25 @@ export function NewSnippet() {
     hovering = 2;
     setTimeout(() => {
       if (hovering === 2) {
-        document.getElementById("s-dropzone")?.classList.remove("bg-textbg");
+        document
+          .getElementById("s-dropzone")
+          ?.classList.remove(
+            "shadow-[inset_0_0_70px_30px_rgba(130,1,120,0.4)]",
+          );
         hovering = 0;
       }
-    }, 200);
+    }, 120);
   };
 
   return (
     <div class="flex justify-center">
       <div class="rounded-lg bg-textbg p-1">
-        <div class="flex justify-center overflow-auto rounded-lg bg-background p-1">
+        <div
+          class="flex justify-center overflow-auto rounded-lg bg-background p-1"
+          id="s-dropzone"
+        >
           <form
             class="grid w-fit grid-cols-[1fr_auto] grid-rows-[1fr_1fr_auto] gap-4 p-2 sm:grid-cols-[auto_1fr_auto] sm:grid-rows-[1fr_auto]"
-            id="s-dropzone"
             ondragleave={dragoverleave}
             ondragover={dragover}
             ondrop={drop}
