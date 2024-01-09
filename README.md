@@ -30,6 +30,7 @@ services:
       - ADMIN_PASSWORD=testtest
       - ADMIN_EMAIL=admin@example.com
       - USER_PASSWORD=test
+      - APP_NAME=File Sharing
     volumes:
       - ./pb_data:/app/pb_data
 ```

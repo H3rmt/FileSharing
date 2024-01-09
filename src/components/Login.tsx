@@ -4,7 +4,7 @@ import { login } from "src/services/login";
 import { checkLoginReverse } from "src/services/pocketpase";
 import ImportantText from "./importantText";
 
-export default function Login() {
+export default function LoginComponent() {
   const [password, setPassword] = createSignal("");
 
   checkLoginReverse();

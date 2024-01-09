@@ -21,6 +21,7 @@ import (
 const (
 	env_host = "HOST"
 	env_port = "PORT"
+	env_name = "APP_NAME"
 
 	env_admin_email    = "ADMIN_EMAIL"
 	env_admin_password = "ADMIN_PASSWORD"
@@ -57,6 +58,20 @@ func main() {
 	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
 		e.Router.GET("/*", apis.StaticDirectoryHandler(os.DirFS("./dist"), false))
 
+		e.Router.GET("/api/name", func(c echo.Context) error {
+			name, present := os.LookupEnv(env_name)
+			if !present {
+				name = "Local File Sharing"
+			}
+			Jname := struct {
+				Name string `json:"name"`
+			}{
+				Name: name,
+			}
+
+			return c.JSON(http.StatusOK, Jname)
+		}, apis.ActivityLogger(app))
+
 		e.Router.GET("/api/size", func(c echo.Context) error {
 			var totalSize int64
 			filepath.WalkDir("pb_data/storage", func(path string, d fs.DirEntry, err error) error {
@@ -72,7 +87,12 @@ func main() {
 				}
 				return nil
 			})
-			return c.String(http.StatusOK, fmt.Sprint(totalSize))
+			Jsize := struct {
+				Size int64 `json:"size"`
+			}{
+				Size: totalSize,
+			}
+			return c.JSON(http.StatusOK, Jsize)
 		}, apis.ActivityLogger(app), apis.RequireAdminOrRecordAuth())
 
 		return nil

@@ -3,7 +3,11 @@ import type { File as F } from "../types/file";
 import { pb } from "./pocketpase";
 
 export async function getSize() {
-  return await pb.send("/api/size", {});
+  return (await pb.send("/api/size", {}))?.size ?? -1;
+}
+
+export async function getName() {
+  return (await pb.send("/api/name", {}))?.name ?? "?File Sharing?";
 }
 
 export async function getFiles(): Promise<F[]> {

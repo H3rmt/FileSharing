@@ -8,7 +8,7 @@ export const toast = (message: string) => {
     duration: 3500,
     close: false,
     gravity: "bottom",
-    position: "center",
+    position: "right",
     stopOnFocus: true,
     style: {
       background: "hsl(var(--toast-background))",
@@ -17,7 +17,7 @@ export const toast = (message: string) => {
       color: "hsl(var(--toast-color))",
       "border-width": "2px",
       "border-color": "hsl(var(--border))",
-      "box-shadow": "0 0 60px 30px rgba(130, 1, 120, 0.2)",
+      "box-shadow": "0 0 20px 15px rgba(130, 1, 120, 0.2)",
     },
   }).showToast();
 };

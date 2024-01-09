@@ -1,15 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ImportantText from "src/components/importantText";
 import Info from "src/components/Info.astro";
+import Name from "src/components/Name";
 import Overview from "src/components/Overview";
 ---
 
-<Layout title="Local File Share">
+<Layout title="File Share">
   <main class="m-auto p-2 text-text">
     <Info />
     <h1 class="m-0 mb-4 mt-3 text-center text-4xl font-bold">
-      Welcome to <ImportantText>Local File Share</ImportantText>
+      <Name client:only />
     </h1>
     <Overview client:only />
   </main>
