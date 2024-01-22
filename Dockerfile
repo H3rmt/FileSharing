@@ -19,9 +19,9 @@ COPY src/ ./src
 COPY info.json ./info.json
 RUN pnpm build
 
-FROM alpine:latest AS release
-WORKDIR /app
+# FROM node:alpine AS release
+# WORKDIR /app
 COPY --from=build-stage /app/LocalFileSharing ./LocalFileSharing
-COPY --from=js-base /app/dist ./dist
+# COPY --from=js-base /app/dist ./dist
 
 ENTRYPOINT ["/app/LocalFileSharing", "serve"]
