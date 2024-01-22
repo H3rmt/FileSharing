@@ -1,12 +1,16 @@
 import { defineConfig } from "astro/config";
 import solidJs from "@astrojs/solid-js";
+import node from '@astrojs/node';
 import tailwind from "@astrojs/tailwind";
 import { VitePWA } from "vite-plugin-pwa";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [solidJs(), tailwind()],
-  output: "static",
+  output: "server",
+  adapter: node({
+    mode: 'standalone',
+  }),
   vite: {
     plugins: [
       VitePWA({

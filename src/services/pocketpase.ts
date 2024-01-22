@@ -1,6 +1,11 @@
 import Pocketbase from "pocketbase";
 
-export const pb = new Pocketbase();
+try {
+  var url = process?.env?.POCKETBASE_URL ?? ''
+} catch (error) {
+  var url = '/'
+}
+export const pb = new Pocketbase(url);
 
 export async function checkLogin() {
   if (!pb.authStore.model) {

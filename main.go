@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"io/fs"
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 
@@ -28,19 +30,61 @@ const (
 	env_user_password  = "USER_PASSWORD"
 )
 
+const node_port = "4321"
+const node_host = "0.0.0.0"
 const username = "generated-user"
+
+func redirect(c echo.Context) error {
+	println(c.Request().RequestURI)
+
+	// Erstellt eine neue Anfrage an den Node.js-Server
+	req, err := http.NewRequest(c.Request().Method, fmt.Sprintf("http://%s:%s%s", node_host, node_port, c.Request().RequestURI), c.Request().Body)
+	if err != nil {
+		err = fmt.Errorf("error creating request: %w", err)
+		println(err.Error())
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	// Kopiert die Header aus der ursprünglichen Anfrage
+	for name, values := range c.Request().Header {
+		for _, value := range values {
+			req.Header.Add(name, value)
+		}
+	}
+
+	// Sendet die Anfrage und erhält eine Antwort
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		err = fmt.Errorf("error sending request: %w", err)
+		println(err.Error())
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	defer resp.Body.Close()
+
+	// Liest den Antwortkörper und sendet ihn zurück an den Client
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		err = fmt.Errorf("error reading response: %w", err)
+		println(err.Error())
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return c.Blob(http.StatusOK, resp.Header.Get("Content-Type"), body)
+}
 
 func main() {
 	app := pocketbase.New()
+	var host string
+	var port string
 
 	// run if serve command is executed
 	if len(os.Args) > 1 && os.Args[1] == "serve" {
-		host, present := os.LookupEnv(env_host)
+		var present bool
+		host, present = os.LookupEnv(env_host)
 		if !present {
 			host = "0.0.0.0"
 			fmt.Printf("missing %s env, using '%s'\n", env_host, host)
 		}
-		port, present := os.LookupEnv(env_port)
+		port, present = os.LookupEnv(env_port)
 		if !present {
 			port = "80"
 			fmt.Printf("missing %s env, using '%s'\n", env_port, port)
@@ -56,7 +100,26 @@ func main() {
 	})
 
 	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
-		e.Router.GET("/*", apis.StaticDirectoryHandler(os.DirFS("./dist"), false))
+		// start node server
+		cmd := exec.Command("node", "./dist/server/entry.mjs")
+		cmd.Env = append(os.Environ(), fmt.Sprintf("HOST=%s", node_host), fmt.Sprintf("PORT=%s", node_port), fmt.Sprintf("POCKETBASE_URL=http://%s:%s", host, port))
+		cmd.Stdout = os.Stdout // Leitet die Standardausgabe des Node.js-Servers in die Standardausgabe des Go-Programms um
+		cmd.Stderr = os.Stderr // Leitet die Standardfehler des Node.js-Servers in die Standardfehler des Go-Programms um
+		err := cmd.Start()
+		if err != nil {
+			log.Fatal(err)
+		}
+		log.Printf("Node server started with PID %d\n", cmd.Process.Pid)
+		go func() {
+			err := cmd.Wait()
+			if err != nil {
+				log.Printf("Node server terminated with error: %v\n", err)
+			} else {
+				log.Println("Node server terminated successfully")
+			}
+		}()
+
+		e.Router.GET("/*", redirect)
 
 		e.Router.GET("/api/name", func(c echo.Context) error {
 			name, present := os.LookupEnv(env_name)

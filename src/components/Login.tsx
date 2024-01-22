@@ -1,13 +1,10 @@
 import { createSignal } from "solid-js";
 import { toast } from "../services/toast";
 import { login } from "src/services/login";
-import { checkLoginReverse } from "src/services/pocketpase";
 import ImportantText from "./importantText";
 
 export default function LoginComponent() {
   const [password, setPassword] = createSignal("");
-
-  checkLoginReverse();
 
   const submit = async (e: SubmitEvent) => {
     e.preventDefault();
