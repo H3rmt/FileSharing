@@ -121,6 +121,10 @@ func main() {
 
 		e.Router.GET("/*", redirect)
 
+		e.Router.GET("/info", func(c echo.Context) error {
+			return c.File("info.json")
+		})
+
 		e.Router.GET("/api/name", func(c echo.Context) error {
 			name, present := os.LookupEnv(env_name)
 			if !present {
