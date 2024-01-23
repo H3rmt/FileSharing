@@ -14,7 +14,7 @@ COPY astro.config.mjs tailwind.config.cjs tsconfig.json ./
 COPY public/ ./public
 COPY src/ ./src
 COPY info.json ./info.json
-RUN npm build
+RUN npm run build
 
 COPY --from=build-stage /app/LocalFileSharing ./LocalFileSharing
 
