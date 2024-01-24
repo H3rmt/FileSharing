@@ -9,7 +9,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o ./LocalFileSharing
 FROM node:alpine AS js-base
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm install
 COPY astro.config.mjs tailwind.config.cjs tsconfig.json ./
 COPY public/ ./public
 COPY src/ ./src
