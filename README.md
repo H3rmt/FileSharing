@@ -34,3 +34,8 @@ services:
     volumes:
       - ./pb_data:/app/pb_data
 ```
+
+## Preview
+
+|![Screenshot](https://github.com/H3rmt/LocalFileSharing/assets/100319043/8b3ae608-18b5-4cc3-b74c-30940d64601b)|![Screenshot](https://github.com/H3rmt/LocalFileSharing/assets/100319043/6af2c58e-468d-4137-8292-50d6ee570f09)|
+|--|--|

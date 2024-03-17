@@ -1,6 +1,6 @@
 import {
   defineConfig,
-  minimalPreset as preset,
+  minimal2023Preset as preset,
 } from "@vite-pwa/assets-generator/config";
 
 export default defineConfig({

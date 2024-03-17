@@ -1,4 +1,5 @@
 ---
+import CheckLogin from "src/components/CheckLogin";
 import Layout from "../layouts/Layout.astro";
 import Info from "src/components/Info.astro";
 import LoginComponent from "src/components/Login";
@@ -8,8 +9,9 @@ import Name from "src/components/Name";
 <Layout title="File Share">
   <main class="m-auto flex h-[100dvh] flex-col p-2 text-text">
     <Info />
+    <CheckLogin client:only reverse />
     <h1 class="m-0 mb-4 mt-3 text-center text-4xl font-bold">
-      <Name client:only />
+      <Name />
     </h1>
     <div class="m-auto flex justify-center">
       <div
@@ -18,7 +20,7 @@ import Name from "src/components/Name";
         <div
           class="flex justify-center overflow-auto rounded-lg bg-background p-2"
         >
-          <LoginComponent client:only />
+          <LoginComponent client:load />
         </div>
       </div>
     </div>

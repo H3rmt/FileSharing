@@ -2,7 +2,7 @@ name: Release
 
 on:
   release:
-    types: [prereleased, released]
+    types: [released]
 
 jobs:
   build:
@@ -14,6 +14,9 @@ jobs:
           - linux/amd64
           - linux/arm/v7
           - linux/arm64
+    permissions: 
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,7 +41,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Populate info.json
         run: |
           jq -n --arg version "${{ github.ref_name }}" --arg commit "${{ github.sha }}" --arg date "$(date -u +%F)" '{ version: $version, commit: $commit, date: $date }' > info.json
@@ -67,6 +70,9 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build
+    permissions: 
+      contents: read
+      packages: write
     steps:
       - name: Download digests
         uses: actions/download-artifact@v3
@@ -92,7 +98,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Create manifest list and push
         working-directory: /tmp/digests
         run: |

@@ -1,4 +1,5 @@
 ---
+import CheckLogin from "src/components/CheckLogin";
 import Layout from "../layouts/Layout.astro";
 import Info from "src/components/Info.astro";
 import Name from "src/components/Name";
@@ -8,8 +9,9 @@ import Overview from "src/components/Overview";
 <Layout title="File Share">
   <main class="m-auto p-2 text-text">
     <Info />
+    <CheckLogin client:only />
     <h1 class="m-0 mb-4 mt-3 text-center text-4xl font-bold">
-      <Name client:only />
+      <Name />
     </h1>
     <Overview client:only />
   </main>
