@@ -6,11 +6,13 @@ import ImportantText from "./importantText";
 
 export default function LoginComponent() {
   const [password, setPassword] = createSignal("");
+  const [loggingIn, setLoggingIn] = createSignal(false);
 
   checkLoginReverse();
 
   const submit = async (e: SubmitEvent) => {
     e.preventDefault();
+    setLoggingIn(true);
     console.log("new Login");
 
     if (password() === "") {
@@ -47,10 +49,11 @@ export default function LoginComponent() {
       />
       <input
         type="submit"
+        disabled={loggingIn()}
         class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 
             focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
             focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
-        value="Login"
+        value={loggingIn() ? "Logging in" : "Login"}
       />
     </form>
   );
