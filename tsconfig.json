@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "~/assets/*": ["src/assets/*"]
+      "~/assets/*": ["src/assets/*"],
     },
     "ignoreDeprecations": "5.0",
     "strict": true,
@@ -28,6 +28,6 @@
     "allowUnusedLabels": false,
     "allowJs": false,
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
-  }
+    "jsxImportSource": "solid-js",
+  },
 }

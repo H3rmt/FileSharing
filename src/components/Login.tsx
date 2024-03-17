@@ -50,7 +50,7 @@ export default function LoginComponent() {
         class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 
             focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
             focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
-        value={loggingIn() ? "Logging in" : "Login"}
+        value={loggingIn() ? "Logging in..." : "Login"}
       />
     </form>
   );

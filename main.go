@@ -35,7 +35,7 @@ const node_host = "0.0.0.0"
 const username = "generated-user"
 
 func redirect(c echo.Context) error {
-	println(c.Request().RequestURI)
+	// println(c.Request().RequestURI)
 
 	// Erstellt eine neue Anfrage an den Node.js-Server
 	req, err := http.NewRequest(c.Request().Method, fmt.Sprintf("http://%s:%s%s", node_host, node_port, c.Request().RequestURI), c.Request().Body)

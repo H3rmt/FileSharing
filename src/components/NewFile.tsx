@@ -60,7 +60,9 @@ export function NewFile() {
   const drop = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("f-dropzone")?.classList.remove("shadow-[inset_0_0_70px_30px_rgba(130,1,120,0.4)]");
+    document
+      .getElementById("f-dropzone")
+      ?.classList.remove("shadow-[inset_0_0_70px_30px_rgba(130,1,120,0.4)]");
 
     console.log("Drop", e.dataTransfer?.files);
     addFiles(e.dataTransfer?.files ?? null);

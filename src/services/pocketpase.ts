@@ -1,9 +1,9 @@
 import Pocketbase from "pocketbase";
 
 try {
-  var url = process?.env?.POCKETBASE_URL ?? ''
+  var url = process?.env?.POCKETBASE_URL ?? "";
 } catch (error) {
-  var url = '/'
+  var url = "/";
 }
 export const pb = new Pocketbase(url);
 
