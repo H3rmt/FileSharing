@@ -7,14 +7,18 @@ COPY migrations/ ./migrations
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o ./LocalFileSharing
 
 FROM node:alpine AS js-base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
 COPY astro.config.mjs tailwind.config.cjs tsconfig.json ./
 COPY public/ ./public
 COPY src/ ./src
 COPY info.json ./info.json
-RUN npm run build
+RUN pnpm run build
 
 COPY --from=build-stage /app/LocalFileSharing ./LocalFileSharing
 
