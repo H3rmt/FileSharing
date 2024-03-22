@@ -13,16 +13,8 @@ import Name from "src/components/Name";
     <h1 class="m-0 mb-4 mt-3 text-center text-4xl font-bold">
       <Name />
     </h1>
-    <div class="m-auto flex justify-center">
-      <div
-        class="rounded-lg bg-textbg p-1 shadow-[0_0_60px_40px_rgba(130_1_120_/_20%)]"
-      >
-        <div
-          class="flex justify-center overflow-auto rounded-lg bg-background p-2"
-        >
-          <LoginComponent client:load />
-        </div>
-      </div>
+    <div class="m-auto flex justify-center gap-8">
+      <LoginComponent client:only />
     </div>
   </main>
 </Layout>
