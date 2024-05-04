@@ -16,9 +16,9 @@ export default defineConfig({
       VitePWA({
         registerType: "autoUpdate",
         manifest: {
-          name: "Local File Sharing",
-          short_name: "Local File Sharing",
-          description: "Local File Sharing Website",
+          name: "File/Snippet Sharing",
+          short_name: "File Sharing",
+          description: "File/Snippet Sharing Website",
           background_color: "#222",
           theme_color: "#ACACAC",
           icons: [

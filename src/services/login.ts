@@ -12,7 +12,9 @@ export async function login(password: string) {
 
 export async function loginOAuth2() {
   try {
-    const authData = await pb.collection('users').authWithOAuth2({ provider: 'oidc3' });
+    const authData = await pb
+      .collection("users")
+      .authWithOAuth2({ provider: "oidc3" });
     console.log(authData);
     return true;
   } catch (e) {

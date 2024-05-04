@@ -1,7 +1,7 @@
 version: "3.8"
 services:
-  localfilesharing:
-    image: h3rmt/localfilesharing
+  filesharing:
+    image: h3rmt/filesharing
     # build: .
     restart: always
     ports:
@@ -12,6 +12,6 @@ services:
       - ADMIN_PASSWORD=testtest
       - ADMIN_EMAIL=admin@example.com
       - USER_PASSWORD=test
-      - APP_NAME=LocalFileSharing
+      - APP_NAME=FileSharing
     volumes:
       - ./pb_data:/app/pb_data

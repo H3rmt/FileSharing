@@ -4,7 +4,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 COPY main.go ./
 COPY migrations/ ./migrations
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o ./LocalFileSharing
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o ./FileSharing
 
 FROM node:alpine AS js-base
 ENV PNPM_HOME="/pnpm"
@@ -20,6 +20,6 @@ COPY src/ ./src
 COPY info.json ./info.json
 RUN pnpm run build
 
-COPY --from=build-stage /app/LocalFileSharing ./LocalFileSharing
+COPY --from=build-stage /app/FileSharing ./FileSharing
 
-ENTRYPOINT ["/app/LocalFileSharing", "serve"]
+ENTRYPOINT ["/app/FileSharing", "serve"]

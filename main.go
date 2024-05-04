@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	_ "github.com/H3rmt/LocalFileSharing/migrations"
+	_ "github.com/H3rmt/FileSharing/migrations"
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/apis"
@@ -128,7 +128,7 @@ func main() {
 		e.Router.GET("/api/name", func(c echo.Context) error {
 			name, present := os.LookupEnv(env_name)
 			if !present {
-				name = "Local File Sharing"
+				name = "File Sharing"
 			}
 			Jname := struct {
 				Name string `json:"name"`

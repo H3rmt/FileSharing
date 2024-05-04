@@ -1,4 +1,4 @@
-module github.com/H3rmt/LocalFileSharing
+module github.com/H3rmt/FileSharing
 
 go 1.21.5
 
