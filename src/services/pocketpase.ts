@@ -1,9 +1,10 @@
 import Pocketbase from "pocketbase";
 
+let url;
 try {
-  var url = process?.env?.POCKETBASE_URL ?? "";
+  url = process?.env?.POCKETBASE_URL ?? "";
 } catch (error) {
-  var url = "/";
+  url = "/";
 }
 export const pb = new Pocketbase(url);
 

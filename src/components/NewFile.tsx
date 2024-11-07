@@ -1,5 +1,5 @@
 import { createSignal } from "solid-js";
-import { isDuplicateFile, uploadFile } from "../services/files";
+import { isDuplicateFile, removeFile, uploadFile } from "../services/files";
 import ImportantText from "./importantText";
 import { toast } from "../services/toast";
 
@@ -22,11 +22,20 @@ export function NewFile() {
     }
 
     try {
-      if (await isDuplicateFile(name())) {
+      const files = await isDuplicateFile(name());
+      if (files.length > 0) {
         if (
-          !confirm("File/Files with same name already exists. Upload anyway?")
+          !confirm(
+            "File/Files with same name already exists. OVERRIDE the previous?",
+          )
         )
           return;
+
+        for (let file of files) {
+          console.log("Remove file");
+          await removeFile(file);
+          toast("File removed");
+        }
       }
     } catch (e) {
       console.error(e);

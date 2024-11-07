@@ -1,4 +1,4 @@
-import { createResource, createSignal } from "solid-js";
+import { createSignal } from "solid-js";
 import { toast } from "../services/toast";
 import { login, loginOAuth2 } from "src/services/login";
 import ImportantText from "./importantText";

@@ -42,13 +42,13 @@ export function File(props: { file: File; viewOld: Accessor<boolean> }) {
       for (const url of urls) {
         text += url + "\n";
       }
-      navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(text);
       toast(`Copied links to ${urls.length} files`);
       return;
     } else if (firstFile) {
       console.log("Share file", props.file);
       const url = getFileUrl(props.file, firstFile, false);
-      navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(url);
       toast("Copied link to file");
       return;
     }
