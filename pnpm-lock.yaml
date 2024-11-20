@@ -8,6 +8,16 @@ importers:
 
   .:
     dependencies:
+      pocketbase:
+        specifier: 0.21.5
+        version: 0.21.5
+      solid-js:
+        specifier: 1.9.3
+        version: 1.9.3
+      toastify-js:
+        specifier: 1.12.0
+        version: 1.12.0
+    devDependencies:
       '@astrojs/node':
         specifier: 8.3.4
         version: 8.3.4(astro@4.16.13(@types/node@22.9.1)(rollup@2.79.2)(terser@5.36.0)(typescript@5.6.3))
@@ -17,31 +27,15 @@ importers:
       '@astrojs/tailwind':
         specifier: 5.1.2
         version: 5.1.2(astro@4.16.13(@types/node@22.9.1)(rollup@2.79.2)(terser@5.36.0)(typescript@5.6.3))(tailwindcss@3.4.15)
-      astro:
-        specifier: 4.16.13
-        version: 4.16.13(@types/node@22.9.1)(rollup@2.79.2)(terser@5.36.0)(typescript@5.6.3)
-      pocketbase:
-        specifier: 0.21.5
-        version: 0.21.5
-      solid-js:
-        specifier: 1.9.3
-        version: 1.9.3
-      tailwindcss:
-        specifier: 3.4.15
-        version: 3.4.15
-      toastify-js:
-        specifier: 1.12.0
-        version: 1.12.0
-      vite-plugin-pwa:
-        specifier: 0.21.0
-        version: 0.21.0(@vite-pwa/assets-generator@0.2.6)(vite@5.4.11(@types/node@22.9.1)(terser@5.36.0))(workbox-build@7.3.0(@types/babel__core@7.20.5))(workbox-window@7.3.0)
-    devDependencies:
       '@types/toastify-js':
         specifier: 1.12.3
         version: 1.12.3
       '@vite-pwa/assets-generator':
         specifier: 0.2.6
         version: 0.2.6
+      astro:
+        specifier: 4.16.13
+        version: 4.16.13(@types/node@22.9.1)(rollup@2.79.2)(terser@5.36.0)(typescript@5.6.3)
       prettier:
         specifier: 3.3.3
         version: 3.3.3
@@ -51,6 +45,12 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: 0.6.9
         version: 0.6.9(prettier-plugin-astro@0.14.1)(prettier@3.3.3)
+      tailwindcss:
+        specifier: 3.4.15
+        version: 3.4.15
+      vite-plugin-pwa:
+        specifier: 0.21.0
+        version: 0.21.0(@vite-pwa/assets-generator@0.2.6)(vite@5.4.11(@types/node@22.9.1)(terser@5.36.0))(workbox-build@7.3.0(@types/babel__core@7.20.5))(workbox-window@7.3.0)
 
 packages:
 

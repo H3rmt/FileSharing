@@ -8,19 +8,19 @@
     "lint": "prettier --write --plugin='prettier-plugin-astro' --plugin='prettier-plugin-tailwindcss' ."
   },
   "dependencies": {
+    "pocketbase": "0.21.5",
+    "solid-js": "1.9.3",
+    "toastify-js": "1.12.0"
+  },
+  "devDependencies": {
     "@astrojs/node": "8.3.4",
     "@astrojs/solid-js": "4.4.3",
     "@astrojs/tailwind": "5.1.2",
-    "astro": "4.16.13",
-    "pocketbase": "0.21.5",
-    "solid-js": "1.9.3",
-    "tailwindcss": "3.4.15",
-    "toastify-js": "1.12.0",
-    "vite-plugin-pwa": "0.21.0"
-  },
-  "devDependencies": {
     "@types/toastify-js": "1.12.3",
     "@vite-pwa/assets-generator": "0.2.6",
+    "vite-plugin-pwa": "0.21.0",
+    "tailwindcss": "3.4.15",
+    "astro": "4.16.13",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.9"

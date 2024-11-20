@@ -1,8 +1,7 @@
-version: "3.8"
 services:
   filesharing:
-    image: h3rmt/filesharing
-    # build: .
+    # image: h3rmt/filesharing
+    build: .
     restart: always
     ports:
       - "8080:80"

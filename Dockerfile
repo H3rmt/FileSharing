@@ -19,7 +19,11 @@ COPY public/ ./public
 COPY src/ ./src
 COPY info.json ./info.json
 RUN pnpm run build
+RUN rm -r node_modules
+RUN pnpm install --prod
 
-COPY --from=build-stage /app/FileSharing ./FileSharing
-
-ENTRYPOINT ["/app/FileSharing", "serve"]
+FROM node:alpine AS run
+COPY --from=js-base /app/dist /dist
+COPY --from=js-base /app/node_modules /node_modules
+COPY --from=build-stage /app/FileSharing /FileSharing
+ENTRYPOINT ["/FileSharing", "serve"]

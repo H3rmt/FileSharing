@@ -16,7 +16,6 @@
     },
     "ignoreDeprecations": "5.0",
     "strict": true,
-    "importsNotUsedAsValues": "error",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,

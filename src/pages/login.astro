@@ -9,12 +9,12 @@ import Name from "src/components/Name";
 <Layout title="File Share">
   <main class="m-auto flex h-[100dvh] flex-col p-2 text-text">
     <Info />
-    <CheckLogin client:only reverse />
+    <CheckLogin client:only="solid-js" reverse />
     <h1 class="m-0 mb-4 mt-3 text-center text-4xl font-bold">
       <Name />
     </h1>
     <div class="m-auto flex justify-center gap-8">
-      <LoginComponent client:only />
+      <LoginComponent client:only="solid-js" />
     </div>
   </main>
 </Layout>
