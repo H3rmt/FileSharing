@@ -26,7 +26,7 @@ RUN rm -r node_modules
 RUN pnpm install --prod
 
 FROM node:alpine AS run
-COPY --from=js-base /app/dist /dist
-COPY --from=js-base /app/node_modules /node_modules
-COPY --from=build /app/FileSharing /FileSharing
-ENTRYPOINT ["/FileSharing", "serve"]
+COPY --from=js-base /app/dist /app/dist
+COPY --from=js-base /app/node_modules /app/node_modules
+COPY --from=build /app/FileSharing /app/FileSharing
+ENTRYPOINT ["/app/FileSharing", "serve"]
