@@ -22,11 +22,10 @@ COPY public/ ./public
 COPY src/ ./src
 COPY info.json ./info.json
 RUN pnpm run build
-RUN rm -r node_modules
-RUN pnpm install --prod
 
 FROM node:alpine AS run
+WORKDIR /app
 COPY --from=js-base /app/dist /app/dist
 COPY --from=js-base /app/node_modules /app/node_modules
 COPY --from=build /app/FileSharing /app/FileSharing
-ENTRYPOINT ["/app/FileSharing", "serve"]
+ENTRYPOINT ["./FileSharing", "serve"]
