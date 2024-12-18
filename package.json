@@ -20,7 +20,7 @@
     "@vite-pwa/assets-generator": "0.2.6",
     "vite-plugin-pwa": "0.21.0",
     "tailwindcss": "3.4.15",
-    "astro": "4.16.13",
+    "astro": "4.16.17",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.9"
