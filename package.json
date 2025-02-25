@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "pocketbase": "0.21.5",
-    "solid-js": "1.9.3",
+    "solid-js": "1.9.4",
     "toastify-js": "1.12.0"
   },
   "devDependencies": {
