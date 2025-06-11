@@ -61,7 +61,7 @@ jobs:
           jq -n --arg version "${{ github.ref_name }}" --arg commit "${{ github.sha }}" --arg date "$(date -u +%F)" '{ version: $version, commit: $commit, date: $date }' > info.json
       - name: Build and push by digest
         id: build
-        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6
+        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
           context: .
           platforms: ${{ matrix.platform }}
