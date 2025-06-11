@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       pocketbase:
-        specifier: 0.21.5
-        version: 0.21.5
+        specifier: 0.26.1
+        version: 0.26.1
       solid-js:
         specifier: 1.9.7
         version: 1.9.7
@@ -2408,8 +2408,8 @@ packages:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
 
-  pocketbase@0.21.5:
-    resolution: {integrity: sha512-bnI/uinnQps+ElSlzxkc4yvwuSFfKcoszDtXH/4QT2FhGq2mJVUvDlxn+rjRXVntUjPfmMG5LEPZ1eGqV6ssog==}
+  pocketbase@0.26.1:
+    resolution: {integrity: sha512-fjcPDpxyqTZCwqGUTPUV7vssIsNMqHxk9GxbhxYHPEf18RqX2d9cpSqbbHk7aas30jqkgptuKfG7aY/Mytjj3g==}
 
   possible-typed-array-names@1.0.0:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
@@ -6006,7 +6006,7 @@ snapshots:
     dependencies:
       find-up: 4.1.0
 
-  pocketbase@0.21.5: {}
+  pocketbase@0.26.1: {}
 
   possible-typed-array-names@1.0.0: {}
 
