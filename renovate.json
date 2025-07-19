@@ -3,6 +3,7 @@
   "extends": [
     "schedule:earlyMondays",
     "config:best-practices",
-    "helpers:pinGitHubActionDigestsToSemver"
+    "helpers:pinGitHubActionDigestsToSemver",
+    ":semanticPrefixFix"
   ]
 }
