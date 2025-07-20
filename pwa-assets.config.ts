@@ -5,6 +5,5 @@ import {
 
 export default defineConfig({
   preset,
-  images: ["icon.png"],
-  root: "./public",
+  images: ["./public/icon.png"],
 });

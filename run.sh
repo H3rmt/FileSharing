@@ -1,4 +1,5 @@
 clear;
+pnpm run build;
 export HOST="0.0.0.0";
 export PORT="8081";
 export ADMIN_PASSWORD="testtest";
