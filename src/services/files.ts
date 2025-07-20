@@ -1,17 +1,36 @@
 import type { RecordSubscription } from "pocketbase";
 import type { File as F } from "../types/file";
 import { pb } from "./pocketpase";
+import { toast } from "./toast";
 
 export async function getSize() {
-  return (await pb.send("/api/size", {}))?.size ?? -1;
+  try {
+    return (await pb.send("/api/size", {}))?.size ?? -1;
+  } catch (error) {
+    toast("Error fetching size");
+    console.error("Error fetching size:", error);
+    return -1;
+  }
 }
 
 export async function getName() {
-  return (await pb.send("/api/name", {}))?.name ?? "?File Sharing?";
+  try {
+    return (await pb.send("/api/name", {}))?.name ?? "?File Sharing?";
+  } catch (error) {
+    toast("Error fetching name");
+    console.error("Error fetching name:", error);
+    return "?File Sharing?";
+  }
 }
 
 export async function getFiles(): Promise<F[]> {
-  return await pb.collection("files").getFullList<F>();
+  try {
+    return await pb.collection("files").getFullList<F>();
+  } catch (error) {
+    toast("Error fetching files");
+    console.error("Error fetching files:", error);
+    return [];
+  }
 }
 
 export async function isDuplicateFile(name: string): Promise<F[]> {
@@ -29,9 +48,10 @@ export async function getFileUrls(file: F): Promise<string[]> {
 export function getFileUrl(
   file: F,
   name: string,
-  crop: boolean = false,
+  crop: boolean = false
 ): string {
-  return pb.files.getUrl(file, name, crop ? { thumb: "200x180" } : {});
+
+  return pb.files.getURL(file, name, crop ? { thumb: "200x180" } : {});
 }
 
 export async function uploadFile(data: FormData): Promise<void> {
@@ -47,10 +67,17 @@ export async function removeFile(file: F): Promise<void> {
 }
 
 export async function subscribeFiles(
-  callback: (file: RecordSubscription<F>) => void,
+  callback: (file: RecordSubscription<F>) => void
 ): Promise<() => Promise<void>> {
-  return await pb.collection("files").subscribe<F>("*", (ev) => {
-    console.log("Files updated");
-    callback(ev);
-  });
+  try {
+    return await pb.collection("files").subscribe<F>("*", (ev) => {
+      console.log("Files updated");
+      callback(ev);
+    });
+  } catch (error) {
+    toast("Error subscribing to files");
+    console.error("Error subscribing to files:", error);
+    return async () => {
+    };
+  }
 }

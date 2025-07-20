@@ -1,18 +1,19 @@
 import { defineConfig } from "astro/config";
 import solidJs from "@astrojs/solid-js";
 import node from "@astrojs/node";
-import tailwind from "@astrojs/tailwind";
 import { VitePWA } from "vite-plugin-pwa";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs(), tailwind()],
+  integrations: [solidJs()],
   output: "server",
   adapter: node({
-    mode: "standalone",
+    mode: "standalone"
   }),
   vite: {
     plugins: [
+      tailwindcss(),
       VitePWA({
         registerType: "autoUpdate",
         manifest: {
@@ -25,28 +26,28 @@ export default defineConfig({
             {
               src: "pwa-64x64.png",
               sizes: "64x64",
-              type: "image/png",
+              type: "image/png"
             },
             {
               src: "pwa-192x192.png",
               sizes: "192x192",
-              type: "image/png",
+              type: "image/png"
             },
             {
               src: "pwa-512x512.png",
               sizes: "512x512",
               type: "image/png",
-              purpose: "any",
+              purpose: "any"
             },
             {
               src: "maskable-icon-512x512.png",
               sizes: "512x512",
               type: "image/png",
-              purpose: "maskable",
-            },
-          ],
-        },
-      }),
-    ],
-  },
+              purpose: "maskable"
+            }
+          ]
+        }
+      })
+    ]
+  }
 });

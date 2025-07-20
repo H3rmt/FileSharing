@@ -12,8 +12,9 @@ export function Info(props: {
   const [size, {}] = createResource(getSize);
 
   return (
-    <div class="rounded-lg bg-textbg p-1">
-      <div class="flex justify-between gap-2 rounded-lg bg-background p-2">
+    <div
+      class="rounded-lg flex p-0.5 shadow-[0_0_15px_15px_rgba(130_1_120/20%)] bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
+      <div class="flex flex-1 justify-between gap-2 rounded-lg bg-white dark:bg-slate-950 p-2">
         <p class="m-0 leading-5">
           This is a file/snippet sharing service. You can upload files and
           snippets to share them with others. <br />
@@ -48,14 +49,18 @@ export function Info(props: {
             Icons8
           </a>
         </div>
-        <button
-          class="focus-visible:outline-solid rounded-lg border-2 border-border bg-transparent
-          p-2 focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1
-          focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
-          onClick={() => props.setOld(!props.old())}
-        >
+        <span
+          class="flex p-0.5 rounded-lg  bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
+         <button
+           class="cursor-pointer rounded-lg p-2 border-transparent flex-1
+                focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+                bg-white dark:bg-slate-950 hover:bg-gray-200 dark:hover:bg-slate-900"
+           onClick={() => props.setOld(!props.old())}
+         >
           {props.old() ? "Hide Old" : "Show Old"}
         </button>
+        </span>
       </div>
     </div>
   );

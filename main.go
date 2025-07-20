@@ -12,33 +12,31 @@ import (
 	"strings"
 
 	_ "github.com/H3rmt/FileSharing/migrations"
-	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/apis"
 	"github.com/pocketbase/pocketbase/core"
-	"github.com/pocketbase/pocketbase/models"
 	"github.com/pocketbase/pocketbase/plugins/migratecmd"
 )
 
 const (
-	env_host = "HOST"
-	env_port = "PORT"
-	env_name = "APP_NAME"
+	envHost = "HOST"
+	envPort = "PORT"
+	envName = "APP_NAME"
 
-	env_admin_email    = "ADMIN_EMAIL"
-	env_admin_password = "ADMIN_PASSWORD"
-	env_user_password  = "USER_PASSWORD"
+	envAdminEmail    = "ADMIN_EMAIL"
+	envAdminPassword = "ADMIN_PASSWORD"
+	envUserPassword  = "USER_PASSWORD"
 )
 
-const node_port = "4321"
-const node_host = "0.0.0.0"
-const username = "generated-user"
+const nodePort = "4321"
+const nodeHost = "0.0.0.0"
+const generatedEmail = "generated-user@example.com"
 
-func redirect(c echo.Context) error {
-	// println(c.Request().RequestURI)
+func redirect(c *core.RequestEvent) error {
+	//println(c.Request.RequestURI)
 
 	// Erstellt eine neue Anfrage an den Node.js-Server
-	req, err := http.NewRequest(c.Request().Method, fmt.Sprintf("http://%s:%s%s", node_host, node_port, c.Request().RequestURI), c.Request().Body)
+	req, err := http.NewRequest(c.Request.Method, fmt.Sprintf("http://%s:%s%s", nodeHost, nodePort, c.Request.RequestURI), c.Request.Body)
 	if err != nil {
 		err = fmt.Errorf("error creating request: %w", err)
 		println(err.Error())
@@ -46,7 +44,7 @@ func redirect(c echo.Context) error {
 	}
 
 	// Kopiert die Header aus der ursprünglichen Anfrage
-	for name, values := range c.Request().Header {
+	for name, values := range c.Request.Header {
 		for _, value := range values {
 			req.Header.Add(name, value)
 		}
@@ -59,7 +57,9 @@ func redirect(c echo.Context) error {
 		println(err.Error())
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
-	defer resp.Body.Close()
+	defer func(Body io.ReadCloser) {
+		_ = Body.Close()
+	}(resp.Body)
 
 	// Liest den Antwortkörper und sendet ihn zurück an den Client
 	body, err := io.ReadAll(resp.Body)
@@ -79,15 +79,15 @@ func main() {
 	// run if serve command is executed
 	if len(os.Args) > 1 && os.Args[1] == "serve" {
 		var present bool
-		host, present = os.LookupEnv(env_host)
+		host, present = os.LookupEnv(envHost)
 		if !present {
 			host = "0.0.0.0"
-			fmt.Printf("missing %s env, using '%s'\n", env_host, host)
+			fmt.Printf("missing %s env, using '%s'\n", envHost, host)
 		}
-		port, present = os.LookupEnv(env_port)
+		port, present = os.LookupEnv(envPort)
 		if !present {
 			port = "80"
-			fmt.Printf("missing %s env, using '%s'\n", env_port, port)
+			fmt.Printf("missing %s env, using '%s'\n", envPort, port)
 		}
 
 		os.Args = append(os.Args, fmt.Sprintf("--http=%s:%s", host, port))
@@ -99,10 +99,10 @@ func main() {
 		Automigrate: strings.HasPrefix(os.Args[0], os.TempDir()),
 	})
 
-	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
+	app.OnServe().BindFunc(func(se *core.ServeEvent) error {
 		// start node server
 		cmd := exec.Command("node", "./dist/server/entry.mjs")
-		cmd.Env = append(os.Environ(), fmt.Sprintf("HOST=%s", node_host), fmt.Sprintf("PORT=%s", node_port), fmt.Sprintf("POCKETBASE_URL=http://%s:%s", host, port))
+		cmd.Env = append(os.Environ(), fmt.Sprintf("HOST=%s", nodeHost), fmt.Sprintf("PORT=%s", nodePort), fmt.Sprintf("POCKETBASE_URL=http://%s:%s", host, port))
 		cmd.Stdout = os.Stdout // Leitet die Standardausgabe des Node.js-Servers in die Standardausgabe des Go-Programms um
 		cmd.Stderr = os.Stderr // Leitet die Standardfehler des Node.js-Servers in die Standardfehler des Go-Programms um
 		err := cmd.Start()
@@ -118,15 +118,16 @@ func main() {
 				log.Println("Node server terminated successfully")
 			}
 		}()
+		se.Router.GET("/", redirect)
+		se.Router.GET("/*", redirect)
 
-		e.Router.GET("/*", redirect)
-
-		e.Router.GET("/info", func(c echo.Context) error {
-			return c.File("info.json")
+		se.Router.GET("/info", func(re *core.RequestEvent) error {
+			staticFS := os.DirFS(".")
+			return re.FileFS(staticFS, "info.json")
 		})
 
-		e.Router.GET("/api/name", func(c echo.Context) error {
-			name, present := os.LookupEnv(env_name)
+		se.Router.GET("/api/name", func(re *core.RequestEvent) error {
+			name, present := os.LookupEnv(envName)
 			if !present {
 				name = "File Sharing"
 			}
@@ -135,18 +136,17 @@ func main() {
 			}{
 				Name: name,
 			}
+			return re.JSON(http.StatusOK, Jname)
+		})
 
-			return c.JSON(http.StatusOK, Jname)
-		}, apis.ActivityLogger(app))
-
-		e.Router.GET("/api/size", func(c echo.Context) error {
+		se.Router.GET("/api/size", func(re *core.RequestEvent) error {
 			var totalSize int64
-			filepath.WalkDir("pb_data/storage", func(path string, d fs.DirEntry, err error) error {
+			_ = filepath.WalkDir("pb_data/storage", func(path string, d fs.DirEntry, err error) error {
 				if d != nil && !d.IsDir() {
 					info, err := d.Info()
 					if err != nil {
 						log.Print(err)
-						return c.String(http.StatusInternalServerError, "")
+						return re.String(http.StatusInternalServerError, "")
 					}
 					if !strings.HasSuffix(info.Name(), ".attrs") {
 						totalSize += info.Size()
@@ -159,47 +159,48 @@ func main() {
 			}{
 				Size: totalSize,
 			}
-			return c.JSON(http.StatusOK, Jsize)
-		}, apis.ActivityLogger(app), apis.RequireAdminOrRecordAuth())
+			return re.JSON(http.StatusOK, Jsize)
+		}).Bind(apis.RequireAuth("_superusers", "users"))
 
-		return nil
+		return se.Next()
 	})
 
 	// app.OnAfterBootstrap().Add(func(e *core.BootstrapEvent) error {
 	// migrations were not applied yet
-	app.OnBeforeServe().Add(func(e *core.ServeEvent) error {
+	app.OnServe().BindFunc(func(se *core.ServeEvent) error {
 		// create admin
-		admin_email, present := os.LookupEnv(env_admin_email)
+		adminEmail, present := os.LookupEnv(envAdminEmail)
 		if !present {
-			admin_email = "admin@example.com"
-			fmt.Printf("missing %s env, using '%s'\n", env_admin_email, admin_email)
+			adminEmail = "admin@example.com"
+			fmt.Printf("missing %s env, using '%s'\n", envAdminEmail, adminEmail)
 		}
-		admin_passwd, present := os.LookupEnv(env_admin_password)
+		adminPasswd, present := os.LookupEnv(envAdminPassword)
 		if !present {
-			return fmt.Errorf("%s env not set", env_admin_password)
+			return fmt.Errorf("%s env not set", envAdminPassword)
 		}
-		user_passwd, present := os.LookupEnv(env_user_password)
+		userPasswd, present := os.LookupEnv(envUserPassword)
 		if !present {
-			return fmt.Errorf("%s env not set", env_user_password)
+			return fmt.Errorf("%s env not set", envUserPassword)
 		}
 
-		old_admin, _ := e.App.Dao().FindAdminByEmail(admin_email)
-		if old_admin == nil {
-			// create new admin
-			admin := &models.Admin{}
-			admin.Email = admin_email
-			admin.SetPassword(admin_passwd)
-
-			err := e.App.Dao().SaveAdmin(admin)
+		oldAdmin, _ := se.App.FindAuthRecordByEmail(core.CollectionNameSuperusers, adminEmail)
+		if oldAdmin == nil {
+			collection, err := se.App.FindCollectionByNameOrId(core.CollectionNameSuperusers)
+			if err != nil {
+				return err
+			}
+			record := core.NewRecord(collection)
+			record.SetEmail(adminEmail)
+			record.SetPassword(adminPasswd)
+			err = se.App.Save(record)
 			if err != nil {
 				return err
 			} else {
 				fmt.Println("created admin")
 			}
 		} else {
-			old_admin.SetPassword(admin_passwd)
-
-			err := e.App.Dao().SaveAdmin(old_admin)
+			oldAdmin.SetPassword(adminPasswd)
+			err := se.App.Save(oldAdmin)
 			if err != nil {
 				return err
 			} else {
@@ -208,26 +209,24 @@ func main() {
 		}
 
 		// create user
-		old_user, _ := e.App.Dao().FindAuthRecordByUsername("users", username)
-		if old_user == nil {
-			collection, err := e.App.Dao().FindCollectionByNameOrId("users")
+		oldUser, _ := se.App.FindAuthRecordByEmail("users", generatedEmail)
+		if oldUser == nil {
+			collection, err := se.App.FindCollectionByNameOrId("users")
 			if err != nil {
 				return err
 			}
-			user := models.NewRecord(collection)
-			user.SetUsername(username)
-			user.SetPassword(user_passwd)
-
-			err = e.App.Dao().SaveRecord(user)
+			record := core.NewRecord(collection)
+			record.SetEmail(generatedEmail)
+			record.SetPassword(userPasswd)
+			err = se.App.Save(record)
 			if err != nil {
 				return err
 			} else {
 				fmt.Println("created user")
 			}
 		} else {
-			old_user.SetPassword(user_passwd)
-
-			err := e.App.Dao().SaveRecord(old_user)
+			oldUser.SetPassword(userPasswd)
+			err := se.App.Save(oldUser)
 			if err != nil {
 				return err
 			} else {
@@ -235,7 +234,7 @@ func main() {
 			}
 		}
 
-		return nil
+		return se.Next()
 	})
 
 	if err := app.Start(); err != nil {

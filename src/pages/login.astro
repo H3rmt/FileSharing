@@ -1,21 +1,17 @@
 ---
 import CheckLogin from "src/components/CheckLogin";
 import Layout from "../layouts/Layout.astro";
-import Info from "src/components/Info.astro";
+import Info from "src/components/Version.astro";
 import LoginComponent from "src/components/Login";
 import Name from "src/components/Name";
 ---
 
 <Layout title="File Share">
-  <main class="m-auto flex h-[100dvh] flex-col p-2 text-text">
+  <main class="m-auto flex h-dvh flex-col p-2">
     <Info />
     <CheckLogin client:only="solid-js" reverse />
-    <h1 class="m-0 mb-4 mt-3 text-center text-4xl font-bold">
-      <Name />
-    </h1>
-    <div class="m-auto flex justify-center gap-8">
-      <LoginComponent client:only="solid-js" />
-    </div>
+    <Name />
+    <LoginComponent client:only="solid-js" />
   </main>
 </Layout>
 

@@ -96,16 +96,17 @@ export function NewSnippet() {
         document
           .getElementById("s-dropzone")
           ?.classList.remove(
-            "shadow-[inset_0_0_70px_30px_rgba(130,1,120,0.4)]",
-          );
+          "shadow-[inset_0_0_70px_30px_rgba(130,1,120,0.4)]"
+        );
         hovering = 0;
       }
     }, 120);
   };
 
   return (
-    <div class="flex justify-center">
-      <div class="rounded-lg bg-textbg p-1">
+    <div
+      class="rounded-lg mx-auto flex p-0.5 shadow-[0_0_15px_15px_rgba(130_1_120/20%)] bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
+      <div class="flex flex-1 justify-center gap-2 rounded-lg bg-white dark:bg-slate-950 p-2">
         <div
           class="flex justify-center overflow-auto rounded-lg bg-background p-1"
           id="s-dropzone"
@@ -120,33 +121,44 @@ export function NewSnippet() {
             <span class="col-span-2 flex w-full items-center justify-center text-3xl font-bold sm:col-span-1">
               Add&nbsp;<ImportantText>Snippet</ImportantText>
             </span>
+            <span
+              class="col-span-1 flex w-full p-0.5 rounded-lg  bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
             <input
               type="text"
-              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
-              focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
-              focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+              class="cursor-text rounded-lg p-2 border-transparent flex-1
+                focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+                bg-white dark:bg-slate-950 hover:bg-gray-200 dark:hover:bg-slate-900"
               value={name()}
               placeholder="Custom Name"
               oninput={(e) => setName(e.target.value)}
             />
+            </span>
+            <span
+              class="col-span-1 flex w-full p-0.5 rounded-lg  bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
             <input
               type="submit"
-              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent
-            p-2 focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1
-            focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+              class="cursor-pointer rounded-lg p-2 border-transparent flex-1
+                focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+                bg-white dark:bg-slate-950 hover:bg-gray-200 dark:hover:bg-slate-900"
               value="Upload"
             />
-            <div class="col-span-2 max-h-[40dvh] w-full overflow-auto p-1 sm:col-span-3">
+            </span>
+            <div
+              class="col-span-2 flex max-h-[40dvh] sm:col-span-3 w-full p-0.5 rounded-lg  bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
               <div
                 data-replicated-value={snippet() + "\n"}
-                class="grid whitespace-pre after:invisible after:whitespace-pre-wrap after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2] "
+                class="grid flex-1 whitespace-pre after:invisible after:whitespace-pre-wrap after:p-2 after:text-lg after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2] "
               >
                 <textarea
                   value={snippet()}
                   placeholder="Snippet"
-                  class="focus-visible:outline-solid resize-none overflow-hidden rounded-lg border-2 border-border bg-transparent p-2 text-lg text-text 
-            [grid-area:1/1/2/2] focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1
-            focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+                  class="resize-none text-lg [grid-area:1/1/2/2]
+                  cursor-text rounded-lg p-2 border-transparent flex-1
+                focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+                bg-white dark:bg-slate-950 hover:bg-gray-200 dark:hover:bg-slate-900"
                   onInput={(e) => {
                     setSnippet(e.target.value);
                   }}

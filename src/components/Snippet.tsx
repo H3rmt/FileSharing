@@ -43,65 +43,76 @@ export default function Snippet(props: {
 
   return (
     <div
-      tabindex="0"
-      onclick={copy}
-      class="focus-visible:outline-solid relative flex min-h-[180px] cursor-pointer flex-col justify-between text-ellipsis whitespace-nowrap rounded-lg border-2 
-      border-border focus-within:bg-background-accent focus-visible:outline-1 
-      focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:bg-background-accent"
-    >
-      <div class="mx-2 overflow-auto py-2 text-center">
-        <h2 class="text-3xl font-semibold [text-shadow:_0_0_0.2em_#00000069]">
-          {props.snippet.name}
-        </h2>
-      </div>
-      <div class="mx-2 overflow-auto py-2 text-center">
-        <pre class="max-h-[40dvh] overflow-auto whitespace-pre text-text">
-          {props.snippet.text}
-        </pre>
-      </div>
-      <div class="flex flex-row justify-between">
-        <button
-          class="focus-visible:outline-solid h-14 w-14 rounded-bl-lg rounded-tr-lg border-r-2 border-t-2 border-border bg-background bg-cover
-          fill-text focus-visible:fill-accent focus-visible:outline-1
-          focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:fill-accent"
-          onClick={share}
-        >
-          <div
-            class="m-auto grid h-10 w-10 place-items-center"
-            innerHTML={sha}
-          ></div>
-        </button>
-        <span class="flex flex-col items-center gap-0 self-center text-base sm:flex-row sm:gap-2">
-          <span class="[text-shadow:_0_0_0.2em_#00000069]">
-            {new Date(props.snippet.created).toLocaleString("de-DE")}
-          </span>
-        </span>
-        {props.viewOld() ? (
+      class="flex rounded-lg bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
+      <a
+        target="_blank"
+        tabindex="0"
+        href=""
+        onclick={copy}
+        class="
+      relative flex min-h-[180px] flex-col justify-between
+      text-ellipsis whitespace-nowrap
+
+      cursor-pointer rounded-lg border-transparent overflow-auto flex-1
+      focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+      focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+"
+      >
+        <div class="mx-2 overflow-auto py-2 text-center">
+          <h2 class="text-3xl font-semibold [text-shadow:2px_2px_0.2em_#000000de]">
+            {props.snippet.name}
+          </h2>
+        </div>
+        <div class="mx-2 overflow-auto py-2 text-center">
+          <pre class="max-h-[40dvh] overflow-auto whitespace-pre text-text">
+            {props.snippet.text}
+          </pre>
+        </div>
+        <div class="flex flex-row justify-between">
           <button
-            class="focus-visible:outline-solid h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover
-          fill-text focus-visible:fill-accent focus-visible:outline-1
-          focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:fill-accent"
-            onClick={remove}
+            class="
+                  h-16 w-16 cursor-pointer p-2 bg-gray-950/55 fill-white
+                border-gray-950 border-r-2 border-t-2 rounded-tr-xl
+                  focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                  focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white"
+            onClick={share}
           >
             <div
               class="m-auto grid h-10 w-10 place-items-center"
-              innerHTML={del}
+              innerHTML={sha}
             ></div>
           </button>
-        ) : (
-          <button
-            class="focus-visible:outline-solid h-14 w-14 rounded-br-lg rounded-tl-lg border-l-2 border-t-2 border-border bg-background bg-cover
-          fill-text focus-visible:fill-accent focus-visible:outline-1
-          focus-visible:outline-offset-4 focus-visible:outline-text sm:hover:fill-accent"
-            onClick={hide}
-          >
-            <div
-              class="m-auto grid h-10 w-10 place-items-center"
-              innerHTML={hid}
-            ></div>
-          </button>
-        )}
-      </div>
+          {props.viewOld() ? (
+            <button
+              class="
+                  h-16 w-16 cursor-pointer p-2 bg-gray-950/55 fill-white
+                border-gray-950 border-l-2 border-t-2 rounded-tl-xl
+                  focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                  focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white"
+              onClick={remove}
+            >
+              <div
+                class="m-auto grid h-10 w-10 place-items-center"
+                innerHTML={del}
+              ></div>
+            </button>
+          ) : (
+            <button
+              class="
+                  h-16 w-16 cursor-pointer p-2 bg-gray-950/55 fill-white
+                border-gray-950 border-l-2 border-t-2 rounded-tl-xl
+                  focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                  focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white"
+              onClick={hide}
+            >
+              <div
+                class="m-auto grid h-10 w-10 place-items-center"
+                innerHTML={hid}
+              ></div>
+            </button>
+          )}
+        </div>
+      </a>
     </div>
   );
 }

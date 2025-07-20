@@ -14,7 +14,7 @@ export default function LoginComponent() {
     console.log("new Login");
 
     if (password() === "") {
-      toast("Password empty");
+      toast("Password empty", true);
       setLoggingIn(false);
       return;
     }
@@ -24,7 +24,7 @@ export default function LoginComponent() {
       setLoggingIn(false);
       window.location.href = "/";
     } else {
-      toast("Login failed");
+      toast("Login failed", true);
       setLoggingIn(false);
     }
   };
@@ -39,64 +39,75 @@ export default function LoginComponent() {
       setOAuthing(false);
       window.location.href = "/";
     } else {
-      toast("Login OAuth failed");
+      toast("Login OAuth failed", true);
       setOAuthing(false);
     }
   };
 
+  /* TODO check if 60 20 better */
   return (
-    <>
-      <div class="rounded-lg bg-textbg p-1 shadow-[0_0_60px_40px_rgba(130_1_120_/_20%)]">
-        <div class="flex justify-center overflow-auto rounded-lg bg-background p-2">
-          <form
-            class="grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] gap-4 p-2"
-            onsubmit={passwordLogin}
-          >
+    <div class="flex justify-around w-auto align-middle my-auto">
+      <div
+        class="rounded-lg flex p-0.5 shadow-[0_0_70px_30px_rgba(130_1_120/20%)] bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
+        <form
+          class="grid grid-cols-[auto_1fr] rounded-lg  bg-white dark:bg-slate-950 grid-rows-[1fr_auto] gap-4 p-4"
+          onsubmit={passwordLogin}
+        >
             <span class="col-span-2 flex w-full items-center justify-center text-3xl font-bold">
               <ImportantText>Login</ImportantText>
             </span>
+          <span
+            class="col-span-1 flex w-full p-0.5 rounded-lg  bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
             <input
               autofocus
               autocomplete="current-password"
               type="password"
-              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2
-              focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
-              focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+              class="cursor-text rounded-lg p-2 border-transparent flex-1
+                focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+                bg-white dark:bg-slate-950 hover:bg-gray-200 dark:hover:bg-slate-900"
               value={password()}
               placeholder="Password"
               oninput={(e) => setPassword(e.target.value)}
             />
+          </span>
+          <span
+            class="col-span-1 flex w-full p-0.5 rounded-lg  bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
             <input
               type="submit"
               disabled={loggingIn()}
-              class="focus-visible:outline-solid col-span-1 w-full rounded-lg border-2 border-border bg-transparent p-2 
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
-            focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
+              class="cursor-pointer rounded-lg p-2 border-transparent flex-1
+                focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+                bg-white dark:bg-slate-950 hover:bg-gray-200 dark:hover:bg-slate-900"
               value={loggingIn() ? "Logging in..." : "Login"}
             />
-          </form>
-        </div>
+          </span>
+        </form>
       </div>
-      <div class="rounded-lg bg-textbg p-1 shadow-[0_0_60px_40px_rgba(130_1_120_/_20%)]">
-        <div class="flex justify-center overflow-auto rounded-lg bg-background p-2">
-          <form
-            class="grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] gap-4 p-2"
-            onsubmit={oathLogin}
-          >
-            <span class="col-span-2 flex w-full items-center justify-center text-3xl font-bold">
+      <div
+        class="rounded-lg flex p-0.5 shadow-[0_0_70px_30px_rgba(130_1_120/20%)] bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
+        <form
+          class="grid grid-cols-[auto_1fr] rounded-lg  bg-white dark:bg-slate-950 grid-rows-[1fr_auto] gap-4 p-4"
+          onsubmit={oathLogin}
+        >
+          <span class="col-span-2 flex w-full items-center justify-center text-3xl font-bold">
               <ImportantText>OAuth</ImportantText>
             </span>
-            <input
-              type="submit"
-              disabled={oAuthing()}
-              class="focus-visible:outline-solid col-span-2 w-full rounded-lg border-2 border-border bg-transparent p-2 
-            focus-visible:bg-background-accent focus-visible:text-accent focus-visible:outline-1 focus-visible:outline-offset-4
-            focus-visible:outline-text sm:hover:bg-background-accent sm:hover:text-accent"
-              value={oAuthing() ? "Logging in..." : "Login"}
-            />
-          </form>
-        </div>
+          <span
+            class="col-span-2 flex w-full p-0.5 rounded-lg  bg-transparent bg-gradient-to-tr from-fuchsia-800 via-pink-600 to-rose-900">
+          <input
+            type="submit"
+            disabled={oAuthing()}
+            class="cursor-pointer rounded-lg p-2 border-transparent flex-1
+                focus-visible:outline-solid focus-visible:outline-1 focus-visible:outline-offset-4
+                focus-visible:outline-bg-slate-950 dark:focus-visible:outline-white
+                bg-white dark:bg-slate-950 hover:bg-gray-200 dark:hover:bg-slate-900"
+            value={oAuthing() ? "Logging in..." : "Login"}
+          />
+          </span>
+        </form>
       </div>
-    </>
+    </div>
   );
 }

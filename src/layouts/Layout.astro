@@ -4,66 +4,30 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import "../global.css";
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="File/Snippet Sharing" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="File/Snippet Sharing" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
 
-    <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#8d0074" />
-    <script is:inline src="/registerSW.js"></script>
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <title>{title}</title>
-  </head>
-  <body class="bg-background">
-    <slot />
-  </body>
+  <meta name="generator" content={Astro.generator} />
+  <meta name="theme-color" content="#8d0074" />
+  <script is:inline src="/registerSW.js"></script>
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <title>{title}</title>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-950 dark:text-gray-100">
+<slot />
+</body>
 </html>
 <style is:global>
-  html {
-    color-scheme: dark light;
-  }
 
-  :root {
-    --background: 0 0% 100%;
-    --text: 0 0% 0%;
-    --border: 318 100% 40%;
-    --accent: 327 100% 50%;
-    --toast-background: 0 0% 0% / 0.9;
-    --toast-color: 0 0% 100%;
-    --background-accent: 318 100% 40% / 0.15;
-    --textbg: linear-gradient(
-      45deg,
-      rgba(161, 12, 181, 1) 15%,
-      rgba(205, 0, 142, 15) 40%,
-      rgba(161, 12, 181, 1) 85%
-    );
-    --file-empty-bg: var(--background);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 0 0% 13%;
-      --text: 0 0% 100%;
-      --border: 318 100% 40%;
-      --accent: 327 100% 50%;
-      --toast-background: 0 0% 0% / 0.9;
-      --toast-color: 0 0% 100%;
-      --background-accent: 318 100% 40% / 0.15;
-      --textbg: linear-gradient(
-        45deg,
-        rgba(161, 12, 181, 1) 15%,
-        rgba(205, 0, 142, 15) 40%,
-        rgba(161, 12, 181, 1) 85%
-      );
-      --file-empty-bg: var(--textbg);
-    }
-  }
 </style>
