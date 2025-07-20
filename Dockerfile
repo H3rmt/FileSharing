@@ -17,10 +17,9 @@ RUN corepack enable
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
-COPY astro.config.mjs tailwind.config.cjs tsconfig.json ./
 COPY public/ ./public
 COPY src/ ./src
-COPY info.json ./info.json
+COPY astro.config.mjs tailwind.config.cjs tsconfig.json icon.png info.json ./
 RUN pnpm run build
 
 FROM node:alpine@sha256:7aaba6b13a55a1d78411a1162c1994428ed039c6bbef7b1d9859c25ada1d7cc5 AS run
