@@ -16,7 +16,7 @@
   "devDependencies": {
     "@astrojs/node": "9.3.0",
     "@astrojs/solid-js": "5.1.0",
-    "@astrojs/tailwind": "5.1.5",
+    "@astrojs/tailwind": "6.0.2",
     "@types/toastify-js": "1.12.4",
     "@vite-pwa/assets-generator": "1.0.0",
     "vite-plugin-pwa": "1.0.0",
