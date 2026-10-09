@@ -9,7 +9,7 @@ COPY main.go ./
 COPY migrations/ ./migrations
 RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags="-s -w" -o ./FileSharing
 
-FROM --platform=$BUILDPLATFORM node:alpine@sha256:820e86612c21d0636580206d802a726f2595366e1b867e564cbc652024151e8a AS js-base
+FROM --platform=$BUILDPLATFORM node:alpine@sha256:143494b1da2945f061539253adc65e4f1569ddf07da2d384c022c791a9d90a4a AS js-base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -22,7 +22,7 @@ COPY src/ ./src
 COPY astro.config.mjs tailwind.config.cjs tsconfig.json icon.png info.json ./
 RUN pnpm run build
 
-FROM node:alpine@sha256:820e86612c21d0636580206d802a726f2595366e1b867e564cbc652024151e8a AS run
+FROM node:alpine@sha256:143494b1da2945f061539253adc65e4f1569ddf07da2d384c022c791a9d90a4a AS run
 WORKDIR /app
 COPY --from=js-base /app/dist /app/dist
 COPY --from=js-base /app/node_modules /app/node_modules
